@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "-[MainCollectionViewController collectionView:cellForItemAtIndexPath:]:MainCollectionViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "rock.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RocksScrollViewController viewDidAppear:]:RocksScrollViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.selectedRock">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[MainCollectionViewController prepareForSegue:sender:]:MainCollectionViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "vc.selectedRock">
+            </PersistentString>
+            <PersistentString
+               value = "selectedIP">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "+[Rock rocksFiltered:]:Rock.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "[rock.state rangeOfString:filterString]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
