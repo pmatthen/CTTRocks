@@ -121,21 +121,48 @@
         [historicalImage setImage:tempRock.imageOfBuilding];
         historicalImage.contentMode = UIViewContentModeScaleToFill;
         
-        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270)];
-        textLabel.numberOfLines = 0;
-        textLabel.textColor = [UIColor whiteColor];
-        textLabel.textAlignment = NSTextAlignmentCenter;
-        [textLabel setFont:[UIFont fontWithName:@"Baskerville" size:16]];
-        textLabel.text = @"Less than a day after Washington and his troops crossed the Delaware, they inflicted a heavy defeat on British troops at Trenton. The Americans captured 900 Hessian mercenaries seving with the British. Less than a day after Washington and his troops crossed the Delaware, they inflicted a heavy defeat on British troops at Trenton. The Americans captured 900 Hessian mercenaries seving with the British.";
-        [textLabel sizeToFit];
+//        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270)];
+//        textLabel.numberOfLines = 0;
+//        textLabel.textColor = [UIColor whiteColor];
+//        textLabel.textAlignment = NSTextAlignmentCenter;
+//        [textLabel setFont:[UIFont fontWithName:@"Baskerville" size:16]];
+//        textLabel.text = @"Less than a day after Washington and his troops crossed the Delaware, they inflicted a heavy defeat on British troops at Trenton. The Americans captured 900 Hessian mercenaries seving with the British. Less than a day after Washington and his troops crossed the Delaware, they inflicted a heavy defeat on British troops at Trenton. The Americans captured 900 Hessian mercenaries seving with the British.";
+//        [textLabel sizeToFit];
+  
+        UITextView *textView;
         
-        UIView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake( ((n * self.view.frame.size.width) + 30), 30, 260, (textLabel.frame.origin.y + textLabel.frame.size.height))];
+        if (tempRock.text)
+        {
+            NSAttributedString *textString =  [[NSAttributedString alloc] initWithAttributedString:tempRock.text];
+            NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:textString];
+            NSLayoutManager *textLayout = [[NSLayoutManager alloc] init];
+            // Add layout manager to text storage object
+            [textStorage addLayoutManager:textLayout];
+            // Create a text container
+            NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:self.view.bounds.size];
+            // Add text container to text layout manager
+            [textLayout addTextContainer:textContainer];
+ 
+            textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270) textContainer:textContainer];
+            
+            textView.backgroundColor = [UIColor whiteColor];
+            textView.editable = NO;
+            textView.selectable = NO;
+            textView.alpha = 0.8;
+            [textView sizeToFit];
+        }
+        else
+        {
+           textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270)];
+        }
+        
+        UIView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake( ((n * self.view.frame.size.width) + 30), 30, 260, (textView.frame.origin.y + textView.frame.size.height))];
         myTranslucentView.backgroundColor = [UIColor blackColor];
         myTranslucentView.alpha = 0.4;
         
         [detailOverlay addSubview:myTranslucentView];
         [detailOverlay addSubview:historicalImage];
-        [detailOverlay addSubview:textLabel];
+        [detailOverlay addSubview:textView];
     }
 }
 

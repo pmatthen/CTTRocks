@@ -11,11 +11,11 @@
 @interface Rock : NSObject
 
 @property (nonatomic, strong) NSString *title;
-@property (nonatomic, strong) NSString *city;
+@property (nonatomic, strong) NSString *location;
 @property (nonatomic, strong) NSString *country;
 @property (nonatomic, strong) NSString *state;
-@property (nonatomic, strong) NSString *year;
-@property (nonatomic, strong) NSString *text;
+@property (nonatomic)         NSInteger *positionOnFacade;
+@property (nonatomic, strong) NSAttributedString *text;
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) UIImage *imageThumbnail;
 @property (nonatomic, strong) UIImage *imageOfBuilding;

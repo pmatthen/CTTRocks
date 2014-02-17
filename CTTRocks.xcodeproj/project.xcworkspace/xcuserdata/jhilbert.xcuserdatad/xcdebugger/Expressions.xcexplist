@@ -3,10 +3,18 @@
    version = "1.0">
    <ContextStates>
       <ContextState
-         contextName = "-[MainCollectionViewController collectionView:cellForItemAtIndexPath:]:MainCollectionViewController.m">
+         contextName = "+[Rock rocksFiltered:]:Rock.m">
          <PersistentStrings>
             <PersistentString
-               value = "rock.title">
+               value = "[rock.state rangeOfString:filterString]">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "-[RocksScrollViewController drawOverlay]:RocksScrollViewController.m">
+         <PersistentStrings>
+            <PersistentString
+               value = "textView.attributedText">
             </PersistentString>
          </PersistentStrings>
       </ContextState>
@@ -30,10 +38,10 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
-         contextName = "+[Rock rocksFiltered:]:Rock.m">
+         contextName = "-[MainCollectionViewController collectionView:cellForItemAtIndexPath:]:MainCollectionViewController.m">
          <PersistentStrings>
             <PersistentString
-               value = "[rock.state rangeOfString:filterString]">
+               value = "rock.title">
             </PersistentString>
          </PersistentStrings>
       </ContextState>

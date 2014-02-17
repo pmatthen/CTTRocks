@@ -138,11 +138,11 @@
 
     if ([rock.country isEqualToString:@"USA"])
     {
-        cell.labelLocation.text = [NSString stringWithFormat:@"%@ %@ %@",rock.country, rock.state, rock.city];
+        cell.labelLocation.text = [NSString stringWithFormat:@"%@ %@ %@",rock.country, rock.state, rock.location];
     }
     else
     {
-        cell.labelLocation.text = [NSString stringWithFormat:@"%@ %@",rock.country, rock.city];
+        cell.labelLocation.text = [NSString stringWithFormat:@"%@ %@",rock.country, rock.location];
     }
     [cell.labelLocation setFont:fontForLocation];
 
