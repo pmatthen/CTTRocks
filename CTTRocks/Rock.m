@@ -7,11 +7,12 @@
 //
 
 #import "Rock.h"
+#import "CHCSVParser.h"
 
 static NSMutableArray *rocks;
 static NSMutableArray *rocksFiltered;
 static NSString *lastUsedFilter;
-static NSArray *imagePaths;
+static NSArray *assestPaths;
 
 @interface Rock ()
 
@@ -21,26 +22,45 @@ static NSArray *imagePaths;
 
 + (void)loadImages
 {
-    for (int i = 0; i < imagePaths.count; i++)
+    for (int i = 0; i < assestPaths.count; i++)
     {
-        NSString *searchStr= @"CTTRocks.app/";
-        NSRange range = [imagePaths[i] rangeOfString:searchStr];
+        NSLog(@"%@", assestPaths[i]);
         
-        NSString *rockNumber = [[imagePaths[i] substringFromIndex:range.location +14] substringToIndex:3];
-        NSString *kindOfImage = [[imagePaths[i] substringFromIndex:range.location +13] substringToIndex:1];
+        NSString *searchStr= @"CTTRocks.app/";
+        NSRange range = [assestPaths[i] rangeOfString:searchStr];
+        
+        NSString *rockNumber = [[assestPaths[i] substringFromIndex:range.location +14] substringToIndex:3];
+        NSString *kindOfImage = [[assestPaths[i] substringFromIndex:range.location +13] substringToIndex:1];
+        NSLog(@"%@", rockNumber);
         
         NSInteger indexOfImage = [rockNumber integerValue] - 1;
-        if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"R"])
+        if (indexOfImage > 0 && [kindOfImage isEqualToString:@"R"])
         {
-            ((Rock*)rocks[indexOfImage]).image = [[UIImage alloc] initWithContentsOfFile:imagePaths[i]];
+            ((Rock*)rocks[indexOfImage]).image = [[UIImage alloc] initWithContentsOfFile:assestPaths[i]];
         }
-        if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"B"])
+        if (indexOfImage > 0 && [kindOfImage isEqualToString:@"B"])
         {
-            ((Rock*)rocks[indexOfImage]).imageOfBuilding = [[UIImage alloc] initWithContentsOfFile:imagePaths[i]];
+            ((Rock*)rocks[indexOfImage]).imageOfBuilding = [[UIImage alloc] initWithContentsOfFile:assestPaths[i]];
         }
-        if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"S"])
+        if (indexOfImage > 0 && [kindOfImage isEqualToString:@"S"])
         {
-            ((Rock*)rocks[indexOfImage]).imageThumbnail = [[UIImage alloc] initWithContentsOfFile:imagePaths[i]];
+            ((Rock*)rocks[indexOfImage]).imageThumbnail = [[UIImage alloc] initWithContentsOfFile:assestPaths[i]];
+        }
+    }
+}
+
+
++ (void)loadTexts
+{
+    for (int i = 0; i < assestPaths.count; i++)
+    {
+        NSString *searchStr= @"CTTRocks.app/";
+        NSRange range = [assestPaths[i] rangeOfString:searchStr];
+        NSString *rockNumber = [[assestPaths[i] substringFromIndex:range.location +17] substringToIndex:3];
+        NSInteger indexOfImage = [rockNumber integerValue] - 1;
+        if (indexOfImage >= 0)
+        {
+            ((Rock*)rocks[indexOfImage]).text = [[NSAttributedString alloc]   initWithFileURL:[[NSURL alloc]initFileURLWithPath:assestPaths[i]] options:@{NSDocumentTypeDocumentAttribute:NSRTFTextDocumentType} documentAttributes:nil error:nil];
         }
     }
 }
@@ -51,24 +71,37 @@ static NSArray *imagePaths;
     
     dispatch_once(&onceToken, ^{
         rocks = [NSMutableArray new];
-
-        for (int i = 0; i < 150; i++)
+        
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"CTT New Inventory" ofType:@"csv"];
+        NSError *error = nil;
+        NSArray *rocksCSV = [NSArray arrayWithContentsOfCSVFile:path options:CHCSVParserOptionsSanitizesFields delimiter:';'];
+        if (rocksCSV == nil) {
+            //something went wrong; log the error and exit
+            NSLog(@"error parsing file: %@", error);
+            return;
+        }
+        
+        for (int i = 1; i < rocksCSV.count; i++)
         {
             Rock *rock = [Rock new];
-            rock.title = [NSString stringWithFormat:@"Title for %i", i];
-            rock.city = [NSString stringWithFormat:@"Location for %i", i];
-            rock.country = [NSString stringWithFormat:@"Country for %i", i];
-            rock.year = [NSString stringWithFormat:@"%i", arc4random_uniform(2014)];
-            rock.text = @"Located within the Vatican, atop the traditional site of the tomb of St. Peter, this enormous cathedral was designed by Michelangelo and took 120 years to build (1506-1626). At 453 feet tall, its colossal dome is only nine feet shorter than the Tribune Tower.";
+            rock.title = rocksCSV[i][1];
+            rock.country = rocksCSV[i][2];
+            rock.state = rocksCSV[i][3];
+            rock.location = rocksCSV[i][4];
+            rock.positionOnFacade = arc4random_uniform(30000);
+            
             [rocks addObject:rock];
         }
-        imagePaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:nil];
+        assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:nil];
         [self loadImages];
-        imagePaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:nil];
+        assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:nil];
         [self loadImages];
+        assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"rtf" inDirectory:nil];
+        [self loadTexts];
     });
     
     return rocks;
+    
 }
 
 +(NSMutableArray*)rocksFiltered:(NSString*)filterString
@@ -97,7 +130,7 @@ static NSArray *imagePaths;
                 }
                 else
                 {
-                    if ([rock.city rangeOfString:filterString].location != NSNotFound)
+                    if ([rock.location rangeOfString:filterString].location != NSNotFound)
                     {
                         [rocksFiltered addObject:rock];
                     }
@@ -106,5 +139,6 @@ static NSArray *imagePaths;
         }
     }
     return rocksFiltered;
+    
 }
 @end
