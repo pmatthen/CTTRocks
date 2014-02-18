@@ -34,15 +34,15 @@ static NSArray *assestPaths;
         NSLog(@"%@", rockNumber);
         
         NSInteger indexOfImage = [rockNumber integerValue] - 1;
-        if (indexOfImage > 0 && [kindOfImage isEqualToString:@"R"])
+        if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"R"])
         {
             ((Rock*)rocks[indexOfImage]).image = [[UIImage alloc] initWithContentsOfFile:assestPaths[i]];
         }
-        if (indexOfImage > 0 && [kindOfImage isEqualToString:@"B"])
+        if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"B"])
         {
             ((Rock*)rocks[indexOfImage]).imageOfBuilding = [[UIImage alloc] initWithContentsOfFile:assestPaths[i]];
         }
-        if (indexOfImage > 0 && [kindOfImage isEqualToString:@"S"])
+        if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"S"])
         {
             ((Rock*)rocks[indexOfImage]).imageThumbnail = [[UIImage alloc] initWithContentsOfFile:assestPaths[i]];
         }

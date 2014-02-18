@@ -9,6 +9,7 @@
 #import "RocksScrollViewController.h"
 #import "ILTranslucentView.h"
 #import "Rock.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define DEGREES_RADIANS(angle) ((angle) / 180.0 * M_PI)
 
@@ -229,17 +230,9 @@
     for (int n = 0; n < rockArray.count; n++) {
         Rock *tempRock = rockArray[n];
         
-        UIImageView *historicalImage = [[UIImageView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 85, 60, 150, 150)];
+        UIImageView *historicalImage = [[UIImageView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 35, 35, 250, 175)];
         [historicalImage setImage:tempRock.imageOfBuilding];
         historicalImage.contentMode = UIViewContentModeScaleToFill;
-        
-//        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270)];
-//        textLabel.numberOfLines = 0;
-//        textLabel.textColor = [UIColor whiteColor];
-//        textLabel.textAlignment = NSTextAlignmentCenter;
-//        [textLabel setFont:[UIFont fontWithName:@"Baskerville" size:16]];
-//        textLabel.text = @"Less than a day after Washington and his troops crossed the Delaware, they inflicted a heavy defeat on British troops at Trenton. The Americans captured 900 Hessian mercenaries seving with the British. Less than a day after Washington and his troops crossed the Delaware, they inflicted a heavy defeat on British troops at Trenton. The Americans captured 900 Hessian mercenaries seving with the British.";
-//        [textLabel sizeToFit];
   
         UITextView *textView;
         
@@ -255,22 +248,33 @@
             // Add text container to text layout manager
             [textLayout addTextContainer:textContainer];
  
-            textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270) textContainer:textContainer];
+            textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 35, 220, 250, self.view.frame.size.height -318) textContainer:textContainer];
             
-            textView.backgroundColor = [UIColor whiteColor];
+            textView.backgroundColor = [UIColor clearColor];
             textView.editable = NO;
             textView.selectable = NO;
-            textView.alpha = 0.8;
+            textView.alpha = 1;
+            textView.textColor = [UIColor blackColor];
+            textView.directionalLockEnabled = YES;
+
             [textView sizeToFit];
+            if (textView.frame.size.height > 250)
+            {
+                textView.frame = CGRectMake((n * self.view.frame.size.width) + 35, 220, textView.frame.size.width, self.view.frame.size.height -318);
+            }
         }
         else
         {
-           textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270)];
+           textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 35, 220, 250, self.view.frame.size.height -318)];
         }
         
-        UIView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake( ((n * self.view.frame.size.width) + 30), 30, 260, (textView.frame.origin.y + textView.frame.size.height))];
-        myTranslucentView.backgroundColor = [UIColor blackColor];
-        myTranslucentView.alpha = 0.4;
+        ILTranslucentView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake( ((n * self.view.frame.size.width)) + 20, 20, 280, self.view.frame.size.height -40 -64)];
+        myTranslucentView.translucentAlpha = 0.8;
+        myTranslucentView.translucentStyle = UIBarStyleDefault;
+        myTranslucentView.translucentTintColor = [UIColor clearColor];
+        myTranslucentView.backgroundColor = [UIColor clearColor];
+        myTranslucentView.layer.cornerRadius = 10.0;
+        myTranslucentView.layer.masksToBounds = YES;
         
         [detailOverlay addSubview:myTranslucentView];
         [detailOverlay addSubview:historicalImage];
