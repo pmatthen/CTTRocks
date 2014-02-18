@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+<<<<<<< HEAD
+	<string>52F03111-9386-44D6-9F95-2838CECEA76C</string>
+=======
+	<string>431A93EF-8042-44D9-ADEC-EDAD91DAC7DA</string>
+>>>>>>> 3c80e33163cb8798928e49215e6524b0c7e33d9a
+	<key>IDESourceControlProjectName</key>
+	<string>CTTRocks</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+<<<<<<< HEAD
+		<key>C94CDC33-D43C-49D3-8E09-F492A68060E8</key>
+		<string>ssh://github.com/pmatthen/CTTRocks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CTTRocks.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C94CDC33-D43C-49D3-8E09-F492A68060E8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/pmatthen/CTTRocks.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C94CDC33-D43C-49D3-8E09-F492A68060E8</string>
+=======
+		<key>2218BD72-E45A-4915-93A1-8E087E8C3D7E</key>
+		<string>https://github.com/jhilbert/CTTRocks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CTTRocks/CTTRocks.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>2218BD72-E45A-4915-93A1-8E087E8C3D7E</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/jhilbert/CTTRocks.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>2218BD72-E45A-4915-93A1-8E087E8C3D7E</string>
+>>>>>>> 3c80e33163cb8798928e49215e6524b0c7e33d9a
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+<<<<<<< HEAD
+			<string>C94CDC33-D43C-49D3-8E09-F492A68060E8</string>
+=======
+			<string>2218BD72-E45A-4915-93A1-8E087E8C3D7E</string>
+>>>>>>> 3c80e33163cb8798928e49215e6524b0c7e33d9a
+			<key>IDESourceControlWCCName</key>
+			<string>CTTRocks</string>
+		</dict>
+	</array>
+</dict>
+</plist>

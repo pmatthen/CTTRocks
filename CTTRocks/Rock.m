@@ -24,14 +24,11 @@ static NSArray *assestPaths;
 {
     for (int i = 0; i < assestPaths.count; i++)
     {
-        NSLog(@"%@", assestPaths[i]);
-        
         NSString *searchStr= @"CTTRocks.app/";
         NSRange range = [assestPaths[i] rangeOfString:searchStr];
         
         NSString *rockNumber = [[assestPaths[i] substringFromIndex:range.location +14] substringToIndex:3];
         NSString *kindOfImage = [[assestPaths[i] substringFromIndex:range.location +13] substringToIndex:1];
-        NSLog(@"%@", rockNumber);
         
         NSInteger indexOfImage = [rockNumber integerValue] - 1;
         if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"R"])

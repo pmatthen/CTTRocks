@@ -10,6 +10,7 @@
 #import "MainCollectionViewController.h"
 #import "ILTranslucentView.h"
 #import "Rock.h"
+#import <QuartzCore/QuartzCore.h>
 
 #define DEGREES_RADIANS(angle) ((angle) / 180.0 * M_PI)
 
@@ -20,9 +21,9 @@
     
     NSArray *imagePaths;
     float startingX;
+    int currentPage;
     int previousPage;
     BOOL isOverlayOn;
-    UIView *detailOverlay;
     UIImageView *imageView;
     UIButton *button1;
     UIButton *button2;
@@ -35,26 +36,45 @@
 @implementation RocksScrollViewController
 @synthesize rockArray;
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
     if (!self.selectedRock) {
         self.selectedRock = 0;
+        previousPage = 0;
+    } else {
+        previousPage = self.selectedRock;
     }
+
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
-    previousPage = 0;
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    self.title = @"Tribune Rocks";
+    
+    //Programmatically add share buttons
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(didTapAction)];
+    NSArray *actionButtonItems = @[shareItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
     
     UIImage *image;
     image = [UIImage imageNamed:@"Estrella.jpeg"];
     imageView = [[UIImageView alloc] initWithImage:image];
-    
     [myPanoramicScrollview addSubview:imageView];
-    
     myPanoramicScrollview.contentSize = imageView.frame.size;
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     myPanoramicScrollview.delegate = self;
     myPanoramicScrollview.hidden = YES;
+    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -62,11 +82,17 @@
     [super viewDidAppear:animated];
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+
+    currentPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
 }
 
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
+    if (!rockArray) {
+        rockArray = [Rock rocks];
+    }
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPhoto)];
     tapGestureRecognizer.numberOfTapsRequired = 1;
@@ -75,33 +101,28 @@
     tapGestureRecognizer.delegate = self;
     [myScrollView addGestureRecognizer:tapGestureRecognizer];
     isOverlayOn = NO;
-    
-    rockArray = [Rock rocks];
-//    Rock *rock;
     startingX = (int)self.selectedRock * (int)self.view.frame.size.width;
     CGFloat width = self.view.frame.size.width * rockArray.count;
-    [self drawPhotos:self.selectedRock];
+    [self photoLayout:self.selectedRock];
     
-//    for (int n = 0; n < rockArray.count; n++) {
-//        rock = rockArray[n];
-//
-//        UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
-//        myImageView.contentMode = UIViewContentModeScaleToFill;
-//        myImageView.frame = CGRectMake(width, 0, self.view.frame.size.width, myScrollView.frame.size.height);
-//        [myScrollView addSubview:myImageView];
-//        
-//        width += myImageView.frame.size.width;
-//    }
     myScrollView.contentSize = CGSizeMake(width, myScrollView.frame.size.height);
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
     [myScrollView setContentOffset:CGPointMake(startingX, self.view.frame.size.height)];
-    
-    detailOverlay = [[UIView alloc]initWithFrame:CGRectMake(0, 0, myScrollView.contentSize.width, myScrollView.contentSize.height)];
-    [detailOverlay setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.1]];
-//    [self drawOverlay];
-    [myScrollView addSubview:detailOverlay];
-    detailOverlay.hidden = YES;
+
+    [self setupGestureRecognizerAbsentNavbar];
+    [self setupNavbarGestureRecognizer];
+}
+
+
+//Add share functionality
+- (void)didTapAction {
+    NSString *shareString = @"Tribune Tower, Chicago";
+    UIImage *shareImage = ((Rock*)rockArray[self.selectedRock]).image;
+    NSArray *activityItems = [NSArray arrayWithObjects:shareString, shareImage, nil];
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+    [self presentViewController:activityViewController animated:YES completion:nil];
 }
 
 - (void)scrollViewDidScroll:(UIScrollView *)aScrollView
@@ -111,76 +132,122 @@
 
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
-    int currentPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
+    currentPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
     if (currentPage != previousPage) {
         if (currentPage > previousPage) {
-            NSLog(@"page increasing");
+            NSLog(@"reached page #%i by increasing", currentPage);
             [self swipePhoto:(currentPage - 4) andAdd:(currentPage + 3)];
         }
         if (currentPage < previousPage) {
-            NSLog(@"page decreasing");
+            NSLog(@"reached page #%i by decreasing", currentPage);
             [self swipePhoto:(currentPage + 4) andAdd:(currentPage - 3)];
         }
         previousPage = currentPage;
     }
 }
 
--(void)drawPhotos:(int)photoPage
+-(void)photoLayout:(int)photoPage
 {
-    Rock *rock;
     for (int n = 3; n > 0; n--) {
         if ((photoPage - n) >= 0) {
-            NSLog(@"photopage - n = %i", (photoPage - n));
-            rock = rockArray[photoPage - n];
-            UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
-            myImageView.contentMode = UIViewContentModeScaleToFill;
-            myImageView.frame = CGRectMake((self.view.frame.size.width * (photoPage - n)), 0, self.view.frame.size.width, myScrollView.frame.size.height);
-            myImageView.tag = (photoPage - n) + 1;
-            NSLog(@"tag = %i", myImageView.tag);
-            [myScrollView addSubview:myImageView];
+            [self drawPhotos:(photoPage - n)];
         }
     }
-    
-    rock = rockArray[photoPage];
-    UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
-    myImageView.contentMode = UIViewContentModeScaleToFill;
-    myImageView.frame = CGRectMake((self.view.frame.size.width * photoPage), 0, self.view.frame.size.width, myScrollView.frame.size.height);
-    myImageView.tag = photoPage + 1;
-    NSLog(@"tag = %i", myImageView.tag);
-    [myScrollView addSubview:myImageView];
+    if (rockArray[photoPage]) {
+        [self drawPhotos:photoPage];
+    }
     
     for (int n = 1; n < 4; n++) {
-        if ((photoPage + n) <= rockArray.count) {
-            NSLog(@"photopage + n = %i", (photoPage + n));
-            rock = rockArray[photoPage + n];
-            UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
-            myImageView.contentMode = UIViewContentModeScaleToFill;
-            myImageView.frame = CGRectMake((self.view.frame.size.width * (photoPage + n)), 0, self.view.frame.size.width, myScrollView.frame.size.height);
-            myImageView.tag = (photoPage + n) + 1;
-            NSLog(@"tag = %i", myImageView.tag);
-            [myScrollView addSubview:myImageView];
+        if ( ((photoPage + n) < rockArray.count) ) {
+            [self drawPhotos:(photoPage + n)];
         }
     }
 }
 
--(void)swipePhoto:(int)subViewToDelete andAdd:(int)subViewToAdd
+-(void)drawPhotos:(int)sub
 {
     Rock *rock;
     
+    NSLog(@"adding rock and overlay at position %i", sub);
+    rock = rockArray[sub];
+    UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
+    myImageView.contentMode = UIViewContentModeScaleToFill;
+    myImageView.frame = CGRectMake((self.view.frame.size.width * sub), 0, self.view.frame.size.width, myScrollView.frame.size.height);
+    myImageView.tag = sub + 1;
+    
+    UIView* detailOverlay;
+    detailOverlay = [[UIView alloc]initWithFrame:CGRectMake((self.view.frame.size.width * sub), 0, self.view.frame.size.width, self.view.frame.size.height)];
+    [detailOverlay setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.1]];
+    detailOverlay.tag = sub + 1000;
+    detailOverlay.hidden = !isOverlayOn;
+    [myScrollView addSubview:detailOverlay];
+    
+    UIImageView *historicalImage = [[UIImageView alloc] initWithFrame:CGRectMake(35, 35, 250, 175)];
+    [historicalImage setImage:rock.imageOfBuilding];
+    historicalImage.contentMode = UIViewContentModeScaleToFill;
+    
+    UITextView *textView;
+    
+    if (rock.text)
+    {
+        NSAttributedString *textString =  [[NSAttributedString alloc] initWithAttributedString:rock.text];
+        NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:textString];
+        NSLayoutManager *textLayout = [[NSLayoutManager alloc] init];
+        // Add layout manager to text storage object
+        [textStorage addLayoutManager:textLayout];
+        // Create a text container
+        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:self.view.bounds.size];
+        // Add text container to text layout manager
+        [textLayout addTextContainer:textContainer];
+        
+        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -318) textContainer:textContainer];
+        textView.backgroundColor = [UIColor clearColor];
+        textView.editable = NO;
+        textView.selectable = NO;
+        textView.alpha = 1;
+        textView.textColor = [UIColor blackColor];
+        textView.directionalLockEnabled = YES;
+        [textView sizeToFit];
+        if (textView.frame.size.height > 250)
+        {
+            textView.frame = CGRectMake(35, 220, textView.frame.size.width, self.view.frame.size.height -318);
+        }
+    }
+    else
+    {
+        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -318)];
+    }
+    
+    UIView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height -40 -64)];
+    myTranslucentView.backgroundColor = [UIColor clearColor];
+    myTranslucentView.layer.cornerRadius = 10.0;
+    myTranslucentView.layer.masksToBounds = YES;
+    
+    [detailOverlay addSubview:myTranslucentView];
+    [detailOverlay addSubview:historicalImage];
+    [detailOverlay addSubview:textView];
+    [myScrollView addSubview:myImageView];
+    [myScrollView addSubview:detailOverlay];
+}
+
+-(void)swipePhoto:(int)subViewToDelete andAdd:(int)subViewToAdd
+{
     for (UIImageView *myImageView in myScrollView.subviews) {
         if ((myImageView.tag == subViewToDelete + 1) && (myImageView.tag != 0)) {
-            NSLog(@"deleting subview# %i", myImageView.tag);
+            NSLog(@"deleting rock at position %i", (myImageView.tag - 1));
             [myImageView removeFromSuperview];
         }
     }
-    if (subViewToAdd <= rockArray.count) {
-        rock = rockArray[subViewToAdd];
-        UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
-        myImageView.contentMode = UIViewContentModeScaleToFill;
-        myImageView.frame = CGRectMake((self.view.frame.size.width * (subViewToAdd)), 0, self.view.frame.size.width, myScrollView.frame.size.height);
-        myImageView.tag = (subViewToAdd) + 1;
-        NSLog(@"tag = %i", myImageView.tag);
-        [myScrollView addSubview:myImageView];
+    
+    for (UIView *myDetailOverlay in myScrollView.subviews) {
+        if (myDetailOverlay.tag == (subViewToDelete + 1000)) {
+            NSLog(@"deleting detailview at position %i", (myDetailOverlay.tag - 1000));
+            [myDetailOverlay removeFromSuperview];
+        }
+    }
+    
+    if (subViewToAdd < rockArray.count) {
+        [self drawPhotos:subViewToAdd];
     }
 }
 
@@ -188,67 +255,65 @@
 {
     isOverlayOn = !(isOverlayOn);
     if (isOverlayOn) {
-        detailOverlay.hidden = NO;
+        for (UIView *myDetailOverlay in myScrollView.subviews) {
+            if (myDetailOverlay.tag >= 1000) {
+                myDetailOverlay.hidden = NO;
+            }
+        }
         NSLog(@"tapped");
     } else {
-        detailOverlay.hidden = YES;
+        for (UIView *myDetailOverlay in myScrollView.subviews) {
+            if (myDetailOverlay.tag >= 1000) {
+                myDetailOverlay.hidden = YES;
+            }
+        }
         NSLog(@"tapped again");
     }
 }
 
--(void)drawOverlay
+- (BOOL)prefersStatusBarHidden
 {
-    rockArray = [Rock rocks];
-    for (int n = 0; n < rockArray.count; n++) {
-        Rock *tempRock = rockArray[n];
-        
-        UIImageView *historicalImage = [[UIImageView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 85, 60, 150, 150)];
-        [historicalImage setImage:tempRock.imageOfBuilding];
-        historicalImage.contentMode = UIViewContentModeScaleToFill;
-        
-//        UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270)];
-//        textLabel.numberOfLines = 0;
-//        textLabel.textColor = [UIColor whiteColor];
-//        textLabel.textAlignment = NSTextAlignmentCenter;
-//        [textLabel setFont:[UIFont fontWithName:@"Baskerville" size:16]];
-//        textLabel.text = @"Less than a day after Washington and his troops crossed the Delaware, they inflicted a heavy defeat on British troops at Trenton. The Americans captured 900 Hessian mercenaries seving with the British. Less than a day after Washington and his troops crossed the Delaware, they inflicted a heavy defeat on British troops at Trenton. The Americans captured 900 Hessian mercenaries seving with the British.";
-//        [textLabel sizeToFit];
-  
-        UITextView *textView;
-        
-        if (tempRock.text)
-        {
-            NSAttributedString *textString =  [[NSAttributedString alloc] initWithAttributedString:tempRock.text];
-            NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:textString];
-            NSLayoutManager *textLayout = [[NSLayoutManager alloc] init];
-            // Add layout manager to text storage object
-            [textStorage addLayoutManager:textLayout];
-            // Create a text container
-            NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:self.view.bounds.size];
-            // Add text container to text layout manager
-            [textLayout addTextContainer:textContainer];
- 
-            textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270) textContainer:textContainer];
-            
-            textView.backgroundColor = [UIColor whiteColor];
-            textView.editable = NO;
-            textView.selectable = NO;
-            textView.alpha = 0.8;
-            [textView sizeToFit];
-        }
-        else
-        {
-           textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 40, 230, 240, 270)];
-        }
-        
-        UIView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake( ((n * self.view.frame.size.width) + 30), 30, 260, (textView.frame.origin.y + textView.frame.size.height))];
-        myTranslucentView.backgroundColor = [UIColor blackColor];
-        myTranslucentView.alpha = 0.4;
-        
-        [detailOverlay addSubview:myTranslucentView];
-        [detailOverlay addSubview:historicalImage];
-        [detailOverlay addSubview:textView];
-    }
+        return YES;
+}
+
+-(void)showHideNavbar
+{
+    //Hide/unhide navigation controller
+    if (![self.navigationController isNavigationBarHidden])
+        [self.navigationController setNavigationBarHidden:YES animated:YES]; // hides
+    else
+        [self.navigationController setNavigationBarHidden:NO animated:YES]; // shows
+}
+
+
+- (void) setupGestureRecognizerAbsentNavbar {
+    // recognise taps on navigation bar to hide
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbar)];
+    gestureRecognizer.numberOfTapsRequired = 1;
+    // create a view which covers most of the tap bar to
+    // manage the gestures - if we use the navigation bar
+    // it interferes with the nav buttons
+    CGRect frame = CGRectMake(self.view.frame.size.width/4, 0, self.view.frame.size.width/2, 44);
+    UIView *navBarTapView = [[UIView alloc] initWithFrame:frame];
+    [self.view addSubview:navBarTapView];
+    navBarTapView.backgroundColor = [UIColor clearColor];
+    [navBarTapView setUserInteractionEnabled:YES];
+    [navBarTapView addGestureRecognizer:gestureRecognizer];
+}
+
+- (void) setupNavbarGestureRecognizer {
+    // recognise taps on navigation bar to hide
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbar)];
+    gestureRecognizer.numberOfTapsRequired = 1;
+    // create a view which covers most of the tap bar to
+    // manage the gestures - if we use the navigation bar
+    // it interferes with the nav buttons
+    CGRect frame = CGRectMake(self.view.frame.size.width/4, 0, self.view.frame.size.width/2, 44);
+    UIView *navBarTapView = [[UIView alloc] initWithFrame:frame];
+    [self.navigationController.navigationBar addSubview:navBarTapView];
+    navBarTapView.backgroundColor = [UIColor clearColor];
+    [navBarTapView setUserInteractionEnabled:YES];
+    [navBarTapView addGestureRecognizer:gestureRecognizer];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
@@ -266,7 +331,6 @@
         ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)) {
         [self.navigationController setNavigationBarHidden:YES animated:NO];
         myScrollView.hidden = YES;
-//        [self transformView2ToLandscape];
         myPanoramicScrollview.hidden = NO;
         imageView.contentMode = UIViewContentModeScaleToFill;
         myScrollView.contentSize = imageView.frame.size;
@@ -316,7 +380,11 @@
         myPanoramicScrollview.hidden = YES;
         myScrollView.hidden = NO;
         NSLog(@"Portrait Mode = (%f, %f) ", self.view.frame.size.width, self.view.frame.size.height);
-        
+    } else if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) {
+        [button1 removeFromSuperview];
+        [button2 removeFromSuperview];
+        [button3 removeFromSuperview];
+        [button4 removeFromSuperview];
     }
 }
 
@@ -342,102 +410,8 @@
 
 -(IBAction)unwindSegue:(UIStoryboardSegue *)sender
 {
-//    MainCollectionViewController *myMainCollectionViewController = sender.sourceViewController;
-//    self.selectedRock = [myMainCollectionViewController selectedRock];
-//    NSLog(@"self.selectedRock = %i", self.selectedRock);
+    //
 }
 
-//- (IBAction)done:(UIStoryboardSegue *)segue {
-//    ConfirmationViewController *cc = [segue sourceViewController];
-//    [self setAccountInfo:[cc accountInfo]];
-//    [self setShowingSuccessView:YES];
-//}
-
-//-(void) transformView2ToLandscape {
-//    
-//    NSInteger rotationDirection;
-//    UIDeviceOrientation currentOrientation = [[UIDevice currentDevice] orientation];
-//    
-//    if(currentOrientation == UIDeviceOrientationLandscapeLeft){
-//        rotationDirection = 4;
-//    }else {
-//        rotationDirection = -4;
-//    }
-//    
-//    CGRect myFrame = CGRectMake(0, 0, 480, 300);
-//    CGAffineTransform transform = [myPanoramicScrollview transform];
-//    transform = CGAffineTransformRotate(transform, DEGREES_RADIANS(rotationDirection * 90));
-//    [myPanoramicScrollview setFrame: myFrame];
-//    CGPoint center = CGPointMake(myFrame.size.height/2.0, myFrame.size.width/2.0);
-//    [myPanoramicScrollview setTransform: transform];
-//    [myPanoramicScrollview setCenter: center];
-//    
-//}
 
 @end
-
-
-
-
-//
-//        imageView.frame = CGRectMake(width, 0, self.view.frame.size.width, 200);
-//        imageView.contentMode = UIViewContentModeScaleAspectFill;
-//        [scrollView addSubview:imageView];
-
-//        UIView *lowerPart = [[UIView alloc] init];
-//        lowerPart.tag = 001;
-//        [scrollView addSubview:lowerPart];
-//        lowerPart.frame = CGRectMake(width, 200, self.view.frame.size.width, screenHeight - 200);
-//        lowerPart.backgroundColor = [UIColor colorWithRed:255/255.0f green:208/255.0f blue:114/255.0f alpha:1.0];
-//
-//        UILabel *title = [[UILabel alloc] initWithFrame:(CGRectMake(0, 0, self.view.frame.size.width, 21))];
-//        [title setText: rock.title];
-//        [title setFont:fontForTitle];
-//        title.textAlignment = NSTextAlignmentCenter;
-//
-//        [lowerPart addSubview:title];
-
-//      location: combine country, state, location
-//        UILabel *location = [[UILabel alloc] initWithFrame:(CGRectMake(10, 22, 250, 21))];
-//        if ([rock.country isEqualToString:@"USA"])
-//        {
-//            location.text = [NSString stringWithFormat:@"%@ %@ %@",rock.country, rock.state, rock.city];
-//        }
-//        else
-//        {
-//            location.text = [NSString stringWithFormat:@"%@ %@",rock.country, rock.city];
-//        }
-//        [location setFont:fontForLocation];
-//        [lowerPart addSubview:location];
-
-//        UILabel *year = [[UILabel alloc] initWithFrame:(CGRectMake(270, 22, 50, 21))];
-//        year.text = rock.year;
-//        [year setFont:fontForLocation];
-//        [lowerPart addSubview:year];
-
-//        NSAttributedString *textString =  [[NSAttributedString alloc] initWithString:rock.text attributes:@{NSFontAttributeName: [UIFont fontWithName:@"HelveticaNeue" size:15]}];
-//        NSTextStorage *textStorage = [[NSTextStorage alloc] initWithAttributedString:textString];
-//        NSLayoutManager *textLayout = [[NSLayoutManager alloc] init];
-//        // Add layout manager to text storage object
-//        [textStorage addLayoutManager:textLayout];
-//        // Create a text container
-//        NSTextContainer *textContainer = [[NSTextContainer alloc] initWithSize:self.view.bounds.size];
-//        // Add text container to text layout manager
-//        [textLayout addTextContainer:textContainer];
-//
-//        UITextView *textView = [[UITextView alloc] initWithFrame:(CGRectMake(0, 42, self.view.frame.size.width, screenHeight - 200 - 42 - 64 - 48)) textContainer:textContainer];
-//        [lowerPart addSubview:textView];
-//        textView.backgroundColor = [UIColor colorWithRed:255/255.0f green:254/255.0f blue:216/255.0f alpha:1.0];
-//        textView.text = rock.text;
-//        textView.editable = NO;
-//        textView.selectable = NO;
-//
-//        UIImageView *imageOfBuildingView = [[UIImageView alloc] initWithImage:rock.imageOfBuilding];
-//        [lowerPart addSubview:imageOfBuildingView];
-//        imageOfBuildingView.contentMode = UIViewContentModeScaleAspectFit;
-//        imageOfBuildingView.frame = CGRectMake(0, 42, self.view.frame.size.width, screenHeight - 200 - 42 - 64 - 48);
-//        imageOfBuildingView.clipsToBounds = YES;
-//        imageOfBuildingView.backgroundColor = [UIColor blackColor];
-//
-//        imageOfBuildingView.alpha = 0;
-//        imageOfBuildingView.tag = 100;

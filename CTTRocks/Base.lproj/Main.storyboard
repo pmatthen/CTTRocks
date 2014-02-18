@@ -98,7 +98,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </scrollView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" alwaysBounceHorizontal="YES" pagingEnabled="YES" id="Eej-CQ-Dqb">
-                                <rect key="frame" x="0.0" y="65" width="320" height="503"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="vXZ-lx-hvc" id="zoV-f8-N4a"/>
@@ -108,7 +108,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="ctQ-Ty-lZu">
-                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="aBr-PV-DSU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="search" id="aBr-PV-DSU">
                             <connections>
                                 <segue destination="Xn3-nV-bJ7" kind="push" identifier="showMain" id="YmD-aI-XnY"/>
                             </connections>

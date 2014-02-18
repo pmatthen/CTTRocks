@@ -249,6 +249,7 @@
     {
         RocksScrollViewController *vc = segue.destinationViewController;
         vc.selectedRock = selectedIP.row;
+        vc.rockArray = rocks;
         NSLog(@"segue to %i", selectedIP.row);
     }
 }
