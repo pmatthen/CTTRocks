@@ -1278,7 +1278,6 @@
 				TargetAttributes = {
 					88EE98E318AA790E00351DD2 = {
 						DevelopmentTeam = 27W7GCND36;
- 7e3b4136604bfaa7d0970f83f4bd5c52e5df08e4
 					};
 					88EE990418AA790E00351DD2 = {
 						TestTargetID = 88EE98E318AA790E00351DD2;
