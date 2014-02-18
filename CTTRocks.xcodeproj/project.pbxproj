@@ -58,7 +58,6 @@
 		88EE9A1418ABF43300351DD2 /* B029.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE998518ABF43300351DD2 /* B029.jpg */; };
 		88EE9A1518ABF43300351DD2 /* B030.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE998618ABF43300351DD2 /* B030.jpg */; };
 		88EE9A1618ABF43300351DD2 /* B031.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE998718ABF43300351DD2 /* B031.jpg */; };
-		88EE9A1718ABF43300351DD2 /* B001.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE998818ABF43300351DD2 /* B001.jpg */; };
 		88EE9A1818ABF43300351DD2 /* B033.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE998918ABF43300351DD2 /* B033.jpg */; };
 		88EE9A1918ABF43300351DD2 /* B034.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE998A18ABF43300351DD2 /* B034.jpg */; };
 		88EE9A1A18ABF43300351DD2 /* B035.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE998B18ABF43300351DD2 /* B035.jpg */; };
@@ -360,6 +359,7 @@
 		88F651FC18B25EF6009074BE /* Text150_Moon.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 88F6516618B25EF6009074BE /* Text150_Moon.rtf */; };
 		88F651FE18B25F1F009074BE /* CTT New Inventory.csv in Resources */ = {isa = PBXBuildFile; fileRef = 88F651FD18B25F1F009074BE /* CTT New Inventory.csv */; };
 		88F6520218B25F9B009074BE /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F6520118B25F9B009074BE /* CHCSVParser.m */; };
+		88F6520418B33597009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6520318B33597009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -431,7 +431,6 @@
 		88EE998518ABF43300351DD2 /* B029.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B029.jpg; sourceTree = "<group>"; };
 		88EE998618ABF43300351DD2 /* B030.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B030.jpg; sourceTree = "<group>"; };
 		88EE998718ABF43300351DD2 /* B031.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B031.jpg; sourceTree = "<group>"; };
-		88EE998818ABF43300351DD2 /* B001.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B001.jpg; sourceTree = "<group>"; };
 		88EE998918ABF43300351DD2 /* B033.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B033.jpg; sourceTree = "<group>"; };
 		88EE998A18ABF43300351DD2 /* B034.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B034.jpg; sourceTree = "<group>"; };
 		88EE998B18ABF43300351DD2 /* B035.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B035.jpg; sourceTree = "<group>"; };
@@ -737,6 +736,7 @@
 		88F651FD18B25F1F009074BE /* CTT New Inventory.csv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "CTT New Inventory.csv"; sourceTree = "<group>"; };
 		88F6520018B25F9B009074BE /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
 		88F6520118B25F9B009074BE /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
+		88F6520318B33597009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -906,7 +906,7 @@
 		88EE9AC718ABF48B00351DD2 /* Buildings */ = {
 			isa = PBXGroup;
 			children = (
-				88EE998818ABF43300351DD2 /* B001.jpg */,
+				88F6520318B33597009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg */,
 				88EE996A18ABF43300351DD2 /* B002.jpg */,
 				88EE996B18ABF43300351DD2 /* B003.jpg */,
 				88EE996C18ABF43300351DD2 /* B004.jpg */,
@@ -1488,8 +1488,8 @@
 				88F651F618B25EF6009074BE /* Text144_Petrified Forest Arizona.rtf in Resources */,
 				88EE98F218AA790E00351DD2 /* InfoPlist.strings in Resources */,
 				88EE9AAD18ABF47C00351DD2 /* R007.jpg in Resources */,
+				88F6520418B33597009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg in Resources */,
 				88F651D618B25EF6009074BE /* Text112_Tawasa.rtf in Resources */,
-				88EE9A1718ABF43300351DD2 /* B001.jpg in Resources */,
 				88EE9A6218ABF43300351DD2 /* B107.jpg in Resources */,
 				88F651D218B25EF6009074BE /* Text108_Cumberland Gap.rtf in Resources */,
 				88EE9A3B18ABF43300351DD2 /* B068.jpg in Resources */,

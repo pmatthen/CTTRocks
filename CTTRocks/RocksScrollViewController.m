@@ -247,7 +247,7 @@
             // Add text container to text layout manager
             [textLayout addTextContainer:textContainer];
  
-            textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 35, 220, 250, self.view.frame.size.height -318) textContainer:textContainer];
+            textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 35, 220, 250, self.view.frame.size.height -254) textContainer:textContainer];
             
             textView.backgroundColor = [UIColor clearColor];
             textView.editable = NO;
@@ -259,15 +259,15 @@
             [textView sizeToFit];
             if (textView.frame.size.height > 250)
             {
-                textView.frame = CGRectMake((n * self.view.frame.size.width) + 35, 220, textView.frame.size.width, self.view.frame.size.height -318);
+                textView.frame = CGRectMake((n * self.view.frame.size.width) + 35, 220, textView.frame.size.width, self.view.frame.size.height -254);
             }
         }
         else
         {
-           textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 35, 220, 250, self.view.frame.size.height -318)];
+           textView = [[UITextView alloc] initWithFrame:CGRectMake((n * self.view.frame.size.width) + 35, 220, 250, self.view.frame.size.height -254)];
         }
         
-        ILTranslucentView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake( ((n * self.view.frame.size.width)) + 20, 20, 280, self.view.frame.size.height -40 -64)];
+        ILTranslucentView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake( ((n * self.view.frame.size.width)) + 20, 20, 280, self.view.frame.size.height -40)];
         myTranslucentView.translucentAlpha = 0.8;
         myTranslucentView.translucentStyle = UIBarStyleDefault;
         myTranslucentView.translucentTintColor = [UIColor clearColor];
