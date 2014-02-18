@@ -10,4 +10,6 @@
 
 @interface MainCollectionViewController : UICollectionViewController
 
+@property NSInteger selectedRock;
+
 @end

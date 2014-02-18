@@ -7,6 +7,7 @@
 //
 
 #import "RocksScrollViewController.h"
+#import "MainCollectionViewController.h"
 #import "ILTranslucentView.h"
 #import "Rock.h"
 
@@ -19,6 +20,7 @@
     
     NSArray *imagePaths;
     float startingX;
+    int previousPage;
     BOOL isOverlayOn;
     UIView *detailOverlay;
     UIImageView *imageView;
@@ -36,6 +38,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    if (!self.selectedRock) {
+        self.selectedRock = 0;
+    }
+    
+    previousPage = 0;
     
     UIImage *image;
     image = [UIImage imageNamed:@"Estrella.jpeg"];
@@ -56,7 +64,6 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
 }
 
-
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
@@ -70,28 +77,29 @@
     isOverlayOn = NO;
     
     rockArray = [Rock rocks];
-    Rock *rock;
-    CGFloat width = 0.0;
+//    Rock *rock;
+    startingX = (int)self.selectedRock * (int)self.view.frame.size.width;
+    CGFloat width = self.view.frame.size.width * rockArray.count;
+    [self drawPhotos:self.selectedRock];
     
-    for (int n = 0; n < rockArray.count; n++) {
-        rock = rockArray[n];
-
-        UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
-        myImageView.contentMode = UIViewContentModeScaleToFill;
-        myImageView.frame = CGRectMake(width, 0, self.view.frame.size.width, myScrollView.frame.size.height);
-        [myScrollView addSubview:myImageView];
-        
-        width += myImageView.frame.size.width;
-    }
+//    for (int n = 0; n < rockArray.count; n++) {
+//        rock = rockArray[n];
+//
+//        UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
+//        myImageView.contentMode = UIViewContentModeScaleToFill;
+//        myImageView.frame = CGRectMake(width, 0, self.view.frame.size.width, myScrollView.frame.size.height);
+//        [myScrollView addSubview:myImageView];
+//        
+//        width += myImageView.frame.size.width;
+//    }
     myScrollView.contentSize = CGSizeMake(width, myScrollView.frame.size.height);
     
     [self.navigationController setNavigationBarHidden:NO animated:YES];
-    startingX = (int)self.selectedRock * (int)self.view.frame.size.width;
     [myScrollView setContentOffset:CGPointMake(startingX, self.view.frame.size.height)];
     
     detailOverlay = [[UIView alloc]initWithFrame:CGRectMake(0, 0, myScrollView.contentSize.width, myScrollView.contentSize.height)];
     [detailOverlay setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.1]];
-    [self drawOverlay];
+//    [self drawOverlay];
     [myScrollView addSubview:detailOverlay];
     detailOverlay.hidden = YES;
 }
@@ -101,13 +109,90 @@
     [aScrollView setContentOffset:CGPointMake(aScrollView.contentOffset.x, 0.0)];
 }
 
+-(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
+{
+    int currentPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
+    if (currentPage != previousPage) {
+        if (currentPage > previousPage) {
+            NSLog(@"page increasing");
+            [self swipePhoto:(currentPage - 4) andAdd:(currentPage + 3)];
+        }
+        if (currentPage < previousPage) {
+            NSLog(@"page decreasing");
+            [self swipePhoto:(currentPage + 4) andAdd:(currentPage - 3)];
+        }
+        previousPage = currentPage;
+    }
+}
+
+-(void)drawPhotos:(int)photoPage
+{
+    Rock *rock;
+    for (int n = 3; n > 0; n--) {
+        if ((photoPage - n) >= 0) {
+            NSLog(@"photopage - n = %i", (photoPage - n));
+            rock = rockArray[photoPage - n];
+            UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
+            myImageView.contentMode = UIViewContentModeScaleToFill;
+            myImageView.frame = CGRectMake((self.view.frame.size.width * (photoPage - n)), 0, self.view.frame.size.width, myScrollView.frame.size.height);
+            myImageView.tag = (photoPage - n) + 1;
+            NSLog(@"tag = %i", myImageView.tag);
+            [myScrollView addSubview:myImageView];
+        }
+    }
+    
+    rock = rockArray[photoPage];
+    UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
+    myImageView.contentMode = UIViewContentModeScaleToFill;
+    myImageView.frame = CGRectMake((self.view.frame.size.width * photoPage), 0, self.view.frame.size.width, myScrollView.frame.size.height);
+    myImageView.tag = photoPage + 1;
+    NSLog(@"tag = %i", myImageView.tag);
+    [myScrollView addSubview:myImageView];
+    
+    for (int n = 1; n < 4; n++) {
+        if ((photoPage + n) <= rockArray.count) {
+            NSLog(@"photopage + n = %i", (photoPage + n));
+            rock = rockArray[photoPage + n];
+            UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
+            myImageView.contentMode = UIViewContentModeScaleToFill;
+            myImageView.frame = CGRectMake((self.view.frame.size.width * (photoPage + n)), 0, self.view.frame.size.width, myScrollView.frame.size.height);
+            myImageView.tag = (photoPage + n) + 1;
+            NSLog(@"tag = %i", myImageView.tag);
+            [myScrollView addSubview:myImageView];
+        }
+    }
+}
+
+-(void)swipePhoto:(int)subViewToDelete andAdd:(int)subViewToAdd
+{
+    Rock *rock;
+    
+    for (UIImageView *myImageView in myScrollView.subviews) {
+        if ((myImageView.tag == subViewToDelete + 1) && (myImageView.tag != 0)) {
+            NSLog(@"deleting subview# %i", myImageView.tag);
+            [myImageView removeFromSuperview];
+        }
+    }
+    if (subViewToAdd <= rockArray.count) {
+        rock = rockArray[subViewToAdd];
+        UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
+        myImageView.contentMode = UIViewContentModeScaleToFill;
+        myImageView.frame = CGRectMake((self.view.frame.size.width * (subViewToAdd)), 0, self.view.frame.size.width, myScrollView.frame.size.height);
+        myImageView.tag = (subViewToAdd) + 1;
+        NSLog(@"tag = %i", myImageView.tag);
+        [myScrollView addSubview:myImageView];
+    }
+}
+
 -(void)tapPhoto
 {
     isOverlayOn = !(isOverlayOn);
     if (isOverlayOn) {
         detailOverlay.hidden = NO;
+        NSLog(@"tapped");
     } else {
         detailOverlay.hidden = YES;
+        NSLog(@"tapped again");
     }
 }
 
@@ -254,6 +339,19 @@
             break;
     }
 }
+
+-(IBAction)unwindSegue:(UIStoryboardSegue *)sender
+{
+//    MainCollectionViewController *myMainCollectionViewController = sender.sourceViewController;
+//    self.selectedRock = [myMainCollectionViewController selectedRock];
+//    NSLog(@"self.selectedRock = %i", self.selectedRock);
+}
+
+//- (IBAction)done:(UIStoryboardSegue *)segue {
+//    ConfirmationViewController *cc = [segue sourceViewController];
+//    [self setAccountInfo:[cc accountInfo]];
+//    [self setShowingSuccessView:YES];
+//}
 
 //-(void) transformView2ToLandscape {
 //    
