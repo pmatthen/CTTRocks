@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .DS_Store
 *.swp
 *~.nib
@@ -9,3 +10,28 @@ build/
 *.perspectivev3
 
 xcuserdata
+=======
+# OS X
+.DS_Store
+
+# Xcode
+build/
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+*.xccheckout
+profile
+*.moved-aside
+DerivedData
+*.hmap
+*.ipa
+
+# CocoaPods
+Pods
+>>>>>>> 7e3b4136604bfaa7d0970f83f4bd5c52e5df08e4

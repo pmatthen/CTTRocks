@@ -27,6 +27,7 @@
     UIButton *button2;
     UIButton *button3;
     UIButton *button4;
+    
 }
 
 @end
@@ -34,9 +35,33 @@
 @implementation RocksScrollViewController
 @synthesize rockArray;
 
+#define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
+    
+    [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+    
+    NSShadow *shadow = [[NSShadow alloc] init];
+    shadow.shadowColor = [UIColor colorWithRed:0.0 green:0.0 blue:0.0 alpha:0.8];
+    shadow.shadowOffset = CGSizeMake(0, 1);
+    [[UINavigationBar appearance] setTitleTextAttributes: [NSDictionary dictionaryWithObjectsAndKeys:
+                                                           [UIColor colorWithRed:245.0/255.0 green:245.0/255.0 blue:245.0/255.0 alpha:1.0], NSForegroundColorAttributeName,
+                                                           shadow, NSShadowAttributeName,
+                                                           [UIFont fontWithName:@"HelveticaNeue-CondensedBlack" size:21.0], NSFontAttributeName, nil]];
+    
+    self.title = @"Tribune Rocks";
+    
+    //Programmatically add bar buttons
+    UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(didTapAction)];
+    UIBarButtonItem *searchItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self action:@selector(goToSearch)];
+    NSArray *actionButtonItems = @[shareItem, searchItem];
+    self.navigationItem.rightBarButtonItems = actionButtonItems;
+    
     
     UIImage *image;
     image = [UIImage imageNamed:@"Estrella.jpeg"];
@@ -48,6 +73,12 @@
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     myPanoramicScrollview.delegate = self;
     myPanoramicScrollview.hidden = YES;
+    
+}
+
+-(void)goToSearch
+{
+    //
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -55,6 +86,9 @@
     [super viewDidAppear:animated];
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
+   
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    
 }
 
 
@@ -69,7 +103,6 @@
     tapGestureRecognizer.delegate = self;
     [myScrollView addGestureRecognizer:tapGestureRecognizer];
     isOverlayOn = NO;
-    
     rockArray = [Rock rocks];
     Rock *rock;
     CGFloat width = 0.0;
@@ -95,7 +128,27 @@
     [self drawOverlay];
     [myScrollView addSubview:detailOverlay];
     detailOverlay.hidden = YES;
+
+    self.setupGestureRecognizerAbsentNavbar;
+    
+    self.setupNavbarGestureRecognizer;
 }
+
+
+//Add share functionality
+- (void)didTapAction {
+    NSString *shareString = @"Tribune Tower, Chicago";
+    UIImage *shareImage = ((Rock*)rockArray[self.selectedRock]).image;
+    
+    NSArray *activityItems = [NSArray arrayWithObjects:shareString, shareImage, nil];
+    
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
+  //  activityViewController.navigationItem.textColor =
+    [self presentViewController:activityViewController animated:YES completion:nil];
+}
+
+
 
 - (void)scrollViewDidScroll:(UIScrollView *)aScrollView
 {
@@ -107,9 +160,67 @@
     isOverlayOn = !(isOverlayOn);
     if (isOverlayOn) {
         detailOverlay.hidden = NO;
+      //  [self.navigationController setNavigationBarHidden:NO animated:YES];
     } else {
         detailOverlay.hidden = YES;
+       // [self.navigationController setNavigationBarHidden:YES animated:YES];
     }
+}
+
+- (BOOL)prefersStatusBarHidden
+{
+        return YES;
+}
+
+
+//- (BOOL)prefersStatusBarHidden
+//{
+//    if (isOverlayOn) {
+//        return NO;
+//    } else {
+//        return YES;    }
+//}
+
+
+
+-(void)showHideNavbar
+{
+    //Hide/unhide navigation controller
+    if (![self.navigationController isNavigationBarHidden])
+        [self.navigationController setNavigationBarHidden:YES animated:YES]; // hides
+    else
+        [self.navigationController setNavigationBarHidden:NO animated:YES]; // shows
+}
+
+
+- (void) setupGestureRecognizerAbsentNavbar {
+    // recognise taps on navigation bar to hide
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbar)];
+    gestureRecognizer.numberOfTapsRequired = 1;
+    // create a view which covers most of the tap bar to
+    // manage the gestures - if we use the navigation bar
+    // it interferes with the nav buttons
+    CGRect frame = CGRectMake(self.view.frame.size.width/4, 0, self.view.frame.size.width/2, 44);
+    UIView *navBarTapView = [[UIView alloc] initWithFrame:frame];
+    [self.view addSubview:navBarTapView];
+    navBarTapView.backgroundColor = [UIColor clearColor];
+    [navBarTapView setUserInteractionEnabled:YES];
+    [navBarTapView addGestureRecognizer:gestureRecognizer];
+}
+
+- (void) setupNavbarGestureRecognizer {
+    // recognise taps on navigation bar to hide
+    UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbar)];
+    gestureRecognizer.numberOfTapsRequired = 1;
+    // create a view which covers most of the tap bar to
+    // manage the gestures - if we use the navigation bar
+    // it interferes with the nav buttons
+    CGRect frame = CGRectMake(self.view.frame.size.width/4, 0, self.view.frame.size.width/2, 44);
+    UIView *navBarTapView = [[UIView alloc] initWithFrame:frame];
+    [self.navigationController.navigationBar addSubview:navBarTapView];
+    navBarTapView.backgroundColor = [UIColor clearColor];
+    [navBarTapView setUserInteractionEnabled:YES];
+    [navBarTapView addGestureRecognizer:gestureRecognizer];
 }
 
 -(void)drawOverlay
