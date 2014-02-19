@@ -195,7 +195,7 @@
     if (landscape)
         retval = CGSizeMake(640, 150);
     else
-        retval = CGSizeMake(320, 75);
+        retval = CGSizeMake(320, 65);
     return retval;
 }
 
