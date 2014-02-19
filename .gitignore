@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 23ff055e08cb484c29ee24144736a3f011000c18
 .DS_Store
 *.swp
 *~.nib
@@ -9,6 +12,9 @@ build/
 *.perspective
 *.perspectivev3
 
+<<<<<<< HEAD
+xcuserdata
+=======
 xcuserdata
 =======
 # OS X
@@ -35,3 +41,4 @@ DerivedData
 # CocoaPods
 Pods
 >>>>>>> 7e3b4136604bfaa7d0970f83f4bd5c52e5df08e4
+>>>>>>> 23ff055e08cb484c29ee24144736a3f011000c18
