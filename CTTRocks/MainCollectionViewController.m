@@ -176,8 +176,7 @@
     cell.imageView.alpha = 1.0;
     selectedIP = indexPath;
     
-    [self performSegueWithIdentifier:@"showRock" sender:indexPath];
-
+    [self performSegueWithIdentifier:@"unwindSegue" sender:indexPath];
 }
 
 - (void)collectionView:(UICollectionView *)cv didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
@@ -255,10 +254,11 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([segue.identifier isEqualToString:@"showRock"])
+    if ([segue.identifier isEqualToString:@"unwindSegue"])
     {
         RocksScrollViewController *vc = segue.destinationViewController;
         vc.selectedRock = selectedIP.row;
+        vc.rockArray = rocks;
         NSLog(@"segue to %i", selectedIP.row);
     }
 }
