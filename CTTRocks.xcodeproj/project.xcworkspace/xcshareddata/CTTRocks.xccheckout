@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C4AB8A73-89F1-45A1-9020-F97842A434A2</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CTTRocks</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>C94CDC33-D43C-49D3-8E09-F492A68060E8</key>
+		<string>ssh://github.com/pmatthen/CTTRocks.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CTTRocks.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>C94CDC33-D43C-49D3-8E09-F492A68060E8</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/pmatthen/CTTRocks.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>C94CDC33-D43C-49D3-8E09-F492A68060E8</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>C94CDC33-D43C-49D3-8E09-F492A68060E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CTTRocks</string>
+		</dict>
+	</array>
+</dict>
+</plist>

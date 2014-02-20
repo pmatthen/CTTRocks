@@ -59,6 +59,9 @@
 {
     [super viewDidLoad];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1] /*#084283*/];
+  
+
     if (!self.selectedRock) {
         self.selectedRock = 0;
         previousPage = 0;
@@ -66,7 +69,6 @@
         previousPage = self.selectedRock;
     }
 
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     NSShadow *shadow = [[NSShadow alloc] init];
