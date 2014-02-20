@@ -58,6 +58,9 @@
 {
     [super viewDidLoad];
     
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1] /*#084283*/];
+  
+
     if (!self.selectedRock) {
         self.selectedRock = 0;
         previousPage = 0;
@@ -67,7 +70,6 @@
     
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 
-    [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
     
     NSShadow *shadow = [[NSShadow alloc] init];
@@ -95,7 +97,7 @@
     [self setupNavbarGestureRecognizer];
     
     UIImage *image;
-    image = [UIImage imageNamed:@"Estrella.jpeg"];
+    image = [UIImage imageNamed:@"CTTPanoh640.jpg"];
     imageView = [[UIImageView alloc] initWithImage:image];
     [myPanoramicScrollview addSubview:imageView];
     myPanoramicScrollview.contentSize = imageView.frame.size;
@@ -128,6 +130,7 @@
     CGFloat width = self.view.frame.size.width * rockArray.count;
     [self photoLayout:self.selectedRock];
     myScrollView.contentSize = CGSizeMake(width, myScrollView.frame.size.height);
+
     [myScrollView setContentOffset:CGPointMake(startingX, self.view.frame.size.height)];
 }
 
@@ -144,7 +147,7 @@
 - (void)scrollViewDidScroll:(UIScrollView *)aScrollView
 {
     [aScrollView setContentOffset:CGPointMake(aScrollView.contentOffset.x, 0.0)];
-    
+
     if (aScrollView.tag == 4) {
         [self checkMyPanoramicScrollViewContentOffset];
     }
@@ -277,7 +280,7 @@
         // Add text container to text layout manager
         [textLayout addTextContainer:textContainer];
         
-        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -318) textContainer:textContainer];
+        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -254) textContainer:textContainer];
         textView.backgroundColor = [UIColor clearColor];
         textView.editable = NO;
         textView.selectable = NO;
@@ -287,12 +290,12 @@
         [textView sizeToFit];
         if (textView.frame.size.height > 250)
         {
-            textView.frame = CGRectMake(35, 220, textView.frame.size.width, self.view.frame.size.height -268);
+            textView.frame = CGRectMake(35, 220, textView.frame.size.width, self.view.frame.size.height -254);
         }
     }
     else
     {
-        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -268)];
+        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -254)];
     }
     
     UIView *myTranslucentView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height -40)];
@@ -389,6 +392,7 @@
     [navBarTapView setUserInteractionEnabled:YES];
     [navBarTapView addGestureRecognizer:gestureRecognizer];
 }
+
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     // test if our control subview is on-screen

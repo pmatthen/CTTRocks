@@ -124,14 +124,23 @@
 
     Rock *rock = rocks[indexPath.row];
 
-    cell.imageViewRockThumbnail.image = [UIImage imageNamed:@"S002"];
+    cell.imageViewRockThumbnail.image = rock.imageThumbnail;
 
     cell.imageViewRockThumbnail.contentMode = UIViewContentModeScaleAspectFit;
-    cell.imageViewCountry.image = [UIImage imageNamed:@"Flag of United States"];
-    cell.imageViewCountry.contentMode = UIViewContentModeScaleAspectFit;
+ //   cell.imageViewCountry.image = [UIImage imageNamed:@"Flag of United States"];
+ //   cell.imageViewCountry.contentMode = UIViewContentModeScaleAspectFit;
 
     cell.labelTitle.text = rock.title;
     [cell.labelTitle setFont:fontForTitle];
+    
+    if (indexPath.row % 2) {
+        cell.contentView.backgroundColor = [UIColor colorWithRed:0.671 green:0.741 blue:0.761 alpha:1];
+    } else {
+        cell.contentView.backgroundColor = [UIColor colorWithRed:0.478 green:0.663 blue:0.78 alpha:1];
+    }
+
+    
+    
 
     if ([rock.country isEqualToString:@"USA"])
     {
@@ -182,7 +191,7 @@
     if (landscape)
         retval = CGSizeMake(640, 150);
     else
-        retval = CGSizeMake(320, 75);
+        retval = CGSizeMake(320, 65);
     return retval;
 }
 
