@@ -127,7 +127,7 @@
 
     Rock *rock = rocks[indexPath.row];
 
-    cell.imageViewRockThumbnail.image = [UIImage imageNamed:@"S002"];
+    cell.imageViewRockThumbnail.image = rock.imageThumbnail;
 
     cell.imageViewRockThumbnail.contentMode = UIViewContentModeScaleAspectFit;
  //   cell.imageViewCountry.image = [UIImage imageNamed:@"Flag of United States"];

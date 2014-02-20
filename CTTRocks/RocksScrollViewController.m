@@ -294,8 +294,9 @@
         textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -254)];
     }
     
-    UIView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height -40)];
-    myTranslucentView.backgroundColor = [UIColor clearColor];
+    UIView *myTranslucentView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height -40)];
+    myTranslucentView.backgroundColor = [UIColor whiteColor];
+    myTranslucentView.alpha = 0.8;
     myTranslucentView.layer.cornerRadius = 10.0;
     myTranslucentView.layer.masksToBounds = YES;
     
