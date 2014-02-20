@@ -94,7 +94,7 @@
     [self setupNavbarGestureRecognizer];
     
     UIImage *image;
-    image = [UIImage imageNamed:@"Estrella.jpeg"];
+    image = [UIImage imageNamed:@"CTTPanoh640.jpg"];
     imageView = [[UIImageView alloc] initWithImage:image];
     [myPanoramicScrollview addSubview:imageView];
     myPanoramicScrollview.contentSize = imageView.frame.size;
