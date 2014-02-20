@@ -9,7 +9,6 @@
 #import "MainCollectionViewController.h"
 #import "RocksScrollViewController.h"
 #import "CTTCollectionViewCell.h"
-#import "SpringFlowLayout.h"
 #import "Rock.h"
 
 @interface MainCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
@@ -25,8 +24,6 @@
     
     NSIndexPath *selectedIP;
     NSMutableArray *arrayOfAllIndexPaths;
-    
-    UICollectionViewFlowLayout *springFlowLayout;
     
     BOOL landscape;
     
@@ -209,25 +206,6 @@
     return nil;
 }
 
-//-(NSUInteger)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationMaskPortrait;
-//}
-
-//-(NSUInteger)supportedInterfaceOrientations
-//{
-//    return UIInterfaceOrientationPortrait;
-//}
-//
-//-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-//{
-//    return interfaceOrientation == UIInterfaceOrientationPortrait;
-//}
-//
-//-(BOOL)shouldAutorotate {
-//    return NO;
-//}
-
 - (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
 {
     return UIInterfaceOrientationPortrait;
@@ -261,9 +239,3 @@
 }
 
 @end
-
-//    springFlowLayout = [[SpringFlowLayout alloc] init];
-//    springFlowLayout.itemSize = CGSizeMake(300, 300);
-//    springFlowLayout.headerReferenceSize = CGSizeMake(collectionView.frame.size.width, 100);
-//
-//    collectionViewFlowLayout = springFlowLayout;

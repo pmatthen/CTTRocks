@@ -8,7 +8,6 @@
 
 #import "RocksScrollViewController.h"
 #import "MainCollectionViewController.h"
-#import "ILTranslucentView.h"
 #import "Rock.h"
 #import <QuartzCore/QuartzCore.h>
 
@@ -65,6 +64,8 @@
     } else {
         previousPage = self.selectedRock;
     }
+    
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
 
     [[UINavigationBar appearance] setBarTintColor:UIColorFromRGB(0x067AB5)];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
@@ -112,7 +113,6 @@
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
     
-    [self.navigationController setNavigationBarHidden:YES animated:YES];
     currentPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
 }
 
@@ -152,7 +152,7 @@
 
 -(void)checkMyPanoramicScrollViewContentOffset
 {
-    if (myPanoramicScrollview.contentOffset.x < 1241) {
+    if (myPanoramicScrollview.contentOffset.x <= 1240) {
         buttonIndicator1.hidden = YES;
         buttonIndication1.hidden = NO;
     } else {
@@ -176,7 +176,7 @@
         buttonIndication3.hidden = YES;
     }
     
-    if ((myPanoramicScrollview.contentOffset.x > 7490) && (myPanoramicScrollview.contentOffset.x <= 11980)) {
+    if ((myPanoramicScrollview.contentOffset.x > 7490) && (myPanoramicScrollview.contentOffset.x <= 9000)) {
         buttonIndicator4.hidden = YES;
         buttonIndication4.hidden = NO;
     } else {
@@ -184,12 +184,19 @@
         buttonIndication4.hidden = YES;
     }
     
-    if (myPanoramicScrollview.contentOffset.x > 11980) {
+    if ((myPanoramicScrollview.contentOffset.x > 9000) && (myPanoramicScrollview.contentOffset.x < 11980)) {
         buttonIndicator5.hidden = YES;
         buttonIndication5.hidden = NO;
     } else {
         buttonIndicator5.hidden = NO;
         buttonIndication5.hidden = YES;
+    }
+    if (myPanoramicScrollview.contentOffset.x >= 11980) {
+        buttonIndicator6.hidden = YES;
+        buttonIndication6.hidden = NO;
+    } else {
+        buttonIndicator6.hidden = NO;
+        buttonIndication6.hidden = YES;
     }
 }
 
@@ -206,11 +213,9 @@
         currentPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
         if (currentPage != previousPage) {
             if (currentPage > previousPage) {
-                NSLog(@"reached page #%i by increasing", currentPage);
                 [self swipePhoto:(currentPage - 4) andAdd:(currentPage + 3)];
             }
             if (currentPage < previousPage) {
-                NSLog(@"reached page #%i by decreasing", currentPage);
                 [self swipePhoto:(currentPage + 4) andAdd:(currentPage - 3)];
             }
             previousPage = currentPage;
@@ -241,7 +246,6 @@
 {
     Rock *rock;
     
-    NSLog(@"adding rock and overlay at position %i", sub);
     rock = rockArray[sub];
     UIImageView *myImageView = [[UIImageView alloc] initWithImage:rock.image];
     myImageView.contentMode = UIViewContentModeScaleToFill;
@@ -283,16 +287,17 @@
         [textView sizeToFit];
         if (textView.frame.size.height > 250)
         {
-            textView.frame = CGRectMake(35, 220, textView.frame.size.width, self.view.frame.size.height -318);
+            textView.frame = CGRectMake(35, 220, textView.frame.size.width, self.view.frame.size.height -268);
         }
     }
     else
     {
-        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -318)];
+        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -268)];
     }
     
-    UIView *myTranslucentView = [[ILTranslucentView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height -40 -64)];
-    myTranslucentView.backgroundColor = [UIColor clearColor];
+    UIView *myTranslucentView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height -40)];
+    myTranslucentView.backgroundColor = [UIColor whiteColor];
+    myTranslucentView.alpha = 0.8;
     myTranslucentView.layer.cornerRadius = 10.0;
     myTranslucentView.layer.masksToBounds = YES;
     
@@ -307,14 +312,12 @@
 {
     for (UIImageView *myImageView in myScrollView.subviews) {
         if ((myImageView.tag == subViewToDelete + 1) && (myImageView.tag != 0)) {
-            NSLog(@"deleting rock at position %i", (myImageView.tag - 1));
             [myImageView removeFromSuperview];
         }
     }
     
     for (UIView *myDetailOverlay in myScrollView.subviews) {
         if (myDetailOverlay.tag == (subViewToDelete + 1000)) {
-            NSLog(@"deleting detailview at position %i", (myDetailOverlay.tag - 1000));
             [myDetailOverlay removeFromSuperview];
         }
     }
@@ -333,14 +336,12 @@
                 myDetailOverlay.hidden = NO;
             }
         }
-        NSLog(@"tapped");
     } else {
         for (UIView *myDetailOverlay in myScrollView.subviews) {
             if (myDetailOverlay.tag >= 1000) {
                 myDetailOverlay.hidden = YES;
             }
         }
-        NSLog(@"tapped again");
     }
 }
 
@@ -400,6 +401,14 @@
 
 -(void) detectOrientation {
     
+    [button1 removeFromSuperview];
+    [button2 removeFromSuperview];
+    [button3 removeFromSuperview];
+    [button4 removeFromSuperview];
+    [button5 removeFromSuperview];
+    [button6 removeFromSuperview];
+    [topDownMapOverlay removeFromSuperview];
+    
     if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
         ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)) {
         [self.navigationController setNavigationBarHidden:YES animated:NO];
@@ -415,12 +424,12 @@
         button5 = [UIButton buttonWithType:UIButtonTypeCustom];
         button6 = [UIButton buttonWithType:UIButtonTypeCustom];
         
-        button1.frame = CGRectMake(55, 270, 30, 30);
-        button2.frame = CGRectMake(141, 270, 30, 30);
-        button3.frame = CGRectMake(226, 270, 30, 30);
-        button4.frame = CGRectMake(312, 270, 30, 30);
-        button5.frame = CGRectMake(397, 270, 30, 30);
-        button6.frame = CGRectMake(483, 270, 30, 30);
+        button1.frame = CGRectMake(((self.view.frame.size.width - 180)/7 * 1) + (0 * 30), 270, 30, 30);
+        button2.frame = CGRectMake(((self.view.frame.size.width - 180)/7 * 2) + (1 * 30), 270, 30, 30);
+        button3.frame = CGRectMake(((self.view.frame.size.width - 180)/7 * 3) + (2 * 30), 270, 30, 30);
+        button4.frame = CGRectMake(((self.view.frame.size.width - 180)/7 * 4) + (3 * 30), 270, 30, 30);
+        button5.frame = CGRectMake(((self.view.frame.size.width - 180)/7 * 5) + (4 * 30), 270, 30, 30);
+        button6.frame = CGRectMake(((self.view.frame.size.width - 180)/7 * 6) + (5 * 30), 270, 30, 30);
         
         [button1 addTarget:self action:@selector(onButtonPressed:) forControlEvents:UIControlEventTouchDown];
         [button2 addTarget:self action:@selector(onButtonPressed:) forControlEvents:UIControlEventTouchDown];
@@ -450,7 +459,7 @@
         [self.view addSubview:button5];
         [self.view addSubview:button6];
         
-        topDownMapOverlay = [[UIView alloc] initWithFrame:CGRectMake(410, 0, 158, 150)];
+        topDownMapOverlay = [[UIView alloc] initWithFrame:CGRectMake((self.view.frame.size.width - 158), 0, 158, 150)];
         [topDownMapOverlay setBackgroundColor:[UIColor colorWithRed:0 green:0 blue:0 alpha:.4]];
         [self.view addSubview:topDownMapOverlay];
         
@@ -459,67 +468,67 @@
         topDownMapView.contentMode = UIViewContentModeScaleToFill;
         [topDownMapOverlay addSubview:topDownMapView];
 
-        buttonIndicator1 = [[UIImageView alloc] initWithFrame:CGRectMake(25, 43, 15, 15)];
+        buttonIndicator1 = [[UIImageView alloc] initWithFrame:CGRectMake(16, 43, 15, 15)];
         [buttonIndicator1 setImage:[UIImage imageNamed:@"#1.png"]];
         buttonIndicator1.contentMode = UIViewContentModeScaleToFill;
         [topDownMapOverlay addSubview:buttonIndicator1];
         
-        buttonIndicator2 = [[UIImageView alloc] initWithFrame:CGRectMake(33, 111, 15, 15)];
+        buttonIndicator2 = [[UIImageView alloc] initWithFrame:CGRectMake(33, 103, 15, 15)];
         [buttonIndicator2 setImage:[UIImage imageNamed:@"#2.png"]];
         buttonIndicator2.contentMode = UIViewContentModeScaleToFill;
         [topDownMapOverlay addSubview:buttonIndicator2];
         
-        buttonIndicator3 = [[UIImageView alloc] initWithFrame:CGRectMake(52, 92, 15, 15)];
+        buttonIndicator3 = [[UIImageView alloc] initWithFrame:CGRectMake(62, 92, 15, 15)];
         [buttonIndicator3 setImage:[UIImage imageNamed:@"#3.png"]];
         buttonIndicator3.contentMode = UIViewContentModeScaleToFill;
         [topDownMapOverlay addSubview:buttonIndicator3];
         
-        buttonIndicator4 = [[UIImageView alloc] initWithFrame:CGRectMake(92, 92, 15, 15)];
+        buttonIndicator4 = [[UIImageView alloc] initWithFrame:CGRectMake(83, 92, 15, 15)];
         [buttonIndicator4 setImage:[UIImage imageNamed:@"#4.png"]];
         buttonIndicator4.contentMode = UIViewContentModeScaleToFill;
         [topDownMapOverlay addSubview:buttonIndicator4];
         
-        buttonIndicator5 = [[UIImageView alloc] initWithFrame:CGRectMake(110, 111, 15, 15)];
+        buttonIndicator5 = [[UIImageView alloc] initWithFrame:CGRectMake(110, 103, 15, 15)];
         [buttonIndicator5 setImage:[UIImage imageNamed:@"#5.png"]];
         buttonIndicator5.contentMode = UIViewContentModeScaleToFill;
         [topDownMapOverlay addSubview:buttonIndicator5];
         
-        buttonIndicator6 = [[UIImageView alloc] initWithFrame:CGRectMake(119, 43, 15, 15)];
+        buttonIndicator6 = [[UIImageView alloc] initWithFrame:CGRectMake(129, 43, 15, 15)];
         [buttonIndicator6 setImage:[UIImage imageNamed:@"#6.png"]];
         buttonIndicator6.contentMode = UIViewContentModeScaleToFill;
         [topDownMapOverlay addSubview:buttonIndicator6];
         
-        buttonIndication1 = [[UIImageView alloc] initWithFrame:CGRectMake(25, 43, 15, 15)];
+        buttonIndication1 = [[UIImageView alloc] initWithFrame:CGRectMake(16, 43, 15, 15)];
         [buttonIndication1 setImage:[UIImage imageNamed:@"#1blue.png"]];
         buttonIndication1.contentMode = UIViewContentModeScaleToFill;
         buttonIndication1.hidden = YES;
         [topDownMapOverlay addSubview:buttonIndication1];
 
-        buttonIndication2 = [[UIImageView alloc] initWithFrame:CGRectMake(33, 111, 15, 15)];
+        buttonIndication2 = [[UIImageView alloc] initWithFrame:CGRectMake(33, 103, 15, 15)];
         [buttonIndication2 setImage:[UIImage imageNamed:@"#2blue.png"]];
         buttonIndication2.contentMode = UIViewContentModeScaleToFill;
         buttonIndication2.hidden = YES;
         [topDownMapOverlay addSubview:buttonIndication2];
 
-        buttonIndication3 = [[UIImageView alloc] initWithFrame:CGRectMake(52, 92, 15, 15)];
+        buttonIndication3 = [[UIImageView alloc] initWithFrame:CGRectMake(62, 92, 15, 15)];
         [buttonIndication3 setImage:[UIImage imageNamed:@"#3blue.png"]];
         buttonIndication3.contentMode = UIViewContentModeScaleToFill;
         buttonIndication3.hidden = YES;
         [topDownMapOverlay addSubview:buttonIndication3];
 
-        buttonIndication4 = [[UIImageView alloc] initWithFrame:CGRectMake(92, 92, 15, 15)];
+        buttonIndication4 = [[UIImageView alloc] initWithFrame:CGRectMake(83, 92, 15, 15)];
         [buttonIndication4 setImage:[UIImage imageNamed:@"#4blue.png"]];
         buttonIndication4.contentMode = UIViewContentModeScaleToFill;
         buttonIndication4.hidden = YES;
         [topDownMapOverlay addSubview:buttonIndication4];
 
-        buttonIndication5 = [[UIImageView alloc] initWithFrame:CGRectMake(110, 111, 15, 15)];
+        buttonIndication5 = [[UIImageView alloc] initWithFrame:CGRectMake(110, 103, 15, 15)];
         [buttonIndication5 setImage:[UIImage imageNamed:@"#5blue.png"]];
         buttonIndication5.contentMode = UIViewContentModeScaleToFill;
         buttonIndication5.hidden = YES;
         [topDownMapOverlay addSubview:buttonIndication5];
 
-        buttonIndication6 = [[UIImageView alloc] initWithFrame:CGRectMake(119, 43, 15, 15)];
+        buttonIndication6 = [[UIImageView alloc] initWithFrame:CGRectMake(129, 43, 15, 15)];
         [buttonIndication6 setImage:[UIImage imageNamed:@"#6blue.png"]];
         buttonIndication6.contentMode = UIViewContentModeScaleToFill;
         buttonIndication6.hidden = YES;
@@ -533,26 +542,8 @@
         [self checkMyPanoramicScrollViewContentOffset];
         
     } else if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
-        [self.navigationController setNavigationBarHidden:NO animated:NO];
-        [button1 removeFromSuperview];
-        [button2 removeFromSuperview];
-        [button3 removeFromSuperview];
-        [button4 removeFromSuperview];
-        [button5 removeFromSuperview];
-        [button6 removeFromSuperview];
-        [topDownMapOverlay removeFromSuperview];
-        
         myPanoramicScrollview.hidden = YES;
         myScrollView.hidden = NO;
-        NSLog(@"Portrait Mode = (%f, %f) ", self.view.frame.size.width, self.view.frame.size.height);
-    } else if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) {
-        [button1 removeFromSuperview];
-        [button2 removeFromSuperview];
-        [button3 removeFromSuperview];
-        [button4 removeFromSuperview];
-        [button5 removeFromSuperview];
-        [button6 removeFromSuperview];
-        [topDownMapOverlay removeFromSuperview];
     }
 }
 
@@ -572,15 +563,15 @@
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 4:
-            myPanoramicScrollview.contentOffset = CGPointMake(11980, 50);
-            [self checkMyPanoramicScrollViewContentOffset];
-            break;
-        case 5:
             myPanoramicScrollview.contentOffset = CGPointMake(9000, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
-        case 6:
+        case 5:
             myPanoramicScrollview.contentOffset = CGPointMake(10000, 50);
+            [self checkMyPanoramicScrollViewContentOffset];
+            break;
+        case 6:
+            myPanoramicScrollview.contentOffset = CGPointMake(11980, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         default:
