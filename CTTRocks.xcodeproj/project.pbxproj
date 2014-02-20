@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1818D96B18ADFE0600B1BF2F /* ILTranslucentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1818D96A18ADFE0600B1BF2F /* ILTranslucentView.m */; };
-		181DCC0318B67285009D4B83 /* CTTPano.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 181DCC0118B67285009D4B83 /* CTTPano.jpg */; };
 		1864398A18B4277000EFFB9D /* #1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1864397C18B4277000EFFB9D /* #1.png */; };
 		1864398B18B4277000EFFB9D /* #1blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1864397D18B4277000EFFB9D /* #1blue.png */; };
 		1864398C18B4277000EFFB9D /* #2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1864397E18B4277000EFFB9D /* #2.png */; };
@@ -36,6 +35,20 @@
 		88B9B41B18B5D941004F36D8 /* R003 Reims@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B41718B5D941004F36D8 /* R003 Reims@2x.jpg */; };
 		88B9B41C18B5D941004F36D8 /* R003 Reims.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B41818B5D941004F36D8 /* R003 Reims.jpg */; };
 		88B9B41D18B5D941004F36D8 /* R003 Reims-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B41918B5D941004F36D8 /* R003 Reims-568h@2x.jpg */; };
+		88B9B43C18B67C3D004F36D8 /* S006 Quarry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43018B67C3D004F36D8 /* S006 Quarry.jpg */; };
+		88B9B43D18B67C3D004F36D8 /* R006 Quarry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43118B67C3D004F36D8 /* R006 Quarry.jpg */; };
+		88B9B43E18B67C3D004F36D8 /* R006 Quarry@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43218B67C3D004F36D8 /* R006 Quarry@2x.jpg */; };
+		88B9B43F18B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43318B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg */; };
+		88B9B44018B67C3D004F36D8 /* S005 Leiden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43418B67C3D004F36D8 /* S005 Leiden.jpg */; };
+		88B9B44118B67C3D004F36D8 /* R005 Leiden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43518B67C3D004F36D8 /* R005 Leiden.jpg */; };
+		88B9B44218B67C3D004F36D8 /* R005 Leiden@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43618B67C3D004F36D8 /* R005 Leiden@2x.jpg */; };
+		88B9B44318B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43718B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg */; };
+		88B9B44418B67C3D004F36D8 /* S004 Trenton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43818B67C3D004F36D8 /* S004 Trenton.jpg */; };
+		88B9B44518B67C3D004F36D8 /* R004 Trenton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43918B67C3D004F36D8 /* R004 Trenton.jpg */; };
+		88B9B44618B67C3D004F36D8 /* R004 Trenton@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43A18B67C3D004F36D8 /* R004 Trenton@2x.jpg */; };
+		88B9B44718B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43B18B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg */; };
+		88B9B44918B6804B004F36D8 /* CTTPano.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44818B6804B004F36D8 /* CTTPano.jpg */; };
+		88B9B44B18B68565004F36D8 /* R007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44A18B68565004F36D8 /* R007.jpg */; };
 		88EE98E818AA790E00351DD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE98E718AA790E00351DD2 /* Foundation.framework */; };
 		88EE98EA18AA790E00351DD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE98E918AA790E00351DD2 /* CoreGraphics.framework */; };
 		88EE98EC18AA790E00351DD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE98EB18AA790E00351DD2 /* UIKit.framework */; };
@@ -154,10 +167,6 @@
 		88EE9A8418ABF43300351DD2 /* B141.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE99F518ABF43300351DD2 /* B141.jpg */; };
 		88EE9A8518ABF43300351DD2 /* B142.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE99F618ABF43300351DD2 /* B142.jpg */; };
 		88EE9A8618ABF43300351DD2 /* B143.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE99F718ABF43300351DD2 /* B143.jpg */; };
-		88EE9AAA18ABF47C00351DD2 /* R004.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A8A18ABF47C00351DD2 /* R004.jpg */; };
-		88EE9AAB18ABF47C00351DD2 /* R005.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A8B18ABF47C00351DD2 /* R005.jpg */; };
-		88EE9AAC18ABF47C00351DD2 /* R006.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A8C18ABF47C00351DD2 /* R006.jpg */; };
-		88EE9AAD18ABF47C00351DD2 /* R007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A8D18ABF47C00351DD2 /* R007.jpg */; };
 		88EE9AAE18ABF47C00351DD2 /* R008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A8E18ABF47C00351DD2 /* R008.jpg */; };
 		88EE9AAF18ABF47C00351DD2 /* R009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A8F18ABF47C00351DD2 /* R009.jpg */; };
 		88EE9AB018ABF47C00351DD2 /* R010.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A9018ABF47C00351DD2 /* R010.jpg */; };
@@ -359,8 +368,6 @@
 		88F6522A18B42E92009074BE /* B003 Reims Cathedral.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6521618B42E92009074BE /* B003 Reims Cathedral.jpg */; };
 		88F6522B18B42E92009074BE /* B002 Washingtons Landing Place - Delaware River, New Jersey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6521718B42E92009074BE /* B002 Washingtons Landing Place - Delaware River, New Jersey.jpg */; };
 		88F6522C18B42E92009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6521818B42E92009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg */; };
-		9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4718E18B512D50032EEFE /* WelcomeViewController.m */; };
-		9EC471D918B671260032EEFE /* tutorial6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471D818B671260032EEFE /* tutorial6.png */; };
 		88F6523F18B47760009074BE /* B023 The Berlin Wall.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6522D18B4775F009074BE /* B023 The Berlin Wall.jpg */; };
 		88F6524018B47760009074BE /* B024 Hamlet's Castle - Elsinore, Denmark.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6522E18B4775F009074BE /* B024 Hamlet's Castle - Elsinore, Denmark.jpg */; };
 		88F6524118B47760009074BE /* B025 Chillon Castle - Vaud, Switzerland.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6522F18B4775F009074BE /* B025 Chillon Castle - Vaud, Switzerland.jpg */; };
@@ -381,6 +388,8 @@
 		88F6525018B47760009074BE /* B040 Notre_Dame_de_Paris_by_night_time.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6523E18B47760009074BE /* B040 Notre_Dame_de_Paris_by_night_time.jpg */; };
 		88F6525318B47778009074BE /* B021 Wartburg_Eisenach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6525118B47778009074BE /* B021 Wartburg_Eisenach.jpg */; };
 		88F6525418B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6525218B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg */; };
+		9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4718E18B512D50032EEFE /* WelcomeViewController.m */; };
+		9EC471D918B671260032EEFE /* tutorial6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471D818B671260032EEFE /* tutorial6.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -396,7 +405,6 @@
 /* Begin PBXFileReference section */
 		1818D96918ADFE0600B1BF2F /* ILTranslucentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTranslucentView.h; sourceTree = "<group>"; };
 		1818D96A18ADFE0600B1BF2F /* ILTranslucentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTranslucentView.m; sourceTree = "<group>"; };
-		181DCC0118B67285009D4B83 /* CTTPano.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CTTPano.jpg; sourceTree = "<group>"; };
 		1864397C18B4277000EFFB9D /* #1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#1.png"; sourceTree = "<group>"; };
 		1864397D18B4277000EFFB9D /* #1blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#1blue.png"; sourceTree = "<group>"; };
 		1864397E18B4277000EFFB9D /* #2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#2.png"; sourceTree = "<group>"; };
@@ -424,6 +432,20 @@
 		88B9B41718B5D941004F36D8 /* R003 Reims@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R003 Reims@2x.jpg"; sourceTree = "<group>"; };
 		88B9B41818B5D941004F36D8 /* R003 Reims.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R003 Reims.jpg"; sourceTree = "<group>"; };
 		88B9B41918B5D941004F36D8 /* R003 Reims-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R003 Reims-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43018B67C3D004F36D8 /* S006 Quarry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S006 Quarry.jpg"; sourceTree = "<group>"; };
+		88B9B43118B67C3D004F36D8 /* R006 Quarry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R006 Quarry.jpg"; sourceTree = "<group>"; };
+		88B9B43218B67C3D004F36D8 /* R006 Quarry@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R006 Quarry@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43318B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R006 Quarry-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43418B67C3D004F36D8 /* S005 Leiden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S005 Leiden.jpg"; sourceTree = "<group>"; };
+		88B9B43518B67C3D004F36D8 /* R005 Leiden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R005 Leiden.jpg"; sourceTree = "<group>"; };
+		88B9B43618B67C3D004F36D8 /* R005 Leiden@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R005 Leiden@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43718B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R005 Leiden-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43818B67C3D004F36D8 /* S004 Trenton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S004 Trenton.jpg"; sourceTree = "<group>"; };
+		88B9B43918B67C3D004F36D8 /* R004 Trenton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R004 Trenton.jpg"; sourceTree = "<group>"; };
+		88B9B43A18B67C3D004F36D8 /* R004 Trenton@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R004 Trenton@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43B18B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R004 Trenton-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B44818B6804B004F36D8 /* CTTPano.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CTTPano.jpg; sourceTree = "<group>"; };
+		88B9B44A18B68565004F36D8 /* R007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R007.jpg; sourceTree = "<group>"; };
 		88EE98E418AA790E00351DD2 /* CTTRocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTTRocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88EE98E718AA790E00351DD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88EE98E918AA790E00351DD2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -548,10 +570,6 @@
 		88EE99F518ABF43300351DD2 /* B141.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B141.jpg; sourceTree = "<group>"; };
 		88EE99F618ABF43300351DD2 /* B142.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B142.jpg; sourceTree = "<group>"; };
 		88EE99F718ABF43300351DD2 /* B143.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B143.jpg; sourceTree = "<group>"; };
-		88EE9A8A18ABF47C00351DD2 /* R004.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R004.jpg; sourceTree = "<group>"; };
-		88EE9A8B18ABF47C00351DD2 /* R005.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R005.jpg; sourceTree = "<group>"; };
-		88EE9A8C18ABF47C00351DD2 /* R006.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R006.jpg; sourceTree = "<group>"; };
-		88EE9A8D18ABF47C00351DD2 /* R007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R007.jpg; sourceTree = "<group>"; };
 		88EE9A8E18ABF47C00351DD2 /* R008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R008.jpg; sourceTree = "<group>"; };
 		88EE9A8F18ABF47C00351DD2 /* R009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R009.jpg; sourceTree = "<group>"; };
 		88EE9A9018ABF47C00351DD2 /* R010.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R010.jpg; sourceTree = "<group>"; };
@@ -756,9 +774,6 @@
 		88F6521618B42E92009074BE /* B003 Reims Cathedral.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B003 Reims Cathedral.jpg"; sourceTree = "<group>"; };
 		88F6521718B42E92009074BE /* B002 Washingtons Landing Place - Delaware River, New Jersey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B002 Washingtons Landing Place - Delaware River, New Jersey.jpg"; sourceTree = "<group>"; };
 		88F6521818B42E92009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg"; sourceTree = "<group>"; };
-		9EC4718D18B512D50032EEFE /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
-		9EC4718E18B512D50032EEFE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
-		9EC471D818B671260032EEFE /* tutorial6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial6.png; sourceTree = "<group>"; };
 		88F6522D18B4775F009074BE /* B023 The Berlin Wall.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B023 The Berlin Wall.jpg"; sourceTree = "<group>"; };
 		88F6522E18B4775F009074BE /* B024 Hamlet's Castle - Elsinore, Denmark.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B024 Hamlet's Castle - Elsinore, Denmark.jpg"; sourceTree = "<group>"; };
 		88F6522F18B4775F009074BE /* B025 Chillon Castle - Vaud, Switzerland.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B025 Chillon Castle - Vaud, Switzerland.jpg"; sourceTree = "<group>"; };
@@ -779,6 +794,9 @@
 		88F6523E18B47760009074BE /* B040 Notre_Dame_de_Paris_by_night_time.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B040 Notre_Dame_de_Paris_by_night_time.jpg"; sourceTree = "<group>"; };
 		88F6525118B47778009074BE /* B021 Wartburg_Eisenach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B021 Wartburg_Eisenach.jpg"; sourceTree = "<group>"; };
 		88F6525218B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B022 The_Great_Wall_of_China_at_Jinshanling.jpg"; sourceTree = "<group>"; };
+		9EC4718D18B512D50032EEFE /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		9EC4718E18B512D50032EEFE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		9EC471D818B671260032EEFE /* tutorial6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial6.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -938,14 +956,23 @@
 				88B9B40D18B5D0E0004F36D8 /* R002 Washingtons Landing Place.jpg */,
 				88B9B41418B5D119004F36D8 /* R002 Washingtons Landing Place-568h@2x.jpg */,
 				88B9B40E18B5D0E0004F36D8 /* R002 Washingtons Landing Place@2x.jpg */,
+				88B9B43018B67C3D004F36D8 /* S006 Quarry.jpg */,
+				88B9B43118B67C3D004F36D8 /* R006 Quarry.jpg */,
+				88B9B43218B67C3D004F36D8 /* R006 Quarry@2x.jpg */,
+				88B9B43318B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg */,
+				88B9B44A18B68565004F36D8 /* R007.jpg */,
+				88B9B43418B67C3D004F36D8 /* S005 Leiden.jpg */,
+				88B9B43518B67C3D004F36D8 /* R005 Leiden.jpg */,
+				88B9B43618B67C3D004F36D8 /* R005 Leiden@2x.jpg */,
+				88B9B43718B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg */,
+				88B9B43818B67C3D004F36D8 /* S004 Trenton.jpg */,
+				88B9B43918B67C3D004F36D8 /* R004 Trenton.jpg */,
+				88B9B43A18B67C3D004F36D8 /* R004 Trenton@2x.jpg */,
+				88B9B43B18B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg */,
 				88B9B41618B5D941004F36D8 /* S003 Reims.jpg */,
 				88B9B41718B5D941004F36D8 /* R003 Reims@2x.jpg */,
 				88B9B41818B5D941004F36D8 /* R003 Reims.jpg */,
 				88B9B41918B5D941004F36D8 /* R003 Reims-568h@2x.jpg */,
-				88EE9A8A18ABF47C00351DD2 /* R004.jpg */,
-				88EE9A8B18ABF47C00351DD2 /* R005.jpg */,
-				88EE9A8C18ABF47C00351DD2 /* R006.jpg */,
-				88EE9A8D18ABF47C00351DD2 /* R007.jpg */,
 				88EE9A8E18ABF47C00351DD2 /* R008.jpg */,
 				88EE9A8F18ABF47C00351DD2 /* R009.jpg */,
 				88EE9A9018ABF47C00351DD2 /* R010.jpg */,
@@ -1137,7 +1164,7 @@
 		88EE9ADA18AC5EDB00351DD2 /* Others */ = {
 			isa = PBXGroup;
 			children = (
-				181DCC0118B67285009D4B83 /* CTTPano.jpg */,
+				88B9B44818B6804B004F36D8 /* CTTPano.jpg */,
 				18E9BE0B18B01C5100D292D4 /* Estrella.jpeg */,
 			);
 			name = Others;
@@ -1395,7 +1422,6 @@
 				88F6522918B42E92009074BE /* B004 Battle_of_Trenton.jpg in Resources */,
 				88F6516A18B25EF6009074BE /* Text004_The Battle of Trenton.rtf in Resources */,
 				88F651F118B25EF6009074BE /* Text139_Old Washoe County Courthouse.rtf in Resources */,
-				88EE9AAC18ABF47C00351DD2 /* R006.jpg in Resources */,
 				88F6522318B42E92009074BE /* B010 Twin_Towers-NYC.jpg in Resources */,
 				88F6518018B25EF6009074BE /* Text026_Chillon Castle.rtf in Resources */,
 				1864399118B4277000EFFB9D /* #4blue.png in Resources */,
@@ -1403,7 +1429,6 @@
 				88EE9A2418ABF43300351DD2 /* B045.jpg in Resources */,
 				88F651E118B25EF6009074BE /* Text123_Mt. Tapochau.rtf in Resources */,
 				88F6522518B42E92009074BE /* B008 Butter Tower, Cathedral of Notre Dame - Rouen, France.jpg in Resources */,
-				181DCC0318B67285009D4B83 /* CTTPano.jpg in Resources */,
 				88F651C018B25EF6009074BE /* Text090_International Peace Garden.rtf in Resources */,
 				88B9B40418B5BFD1004F36D8 /* R001 Battlefield of Princetone.jpg in Resources */,
 				88EE9A6318ABF43300351DD2 /* B108.jpg in Resources */,
@@ -1455,7 +1480,6 @@
 				88F651B518B25EF6009074BE /* Text079_House of Parliament.rtf in Resources */,
 				88EE9AB918ABF47C00351DD2 /* R019.jpg in Resources */,
 				88EE9A6118ABF43300351DD2 /* B106.jpg in Resources */,
-				88EE9AAA18ABF47C00351DD2 /* R004.jpg in Resources */,
 				88F6518F18B25EF6009074BE /* Text041_Ancient Temple Honan Province.rtf in Resources */,
 				88F6516E18B25EF6009074BE /* Text008_Butter Tower.rtf in Resources */,
 				88F651BF18B25EF6009074BE /* Text089_Little America Antarctica .rtf in Resources */,
@@ -1509,9 +1533,11 @@
 				88EE9A4218ABF43300351DD2 /* B075.jpg in Resources */,
 				88F651E218B25EF6009074BE /* Text124_Bloody Nose Ridge.rtf in Resources */,
 				88F651A818B25EF6009074BE /* Text066_Mount McKinley.rtf in Resources */,
+				88B9B44018B67C3D004F36D8 /* S005 Leiden.jpg in Resources */,
 				88F651AA18B25EF6009074BE /* Text068_The White House.rtf in Resources */,
 				88F651EE18B25EF6009074BE /* Text136_Mount Rainier.rtf in Resources */,
 				88EE9AB118ABF47C00351DD2 /* R011.jpg in Resources */,
+				88B9B44118B67C3D004F36D8 /* R005 Leiden.jpg in Resources */,
 				88EE9A7B18ABF43300351DD2 /* B132.jpg in Resources */,
 				88F651A018B25EF6009074BE /* Text058_Union Stockyard Gate.rtf in Resources */,
 				88EE9AB018ABF47C00351DD2 /* R010.jpg in Resources */,
@@ -1544,8 +1570,10 @@
 				88F6518318B25EF6009074BE /* Text029_Edinburgh Castle.rtf in Resources */,
 				88F6522B18B42E92009074BE /* B002 Washingtons Landing Place - Delaware River, New Jersey.jpg in Resources */,
 				88EE9A5018ABF43300351DD2 /* B089.jpg in Resources */,
+				88B9B44B18B68565004F36D8 /* R007.jpg in Resources */,
 				88EE9A6518ABF43300351DD2 /* B110.jpg in Resources */,
 				88EE9A6A18ABF43300351DD2 /* B115.jpg in Resources */,
+				88B9B43E18B67C3D004F36D8 /* R006 Quarry@2x.jpg in Resources */,
 				88F6519818B25EF6009074BE /* Text050_Tower of Tears.rtf in Resources */,
 				88EE9A5718ABF43300351DD2 /* B096.jpg in Resources */,
 				88EE9A6F18ABF43300351DD2 /* B120.jpg in Resources */,
@@ -1560,9 +1588,9 @@
 				88EE9A4A18ABF43300351DD2 /* B083.jpg in Resources */,
 				88F651F618B25EF6009074BE /* Text144_Petrified Forest Arizona.rtf in Resources */,
 				88EE98F218AA790E00351DD2 /* InfoPlist.strings in Resources */,
-				88EE9AAD18ABF47C00351DD2 /* R007.jpg in Resources */,
 				88F651D618B25EF6009074BE /* Text112_Tawasa.rtf in Resources */,
 				88EE9A6218ABF43300351DD2 /* B107.jpg in Resources */,
+				88B9B43C18B67C3D004F36D8 /* S006 Quarry.jpg in Resources */,
 				88F6523F18B47760009074BE /* B023 The Berlin Wall.jpg in Resources */,
 				88F6522C18B42E92009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg in Resources */,
 				88F651D218B25EF6009074BE /* Text108_Cumberland Gap.rtf in Resources */,
@@ -1573,6 +1601,7 @@
 				88F651DD18B25EF6009074BE /* Text119_Omaha Beach.rtf in Resources */,
 				88F651E618B25EF6009074BE /* Text128_Orote Peninsula.rtf in Resources */,
 				88F6525318B47778009074BE /* B021 Wartburg_Eisenach.jpg in Resources */,
+				88B9B44418B67C3D004F36D8 /* S004 Trenton.jpg in Resources */,
 				1864399418B4277000EFFB9D /* #6.png in Resources */,
 				88EE9ABA18ABF47C00351DD2 /* R020.jpg in Resources */,
 				88F6516818B25EF6009074BE /* Text002_Washington’s Landing Place.rtf in Resources */,
@@ -1594,10 +1623,10 @@
 				88F6519C18B25EF6009074BE /* Text054_Christ Church.rtf in Resources */,
 				88F6524418B47760009074BE /* B028 Westminster_Abbey_-_Thomas_Hosmer_Shepherd_bearbeitet-1.jpg in Resources */,
 				88EE9A5418ABF43300351DD2 /* B093.jpg in Resources */,
+				88B9B44618B67C3D004F36D8 /* R004 Trenton@2x.jpg in Resources */,
 				88F6522218B42E92009074BE /* B011 Rainbow Bridge Forbidden City.jpg in Resources */,
 				88F651FB18B25EF6009074BE /* Text149_Bethlehem.rtf in Resources */,
 				88EE9A4618ABF43300351DD2 /* B079.jpg in Resources */,
-				88EE9AAB18ABF47C00351DD2 /* R005.jpg in Resources */,
 				88F6518618B25EF6009074BE /* Text032_Royal Castle Stockholm.rtf in Resources */,
 				88F6524018B47760009074BE /* B024 Hamlet's Castle - Elsinore, Denmark.jpg in Resources */,
 				88F6524D18B47760009074BE /* B037 St Lucia Barracks.jpg in Resources */,
@@ -1626,6 +1655,7 @@
 				88EE9A7918ABF43300351DD2 /* B130.jpg in Resources */,
 				88F651B618B25EF6009074BE /* Text080_Dome of St. Peter’s Basilica.rtf in Resources */,
 				88F651FC18B25EF6009074BE /* Text150_Moon.rtf in Resources */,
+				88B9B43F18B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg in Resources */,
 				88EE9A2C18ABF43300351DD2 /* B053.jpg in Resources */,
 				88F651AF18B25EF6009074BE /* Text073_Holy Door St. Peter’s Basilica.rtf in Resources */,
 				88F651B018B25EF6009074BE /* Text074_Monastery of Saint Michael.rtf in Resources */,
@@ -1636,6 +1666,7 @@
 				88EE9A5318ABF43300351DD2 /* B092.jpg in Resources */,
 				88EE9A6E18ABF43300351DD2 /* B119.jpg in Resources */,
 				88F6524118B47760009074BE /* B025 Chillon Castle - Vaud, Switzerland.jpg in Resources */,
+				88B9B44718B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg in Resources */,
 				88EE9A3F18ABF43300351DD2 /* B072.jpg in Resources */,
 				88F6516F18B25EF6009074BE /* Text009_Suleiman Mosque.rtf in Resources */,
 				88F6525018B47760009074BE /* B040 Notre_Dame_de_Paris_by_night_time.jpg in Resources */,
@@ -1643,6 +1674,7 @@
 				88F6521E18B42E92009074BE /* B016 Lincoln_Tomb_in_Spring.jpg in Resources */,
 				88EE9A5E18ABF43300351DD2 /* B103.jpg in Resources */,
 				88F6522718B42E92009074BE /* B006 Quarry - Mount Pentelicus, Greece.jpg in Resources */,
+				88B9B44918B6804B004F36D8 /* CTTPano.jpg in Resources */,
 				88F6517418B25EF6009074BE /* Text014_Sydney Opera House.rtf in Resources */,
 				88EE9A3D18ABF43300351DD2 /* B070.jpg in Resources */,
 				88EE9AC218ABF47C00351DD2 /* R028.jpg in Resources */,
@@ -1654,6 +1686,7 @@
 				88EE9A7018ABF43300351DD2 /* B121.jpg in Resources */,
 				88F6519318B25EF6009074BE /* Text045_Hagia Sophia.rtf in Resources */,
 				88F651F018B25EF6009074BE /* Text138_Corregidor.rtf in Resources */,
+				88B9B44518B67C3D004F36D8 /* R004 Trenton.jpg in Resources */,
 				88EE9A3918ABF43300351DD2 /* B066.jpg in Resources */,
 				88F6524C18B47760009074BE /* B036 Cologne_Cathedral.jpg in Resources */,
 				88EE9A6718ABF43300351DD2 /* B112.jpg in Resources */,
@@ -1691,9 +1724,10 @@
 				88F651C718B25EF6009074BE /* Text097_Old Fur Trading Post.rtf in Resources */,
 				88EE9A3118ABF43300351DD2 /* B058.jpg in Resources */,
 				88EE9AC518ABF47C00351DD2 /* R031.jpg in Resources */,
+				88B9B43D18B67C3D004F36D8 /* R006 Quarry.jpg in Resources */,
 				1864398C18B4277000EFFB9D /* #2.png in Resources */,
-				88EE9A0C18ABF43300351DD2 /* B021.jpg in Resources */,
 				88F6516C18B25EF6009074BE /* Text006_Mount Pentelicus.rtf in Resources */,
+				88B9B44318B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg in Resources */,
 				88EE9A2A18ABF43300351DD2 /* B051.jpg in Resources */,
 				88EE9A3A18ABF43300351DD2 /* B067.jpg in Resources */,
 				1864398E18B4277000EFFB9D /* #3.png in Resources */,
@@ -1702,6 +1736,7 @@
 				1864399218B4277000EFFB9D /* #5.png in Resources */,
 				88F6524F18B47760009074BE /* B039 Fort_Santiago_1880_gate.jpg in Resources */,
 				88F6517618B25EF6009074BE /* Text016_Abraham Lincoln’s original tomb.rtf in Resources */,
+				88B9B44218B67C3D004F36D8 /* R005 Leiden@2x.jpg in Resources */,
 				88F651F918B25EF6009074BE /* Text147_Boston Avenue Church.rtf in Resources */,
 				88F6518818B25EF6009074BE /* Text034_Fort San Antonio Abad.rtf in Resources */,
 				88EE9A6418ABF43300351DD2 /* B109.jpg in Resources */,
@@ -1761,7 +1796,6 @@
 				88EE98F818AA790E00351DD2 /* AppDelegate.m in Sources */,
 				88EE9AD218AC4F0100351DD2 /* CTTCollectionViewCell.m in Sources */,
 				9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */,
-				88EE9ACE18AC4ED600351DD2 /* SpringFlowLayout.m in Sources */,
 				88EE98F418AA790E00351DD2 /* main.m in Sources */,
 				88EE9ACF18AC4ED600351DD2 /* MainCollectionViewController.m in Sources */,
 				88F6520218B25F9B009074BE /* CHCSVParser.m in Sources */,
