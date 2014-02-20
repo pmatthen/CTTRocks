@@ -11,6 +11,7 @@
 #import "CTTCollectionViewCell.h"
 #import "SpringFlowLayout.h"
 #import "Rock.h"
+#import "WelcomeViewController.h"
 
 @interface MainCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 

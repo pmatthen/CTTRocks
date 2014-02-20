@@ -374,6 +374,8 @@
 		88F6522A18B42E92009074BE /* B003 Reims Cathedral.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6521618B42E92009074BE /* B003 Reims Cathedral.jpg */; };
 		88F6522B18B42E92009074BE /* B002 Washingtons Landing Place - Delaware River, New Jersey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6521718B42E92009074BE /* B002 Washingtons Landing Place - Delaware River, New Jersey.jpg */; };
 		88F6522C18B42E92009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6521818B42E92009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg */; };
+		9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4718E18B512D50032EEFE /* WelcomeViewController.m */; };
+		9EC471D918B671260032EEFE /* tutorial6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471D818B671260032EEFE /* tutorial6.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -765,6 +767,9 @@
 		88F6521618B42E92009074BE /* B003 Reims Cathedral.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B003 Reims Cathedral.jpg"; sourceTree = "<group>"; };
 		88F6521718B42E92009074BE /* B002 Washingtons Landing Place - Delaware River, New Jersey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B002 Washingtons Landing Place - Delaware River, New Jersey.jpg"; sourceTree = "<group>"; };
 		88F6521818B42E92009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg"; sourceTree = "<group>"; };
+		9EC4718D18B512D50032EEFE /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
+		9EC4718E18B512D50032EEFE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
+		9EC471D818B671260032EEFE /* tutorial6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial6.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -851,6 +856,8 @@
 				88EE98F618AA790E00351DD2 /* AppDelegate.h */,
 				88EE98F718AA790E00351DD2 /* AppDelegate.m */,
 				88EE98F918AA790E00351DD2 /* Main.storyboard */,
+				9EC4718D18B512D50032EEFE /* WelcomeViewController.h */,
+				9EC4718E18B512D50032EEFE /* WelcomeViewController.m */,
 				88EE98FC18AA790E00351DD2 /* RocksScrollViewController.h */,
 				88EE98FD18AA790E00351DD2 /* RocksScrollViewController.m */,
 				88EE9ACC18AC4ED600351DD2 /* MainCollectionViewController.h */,
@@ -866,6 +873,7 @@
 				88F6520018B25F9B009074BE /* CHCSVParser.h */,
 				88F6520118B25F9B009074BE /* CHCSVParser.m */,
 				88EE98FF18AA790E00351DD2 /* Images.xcassets */,
+				9EC471D818B671260032EEFE /* tutorial6.png */,
 				88EE98EE18AA790E00351DD2 /* Supporting Files */,
 			);
 			path = CTTRocks;
@@ -1517,6 +1525,7 @@
 				88EE9A2318ABF43300351DD2 /* B044.jpg in Resources */,
 				88F6519118B25EF6009074BE /* Text043_Winter Palace Forbidden City.rtf in Resources */,
 				88F651CA18B25EF6009074BE /* Text100_Fort William and Mary.rtf in Resources */,
+				9EC471D918B671260032EEFE /* tutorial6.png in Resources */,
 				88F651F218B25EF6009074BE /* Text140_Hans Christian Andersen Home.rtf in Resources */,
 				88EE9A6018ABF43300351DD2 /* B105.jpg in Resources */,
 				88F6518318B25EF6009074BE /* Text029_Edinburgh Castle.rtf in Resources */,
@@ -1631,7 +1640,6 @@
 				88F651A318B25EF6009074BE /* Text061_Bunker Hill.rtf in Resources */,
 				88EE9A1C18ABF43300351DD2 /* B037.jpg in Resources */,
 				1864399518B4277000EFFB9D /* #6blue.png in Resources */,
-				88EE99FF18ABF43300351DD2 /* B008.jpg in Resources */,
 				88F651F318B25EF6009074BE /* Text141_The Mormon Temple.rtf in Resources */,
 				88EE9A3818ABF43300351DD2 /* B065.jpg in Resources */,
 				88F651DB18B25EF6009074BE /* Text117_Ludendorff Bridge.rtf in Resources */,
@@ -1664,7 +1672,6 @@
 				88EE9A3118ABF43300351DD2 /* B058.jpg in Resources */,
 				88EE9AC518ABF47C00351DD2 /* R031.jpg in Resources */,
 				1864398C18B4277000EFFB9D /* #2.png in Resources */,
-				88EE9A0418ABF43300351DD2 /* B013.jpg in Resources */,
 				88EE9A0C18ABF43300351DD2 /* B021.jpg in Resources */,
 				88F6516C18B25EF6009074BE /* Text006_Mount Pentelicus.rtf in Resources */,
 				88EE9A2A18ABF43300351DD2 /* B051.jpg in Resources */,
@@ -1688,7 +1695,6 @@
 				88EE9A0D18ABF43300351DD2 /* B022.jpg in Resources */,
 				88EE9A1118ABF43300351DD2 /* B026.jpg in Resources */,
 				88EE9A3718ABF43300351DD2 /* B064.jpg in Resources */,
-				88EE99FC18ABF43300351DD2 /* B005.jpg in Resources */,
 				1864399018B4277000EFFB9D /* #4.png in Resources */,
 				88EE9A5918ABF43300351DD2 /* B098.jpg in Resources */,
 				88F651D718B25EF6009074BE /* Text113_Birthplace of Elijah Parish Lovejoy.rtf in Resources */,
@@ -1734,6 +1740,7 @@
 				88EE98FE18AA790E00351DD2 /* RocksScrollViewController.m in Sources */,
 				88EE98F818AA790E00351DD2 /* AppDelegate.m in Sources */,
 				88EE9AD218AC4F0100351DD2 /* CTTCollectionViewCell.m in Sources */,
+				9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */,
 				88EE9ACE18AC4ED600351DD2 /* SpringFlowLayout.m in Sources */,
 				88EE98F418AA790E00351DD2 /* main.m in Sources */,
 				88EE9ACF18AC4ED600351DD2 /* MainCollectionViewController.m in Sources */,
