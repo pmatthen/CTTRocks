@@ -35,20 +35,20 @@
 		88B9B41B18B5D941004F36D8 /* R003 Reims@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B41718B5D941004F36D8 /* R003 Reims@2x.jpg */; };
 		88B9B41C18B5D941004F36D8 /* R003 Reims.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B41818B5D941004F36D8 /* R003 Reims.jpg */; };
 		88B9B41D18B5D941004F36D8 /* R003 Reims-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B41918B5D941004F36D8 /* R003 Reims-568h@2x.jpg */; };
-		88B9B42F18B6706E004F36D8 /* CTTPanorama@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B42D18B6706E004F36D8 /* CTTPanorama@2x.jpg */; };
-		88B9B43C18B67C3D004F36D8 /* S007 Quarry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43018B67C3D004F36D8 /* S007 Quarry.jpg */; };
-		88B9B43D18B67C3D004F36D8 /* R007 Quarry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43118B67C3D004F36D8 /* R007 Quarry.jpg */; };
-		88B9B43E18B67C3D004F36D8 /* R007 Quarry@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43218B67C3D004F36D8 /* R007 Quarry@2x.jpg */; };
-		88B9B43F18B67C3D004F36D8 /* R007 Quarry-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43318B67C3D004F36D8 /* R007 Quarry-568h@2x.jpg */; };
-		88B9B44018B67C3D004F36D8 /* S006 Leiden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43418B67C3D004F36D8 /* S006 Leiden.jpg */; };
-		88B9B44118B67C3D004F36D8 /* R006 Leiden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43518B67C3D004F36D8 /* R006 Leiden.jpg */; };
-		88B9B44218B67C3D004F36D8 /* R006 Leiden@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43618B67C3D004F36D8 /* R006 Leiden@2x.jpg */; };
-		88B9B44318B67C3D004F36D8 /* R006 Leiden-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43718B67C3D004F36D8 /* R006 Leiden-568h@2x.jpg */; };
+		88B9B43C18B67C3D004F36D8 /* S006 Quarry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43018B67C3D004F36D8 /* S006 Quarry.jpg */; };
+		88B9B43D18B67C3D004F36D8 /* R006 Quarry.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43118B67C3D004F36D8 /* R006 Quarry.jpg */; };
+		88B9B43E18B67C3D004F36D8 /* R006 Quarry@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43218B67C3D004F36D8 /* R006 Quarry@2x.jpg */; };
+		88B9B43F18B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43318B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg */; };
+		88B9B44018B67C3D004F36D8 /* S005 Leiden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43418B67C3D004F36D8 /* S005 Leiden.jpg */; };
+		88B9B44118B67C3D004F36D8 /* R005 Leiden.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43518B67C3D004F36D8 /* R005 Leiden.jpg */; };
+		88B9B44218B67C3D004F36D8 /* R005 Leiden@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43618B67C3D004F36D8 /* R005 Leiden@2x.jpg */; };
+		88B9B44318B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43718B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg */; };
 		88B9B44418B67C3D004F36D8 /* S004 Trenton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43818B67C3D004F36D8 /* S004 Trenton.jpg */; };
 		88B9B44518B67C3D004F36D8 /* R004 Trenton.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43918B67C3D004F36D8 /* R004 Trenton.jpg */; };
 		88B9B44618B67C3D004F36D8 /* R004 Trenton@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43A18B67C3D004F36D8 /* R004 Trenton@2x.jpg */; };
 		88B9B44718B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43B18B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg */; };
 		88B9B44918B6804B004F36D8 /* CTTPano.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44818B6804B004F36D8 /* CTTPano.jpg */; };
+		88B9B44B18B68565004F36D8 /* R007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44A18B68565004F36D8 /* R007.jpg */; };
 		88EE98E818AA790E00351DD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE98E718AA790E00351DD2 /* Foundation.framework */; };
 		88EE98EA18AA790E00351DD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE98E918AA790E00351DD2 /* CoreGraphics.framework */; };
 		88EE98EC18AA790E00351DD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE98EB18AA790E00351DD2 /* UIKit.framework */; };
@@ -432,20 +432,20 @@
 		88B9B41718B5D941004F36D8 /* R003 Reims@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R003 Reims@2x.jpg"; sourceTree = "<group>"; };
 		88B9B41818B5D941004F36D8 /* R003 Reims.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R003 Reims.jpg"; sourceTree = "<group>"; };
 		88B9B41918B5D941004F36D8 /* R003 Reims-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R003 Reims-568h@2x.jpg"; sourceTree = "<group>"; };
-		88B9B42D18B6706E004F36D8 /* CTTPanorama@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "CTTPanorama@2x.jpg"; sourceTree = "<group>"; };
-		88B9B43018B67C3D004F36D8 /* S007 Quarry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S007 Quarry.jpg"; sourceTree = "<group>"; };
-		88B9B43118B67C3D004F36D8 /* R007 Quarry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R007 Quarry.jpg"; sourceTree = "<group>"; };
-		88B9B43218B67C3D004F36D8 /* R007 Quarry@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R007 Quarry@2x.jpg"; sourceTree = "<group>"; };
-		88B9B43318B67C3D004F36D8 /* R007 Quarry-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R007 Quarry-568h@2x.jpg"; sourceTree = "<group>"; };
-		88B9B43418B67C3D004F36D8 /* S006 Leiden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S006 Leiden.jpg"; sourceTree = "<group>"; };
-		88B9B43518B67C3D004F36D8 /* R006 Leiden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R006 Leiden.jpg"; sourceTree = "<group>"; };
-		88B9B43618B67C3D004F36D8 /* R006 Leiden@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R006 Leiden@2x.jpg"; sourceTree = "<group>"; };
-		88B9B43718B67C3D004F36D8 /* R006 Leiden-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R006 Leiden-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43018B67C3D004F36D8 /* S006 Quarry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S006 Quarry.jpg"; sourceTree = "<group>"; };
+		88B9B43118B67C3D004F36D8 /* R006 Quarry.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R006 Quarry.jpg"; sourceTree = "<group>"; };
+		88B9B43218B67C3D004F36D8 /* R006 Quarry@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R006 Quarry@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43318B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R006 Quarry-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43418B67C3D004F36D8 /* S005 Leiden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S005 Leiden.jpg"; sourceTree = "<group>"; };
+		88B9B43518B67C3D004F36D8 /* R005 Leiden.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R005 Leiden.jpg"; sourceTree = "<group>"; };
+		88B9B43618B67C3D004F36D8 /* R005 Leiden@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R005 Leiden@2x.jpg"; sourceTree = "<group>"; };
+		88B9B43718B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R005 Leiden-568h@2x.jpg"; sourceTree = "<group>"; };
 		88B9B43818B67C3D004F36D8 /* S004 Trenton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S004 Trenton.jpg"; sourceTree = "<group>"; };
 		88B9B43918B67C3D004F36D8 /* R004 Trenton.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R004 Trenton.jpg"; sourceTree = "<group>"; };
 		88B9B43A18B67C3D004F36D8 /* R004 Trenton@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R004 Trenton@2x.jpg"; sourceTree = "<group>"; };
 		88B9B43B18B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R004 Trenton-568h@2x.jpg"; sourceTree = "<group>"; };
 		88B9B44818B6804B004F36D8 /* CTTPano.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CTTPano.jpg; sourceTree = "<group>"; };
+		88B9B44A18B68565004F36D8 /* R007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R007.jpg; sourceTree = "<group>"; };
 		88EE98E418AA790E00351DD2 /* CTTRocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTTRocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88EE98E718AA790E00351DD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88EE98E918AA790E00351DD2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -956,14 +956,15 @@
 				88B9B40D18B5D0E0004F36D8 /* R002 Washingtons Landing Place.jpg */,
 				88B9B41418B5D119004F36D8 /* R002 Washingtons Landing Place-568h@2x.jpg */,
 				88B9B40E18B5D0E0004F36D8 /* R002 Washingtons Landing Place@2x.jpg */,
-				88B9B43018B67C3D004F36D8 /* S007 Quarry.jpg */,
-				88B9B43118B67C3D004F36D8 /* R007 Quarry.jpg */,
-				88B9B43218B67C3D004F36D8 /* R007 Quarry@2x.jpg */,
-				88B9B43318B67C3D004F36D8 /* R007 Quarry-568h@2x.jpg */,
-				88B9B43418B67C3D004F36D8 /* S006 Leiden.jpg */,
-				88B9B43518B67C3D004F36D8 /* R006 Leiden.jpg */,
-				88B9B43618B67C3D004F36D8 /* R006 Leiden@2x.jpg */,
-				88B9B43718B67C3D004F36D8 /* R006 Leiden-568h@2x.jpg */,
+				88B9B43018B67C3D004F36D8 /* S006 Quarry.jpg */,
+				88B9B43118B67C3D004F36D8 /* R006 Quarry.jpg */,
+				88B9B43218B67C3D004F36D8 /* R006 Quarry@2x.jpg */,
+				88B9B43318B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg */,
+				88B9B44A18B68565004F36D8 /* R007.jpg */,
+				88B9B43418B67C3D004F36D8 /* S005 Leiden.jpg */,
+				88B9B43518B67C3D004F36D8 /* R005 Leiden.jpg */,
+				88B9B43618B67C3D004F36D8 /* R005 Leiden@2x.jpg */,
+				88B9B43718B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg */,
 				88B9B43818B67C3D004F36D8 /* S004 Trenton.jpg */,
 				88B9B43918B67C3D004F36D8 /* R004 Trenton.jpg */,
 				88B9B43A18B67C3D004F36D8 /* R004 Trenton@2x.jpg */,
@@ -1532,11 +1533,11 @@
 				88EE9A4218ABF43300351DD2 /* B075.jpg in Resources */,
 				88F651E218B25EF6009074BE /* Text124_Bloody Nose Ridge.rtf in Resources */,
 				88F651A818B25EF6009074BE /* Text066_Mount McKinley.rtf in Resources */,
-				88B9B44018B67C3D004F36D8 /* S006 Leiden.jpg in Resources */,
+				88B9B44018B67C3D004F36D8 /* S005 Leiden.jpg in Resources */,
 				88F651AA18B25EF6009074BE /* Text068_The White House.rtf in Resources */,
 				88F651EE18B25EF6009074BE /* Text136_Mount Rainier.rtf in Resources */,
 				88EE9AB118ABF47C00351DD2 /* R011.jpg in Resources */,
-				88B9B44118B67C3D004F36D8 /* R006 Leiden.jpg in Resources */,
+				88B9B44118B67C3D004F36D8 /* R005 Leiden.jpg in Resources */,
 				88EE9A7B18ABF43300351DD2 /* B132.jpg in Resources */,
 				88F651A018B25EF6009074BE /* Text058_Union Stockyard Gate.rtf in Resources */,
 				88EE9AB018ABF47C00351DD2 /* R010.jpg in Resources */,
@@ -1569,9 +1570,10 @@
 				88F6518318B25EF6009074BE /* Text029_Edinburgh Castle.rtf in Resources */,
 				88F6522B18B42E92009074BE /* B002 Washingtons Landing Place - Delaware River, New Jersey.jpg in Resources */,
 				88EE9A5018ABF43300351DD2 /* B089.jpg in Resources */,
+				88B9B44B18B68565004F36D8 /* R007.jpg in Resources */,
 				88EE9A6518ABF43300351DD2 /* B110.jpg in Resources */,
 				88EE9A6A18ABF43300351DD2 /* B115.jpg in Resources */,
-				88B9B43E18B67C3D004F36D8 /* R007 Quarry@2x.jpg in Resources */,
+				88B9B43E18B67C3D004F36D8 /* R006 Quarry@2x.jpg in Resources */,
 				88F6519818B25EF6009074BE /* Text050_Tower of Tears.rtf in Resources */,
 				88EE9A5718ABF43300351DD2 /* B096.jpg in Resources */,
 				88EE9A6F18ABF43300351DD2 /* B120.jpg in Resources */,
@@ -1588,7 +1590,7 @@
 				88EE98F218AA790E00351DD2 /* InfoPlist.strings in Resources */,
 				88F651D618B25EF6009074BE /* Text112_Tawasa.rtf in Resources */,
 				88EE9A6218ABF43300351DD2 /* B107.jpg in Resources */,
-				88B9B43C18B67C3D004F36D8 /* S007 Quarry.jpg in Resources */,
+				88B9B43C18B67C3D004F36D8 /* S006 Quarry.jpg in Resources */,
 				88F6523F18B47760009074BE /* B023 The Berlin Wall.jpg in Resources */,
 				88F6522C18B42E92009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg in Resources */,
 				88F651D218B25EF6009074BE /* Text108_Cumberland Gap.rtf in Resources */,
@@ -1653,7 +1655,7 @@
 				88EE9A7918ABF43300351DD2 /* B130.jpg in Resources */,
 				88F651B618B25EF6009074BE /* Text080_Dome of St. Peter’s Basilica.rtf in Resources */,
 				88F651FC18B25EF6009074BE /* Text150_Moon.rtf in Resources */,
-				88B9B43F18B67C3D004F36D8 /* R007 Quarry-568h@2x.jpg in Resources */,
+				88B9B43F18B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg in Resources */,
 				88EE9A2C18ABF43300351DD2 /* B053.jpg in Resources */,
 				88F651AF18B25EF6009074BE /* Text073_Holy Door St. Peter’s Basilica.rtf in Resources */,
 				88F651B018B25EF6009074BE /* Text074_Monastery of Saint Michael.rtf in Resources */,
@@ -1722,11 +1724,10 @@
 				88F651C718B25EF6009074BE /* Text097_Old Fur Trading Post.rtf in Resources */,
 				88EE9A3118ABF43300351DD2 /* B058.jpg in Resources */,
 				88EE9AC518ABF47C00351DD2 /* R031.jpg in Resources */,
-				88B9B42F18B6706E004F36D8 /* CTTPanorama@2x.jpg in Resources */,
-				88B9B43D18B67C3D004F36D8 /* R007 Quarry.jpg in Resources */,
+				88B9B43D18B67C3D004F36D8 /* R006 Quarry.jpg in Resources */,
 				1864398C18B4277000EFFB9D /* #2.png in Resources */,
 				88F6516C18B25EF6009074BE /* Text006_Mount Pentelicus.rtf in Resources */,
-				88B9B44318B67C3D004F36D8 /* R006 Leiden-568h@2x.jpg in Resources */,
+				88B9B44318B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg in Resources */,
 				88EE9A2A18ABF43300351DD2 /* B051.jpg in Resources */,
 				88EE9A3A18ABF43300351DD2 /* B067.jpg in Resources */,
 				1864398E18B4277000EFFB9D /* #3.png in Resources */,
@@ -1735,7 +1736,7 @@
 				1864399218B4277000EFFB9D /* #5.png in Resources */,
 				88F6524F18B47760009074BE /* B039 Fort_Santiago_1880_gate.jpg in Resources */,
 				88F6517618B25EF6009074BE /* Text016_Abraham Lincoln’s original tomb.rtf in Resources */,
-				88B9B44218B67C3D004F36D8 /* R006 Leiden@2x.jpg in Resources */,
+				88B9B44218B67C3D004F36D8 /* R005 Leiden@2x.jpg in Resources */,
 				88F651F918B25EF6009074BE /* Text147_Boston Avenue Church.rtf in Resources */,
 				88F6518818B25EF6009074BE /* Text034_Fort San Antonio Abad.rtf in Resources */,
 				88EE9A6418ABF43300351DD2 /* B109.jpg in Resources */,
