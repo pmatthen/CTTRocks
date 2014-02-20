@@ -97,12 +97,11 @@
     [self setupNavbarGestureRecognizer];
     
     UIImage *image;
- //   image = [UIImage imageNamed:@"Estrella.jpg"];
-    image = [UIImage imageNamed:@"CTTPanorama.jpg"];
-//
+    image = [UIImage imageNamed:@"CTTPano.jpg"];
     imageView = [[UIImageView alloc] initWithImage:image];
     [myPanoramicScrollview addSubview:imageView];
     myPanoramicScrollview.contentSize = imageView.frame.size;
+    NSLog(@"Panoramic ScrollView contentSize X = %f", myPanoramicScrollview.contentSize.width);
     imageView.contentMode = UIViewContentModeScaleAspectFill;
     myPanoramicScrollview.delegate = self;
     myPanoramicScrollview.tag = 4;
@@ -157,7 +156,7 @@
 
 -(void)checkMyPanoramicScrollViewContentOffset
 {
-    if (myPanoramicScrollview.contentOffset.x <= 1240) {
+    if (myPanoramicScrollview.contentOffset.x <= 5840) {
         buttonIndicator1.hidden = YES;
         buttonIndication1.hidden = NO;
     } else {
@@ -165,7 +164,7 @@
         buttonIndication1.hidden = YES;
     }
     
-    if ((myPanoramicScrollview.contentOffset.x > 1240) && (myPanoramicScrollview.contentOffset.x <= 5190)) {
+    if ((myPanoramicScrollview.contentOffset.x > 5840) && (myPanoramicScrollview.contentOffset.x <= 7485)) {
         buttonIndicator2.hidden = YES;
         buttonIndication2.hidden = NO;
     } else {
@@ -173,7 +172,7 @@
         buttonIndication2.hidden = YES;
     }
     
-    if ((myPanoramicScrollview.contentOffset.x > 5190) && (myPanoramicScrollview.contentOffset.x <= 7490)) {
+    if ((myPanoramicScrollview.contentOffset.x > 7485) && (myPanoramicScrollview.contentOffset.x <= 9690)) {
         buttonIndicator3.hidden = YES;
         buttonIndication3.hidden = NO;
     } else {
@@ -181,7 +180,7 @@
         buttonIndication3.hidden = YES;
     }
     
-    if ((myPanoramicScrollview.contentOffset.x > 7490) && (myPanoramicScrollview.contentOffset.x <= 9000)) {
+    if ((myPanoramicScrollview.contentOffset.x > 9690) && (myPanoramicScrollview.contentOffset.x <= 10780)) {
         buttonIndicator4.hidden = YES;
         buttonIndication4.hidden = NO;
     } else {
@@ -189,14 +188,14 @@
         buttonIndication4.hidden = YES;
     }
     
-    if ((myPanoramicScrollview.contentOffset.x > 9000) && (myPanoramicScrollview.contentOffset.x < 11980)) {
+    if ((myPanoramicScrollview.contentOffset.x > 10780) && (myPanoramicScrollview.contentOffset.x < 12415)) {
         buttonIndicator5.hidden = YES;
         buttonIndication5.hidden = NO;
     } else {
         buttonIndicator5.hidden = NO;
         buttonIndication5.hidden = YES;
     }
-    if (myPanoramicScrollview.contentOffset.x >= 11980) {
+    if (myPanoramicScrollview.contentOffset.x >= 12415) {
         buttonIndicator6.hidden = YES;
         buttonIndication6.hidden = NO;
     } else {
@@ -227,6 +226,18 @@
         }
         scrollView.userInteractionEnabled = YES;
     }
+}
+
+-(void)determinePositionOnPanorama
+{
+    // the current page of myScrollView determines where the PanoramicScrollView's offset will be set
+}
+
+-(void)determinePositionOnScrollView
+{
+    
+
+    
 }
 
 -(void)photoLayout:(int)photoPage
@@ -557,27 +568,27 @@
 {
     switch (button.tag) {
         case 1:
-            myPanoramicScrollview.contentOffset = CGPointMake(1240, self.view.frame.size.width/2);
+            myPanoramicScrollview.contentOffset = CGPointMake(0, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 2:
-            myPanoramicScrollview.contentOffset = CGPointMake(5190, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(5841, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 3:
-            myPanoramicScrollview.contentOffset = CGPointMake(7490, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(7486, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 4:
-            myPanoramicScrollview.contentOffset = CGPointMake(9000, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(9691, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 5:
-            myPanoramicScrollview.contentOffset = CGPointMake(10000, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(10781, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 6:
-            myPanoramicScrollview.contentOffset = CGPointMake(11980, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(12416, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         default:
