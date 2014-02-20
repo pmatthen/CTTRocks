@@ -161,6 +161,50 @@
             endingLineNumber = "113"
             landmarkName = "-searchBarCancelButtonClicked:"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__61-[MainCollectionViewController searchBarCancelButtonClicked:]_block_invoke"
+                  moduleName = "CTTRocks"
+                  urlString = "file:///Users/jhilbert/Documents/XCodeProjects/CTTRocks/CTTRocks/CTTRocks/MainCollectionViewController.m"
+                  timestampString = "414607141.198342"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "173">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__copy_helper_block_61"
+                  moduleName = "CTTRocks"
+                  urlString = "file:///Users/jhilbert/Documents/XCodeProjects/CTTRocks/CTTRocks/CTTRocks/MainCollectionViewController.m"
+                  timestampString = "414607141.198496"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "18">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__destroy_helper_block_62"
+                  moduleName = "CTTRocks"
+                  urlString = "file:///Users/jhilbert/Documents/XCodeProjects/CTTRocks/CTTRocks/CTTRocks/MainCollectionViewController.m"
+                  timestampString = "414607141.198652"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "113"
+                  endingLineNumber = "113"
+                  offsetFromSymbolStart = "17">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy

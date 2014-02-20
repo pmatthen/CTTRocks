@@ -98,7 +98,7 @@
     
     UIImage *image;
  //   image = [UIImage imageNamed:@"Estrella.jpg"];
-    image = [UIImage imageNamed:@"CTTPano.jpg"];
+    image = [UIImage imageNamed:@"CTTPanorama.jpg"];
 //
     imageView = [[UIImageView alloc] initWithImage:image];
     [myPanoramicScrollview addSubview:imageView];
