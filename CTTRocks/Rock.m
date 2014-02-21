@@ -86,7 +86,7 @@ static NSArray *assestPaths;
             rock.state = rocksCSV[i][3];
             rock.location = rocksCSV[i][4];
             NSString *positionOnFacadeString = rocksCSV[i][5];
-            rock.positionOnFacade = arc4random_uniform(15000);
+            rock.positionOnFacade = [positionOnFacadeString integerValue];
 //            positionOnFacadeString.integerValue;
             
             [rocks addObject:rock];
@@ -97,6 +97,21 @@ static NSArray *assestPaths;
         [self loadImages];
         assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"rtf" inDirectory:nil];
         [self loadTexts];
+        
+        rocks  = [rocks sortedArrayUsingComparator:^NSComparisonResult(Rock *rock1, Rock *rock2) {
+            int location1 = rock1.positionOnFacade;
+            int location2 = rock2.positionOnFacade;
+            
+            if (location1 > location2) {
+                return NSOrderedDescending;
+            }
+            if (location1 < location2) {
+                return NSOrderedAscending;
+            }
+            
+            return NSOrderedSame;
+        }];
+
     });
     
     return rocks;
