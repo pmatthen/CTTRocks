@@ -10,6 +10,7 @@
 #import "RocksScrollViewController.h"
 #import "CTTCollectionViewCell.h"
 #import "Rock.h"
+#import "WelcomeViewController.h"
 
 @interface MainCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 

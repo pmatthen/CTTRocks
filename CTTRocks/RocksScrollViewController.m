@@ -60,7 +60,7 @@
 {
     [super viewDidLoad];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1] /*#084283*/];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1.0] /*#084283*/];
   
 
     if (!self.selectedRock) {

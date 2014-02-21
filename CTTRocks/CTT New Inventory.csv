@@ -1,9 +1,9 @@
 Number;Title;Country;State;Location;PositionInFacade;
-1;Battlefield of Princeton;USA;New Jersey;;14650;
-2;Washington’s Landing Place;USA;New Jersey;Delaware River;300;
-3;The Cathedral of Reims;France;;;440;
-4;The Battle of Trenton;USA;New Jersey;;100;
-5;Pilgrims’ Settlement;Netherlands;;Leiden;100;
+1;Battlefield of Princeton;USA;New Jersey;;14930;
+2;Washington’s Landing Place;USA;New Jersey;Delaware River;14654;
+3;The Cathedral of Reims;France;;;14476;
+4;The Battle of Trenton;USA;New Jersey;;14234;
+5;Pilgrims’ Settlement;Netherlands;;Leiden;14030;
 6;Mount Pentelicus Quarry;Greece;;;100;
 7;Fortress Walls;Colombia;;Cartagena;100;
 8;Butter Tower;France;;Rouen;100;
