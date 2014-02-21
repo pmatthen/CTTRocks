@@ -241,15 +241,17 @@
 {
     if (scrollView.tag == 5) {
         currentPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
+        NSLog(@"current page = %d", currentPage);
         Rock *rock;
         rock = rockArray[currentPage];
         NSLog(@"position on facade = %i", rock.positionOnFacade);
+        NSLog(@"currentpage = %i, previouspage = %d", currentPage, previousPage);
         if (currentPage != previousPage) {
             if (currentPage > previousPage) {
-                [self swipePhoto:(currentPage - 4) andAdd:(currentPage + 3)];
+                [self swipePhoto:(currentPage - 2) andAdd:(currentPage + 1)];
             }
             if (currentPage < previousPage) {
-                [self swipePhoto:(currentPage + 4) andAdd:(currentPage - 3)];
+                [self swipePhoto:(currentPage + 2) andAdd:(currentPage - 1)];
             }
             previousPage = currentPage;
         }
@@ -259,11 +261,13 @@
 
 -(void)determinePositionOnPanorama
 {
-    Rock *rock = rockArray[currentPage];
-    
-    if (rock.positionOnFacade < self.view.frame.size.width/2) {
+    NSLog(@"myscrollview.contentoffset.x = %f", myScrollView.contentOffset.x);
+    NSLog(@"previouspage = %d", previousPage);
+    Rock *rock = rockArray[previousPage];
+    NSLog(@"self.view.frame.size.width/2 = %f", self.view.frame.size.width/2);
+    if ((rock.positionOnFacade - self.view.frame.size.width/2) < 0) {
         myPanoramicScrollview.contentOffset = CGPointMake(0, 50);
-    } else if (rock.positionOnFacade > (myPanoramicScrollview.contentSize.width - (self.view.frame.size.width/2))) {
+    } else if ((rock.positionOnFacade - self.view.frame.size.width/2) > (myPanoramicScrollview.contentSize.width - self.view.frame.size.width)) {
         myPanoramicScrollview.contentOffset = CGPointMake(myPanoramicScrollview.contentSize.width - (self.view.frame.size.width), 50);
     }  else {
         myPanoramicScrollview.contentOffset = CGPointMake(rock.positionOnFacade - (self.view.frame.size.width/2), 50);
@@ -273,9 +277,10 @@
 
 -(void)determinePositionOnScrollView
 {
+    NSLog(@"%f > %f", (myPanoramicScrollview.contentOffset.x - self.view.frame.size.width/2), (myPanoramicScrollview.contentSize.width - self.view.frame.size.width/2));
     if (myPanoramicScrollview.contentOffset.x < (self.view.frame.size.width/2)) {
         self.selectedRock = 0;
-    } else if (myPanoramicScrollview.contentOffset.x > (myPanoramicScrollview.contentSize.width - (self.view.frame.size.width/2))) {
+    } else if (myPanoramicScrollview.contentOffset.x > 14400) {
         self.selectedRock = rockArray.count - 1;
     } else {
         Rock *rock;
@@ -284,43 +289,44 @@
             self.selectedRock = 0;
         }
         rock = rockArray[rockArray.count - 1];
-        if (myPanoramicScrollview.contentOffset.x > rock.positionOnFacade) {
+        if ((myPanoramicScrollview.contentOffset.x - self.view.frame.size.width) > (rock.positionOnFacade - self.view.frame.size.width/2)) {
             self.selectedRock = rockArray.count - 1;
         } else {
             for (int n = 1; n < (rockArray.count - 1); n++) {
                 Rock *previousRock = rockArray[n - 1];
                 Rock *nextRock = rockArray[n + 1];
                 rock = rockArray[n];
-                if ((myPanoramicScrollview.contentOffset.x > previousRock.positionOnFacade) && (myPanoramicScrollview.contentOffset.x < nextRock.positionOnFacade) ) {
+                if (((myPanoramicScrollview.contentOffset.x + self.view.frame.size.width/2) > previousRock.positionOnFacade) && ((myPanoramicScrollview.contentOffset.x + self.view.frame.size.width/2) < nextRock.positionOnFacade) ) {
                     self.selectedRock = n;
                 }
             }
         }
     }
-    NSLog(@"self.selectedRock = %i", self.selectedRock);
+    previousPage = self.selectedRock;
     [self resetScrollView];
+    NSLog(@"self.selectedrock = %i", self.selectedRock);
+    NSLog(@"myscrollview.contentoffset.x = %f", myScrollView.contentOffset.x);
+    NSLog(@"myscrollview.contentsize.width = %f",myScrollView.contentSize.width);
 }
 
 -(void)photoLayout:(int)photoPage
 {
-    for (int n = 3; n > 0; n--) {
-        if ((photoPage - n) >= 0) {
-            [self drawPhotos:(photoPage - n)];
-        }
+    if ((photoPage - 1) >= 0) {
+        [self drawPhotos:(photoPage - 1)];
     }
+    
     if (rockArray[photoPage]) {
         [self drawPhotos:photoPage];
     }
     
-    for (int n = 1; n < 4; n++) {
-        if ( ((photoPage + n) < rockArray.count) ) {
-            [self drawPhotos:(photoPage + n)];
-        }
+    if ( ((photoPage + 1) < rockArray.count) ) {
+        [self drawPhotos:(photoPage + 1)];
     }
 }
 
 -(void)drawPhotos:(int)sub
 {
+    NSLog(@"drawing photo at sub %i", sub);
     Rock *rock;
     
     rock = rockArray[sub];
@@ -488,7 +494,7 @@
     [topDownMapOverlay removeFromSuperview];
     
     if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
-        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight)) {
+        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown)) {
         [self.navigationController setNavigationBarHidden:YES animated:NO];
         currentOrientation = 1;
         
@@ -498,8 +504,6 @@
         
         myScrollView.hidden = YES;
         myPanoramicScrollview.hidden = NO;
-        imageView.contentMode = UIViewContentModeScaleToFill;
-        myScrollView.contentSize = imageView.frame.size;
         
         button1 = [UIButton buttonWithType:UIButtonTypeCustom];
         button2 = [UIButton buttonWithType:UIButtonTypeCustom];

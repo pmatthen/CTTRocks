@@ -214,11 +214,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CTTRocks/Rock.m"
-            timestampString = "414343874.956504"
+            timestampString = "414716455.441735"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "146"
-            endingLineNumber = "146">
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "+rocksFiltered:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
