@@ -86,7 +86,7 @@ static NSArray *assestPaths;
             rock.state = rocksCSV[i][3];
             rock.location = rocksCSV[i][4];
             NSString *positionOnFacadeString = rocksCSV[i][5];
-            rock.positionOnFacade = arc4random_uniform(15000);
+            rock.positionOnFacade = [positionOnFacadeString intValue];
 //            positionOnFacadeString.integerValue;
             
             [rocks addObject:rock];

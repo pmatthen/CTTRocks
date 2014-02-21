@@ -48,7 +48,27 @@
 		88B9B44618B67C3D004F36D8 /* R004 Trenton@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43A18B67C3D004F36D8 /* R004 Trenton@2x.jpg */; };
 		88B9B44718B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B43B18B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg */; };
 		88B9B44918B6804B004F36D8 /* CTTPano.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44818B6804B004F36D8 /* CTTPano.jpg */; };
-		88B9B44B18B68565004F36D8 /* R007.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44A18B68565004F36D8 /* R007.jpg */; };
+		88B9B46118B80A3C004F36D8 /* R007 Fortress-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44C18B80A3C004F36D8 /* R007 Fortress-568h@2x.jpg */; };
+		88B9B46218B80A3C004F36D8 /* R007 Fortress.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44D18B80A3C004F36D8 /* R007 Fortress.jpg */; };
+		88B9B46318B80A3C004F36D8 /* R007 Fortress@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44E18B80A3C004F36D8 /* R007 Fortress@2x.jpg */; };
+		88B9B46418B80A3C004F36D8 /* R008 Butter Tower-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B44F18B80A3C004F36D8 /* R008 Butter Tower-568h@2x.jpg */; };
+		88B9B46518B80A3C004F36D8 /* R008 Butter Tower.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45018B80A3C004F36D8 /* R008 Butter Tower.jpg */; };
+		88B9B46618B80A3C004F36D8 /* R008 Butter Tower@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45118B80A3C004F36D8 /* R008 Butter Tower@2x.jpg */; };
+		88B9B46718B80A3C004F36D8 /* R009 Suleiman-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45218B80A3C004F36D8 /* R009 Suleiman-568h@2x.jpg */; };
+		88B9B46818B80A3C004F36D8 /* R009 Suleiman.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45318B80A3C004F36D8 /* R009 Suleiman.jpg */; };
+		88B9B46918B80A3C004F36D8 /* R009 Suleiman@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45418B80A3C004F36D8 /* R009 Suleiman@2x.jpg */; };
+		88B9B46A18B80A3C004F36D8 /* R010 WTC-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45518B80A3C004F36D8 /* R010 WTC-568h@2x.jpg */; };
+		88B9B46B18B80A3C004F36D8 /* R010 WTC.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45618B80A3C004F36D8 /* R010 WTC.jpg */; };
+		88B9B46C18B80A3C004F36D8 /* R010 WTC@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45718B80A3C004F36D8 /* R010 WTC@2x.jpg */; };
+		88B9B46D18B80A3C004F36D8 /* R011 ForbiddenCity-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45818B80A3C004F36D8 /* R011 ForbiddenCity-568h@2x.jpg */; };
+		88B9B46E18B80A3C004F36D8 /* R011 ForbiddenCity.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45918B80A3C004F36D8 /* R011 ForbiddenCity.jpg */; };
+		88B9B46F18B80A3C004F36D8 /* R011 ForbiddenCity@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45A18B80A3C004F36D8 /* R011 ForbiddenCity@2x.jpg */; };
+		88B9B47018B80A3C004F36D8 /* R012 Ehrenbreitstein-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45B18B80A3C004F36D8 /* R012 Ehrenbreitstein-568h@2x.jpg */; };
+		88B9B47118B80A3C004F36D8 /* R012 Ehrenbreitstein.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45C18B80A3C004F36D8 /* R012 Ehrenbreitstein.jpg */; };
+		88B9B47218B80A3C004F36D8 /* R012 Ehrenbreitstein@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45D18B80A3C004F36D8 /* R012 Ehrenbreitstein@2x.jpg */; };
+		88B9B47318B80A3C004F36D8 /* R013 Panama-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45E18B80A3C004F36D8 /* R013 Panama-568h@2x.jpg */; };
+		88B9B47418B80A3C004F36D8 /* R013 Panama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B45F18B80A3C004F36D8 /* R013 Panama.jpg */; };
+		88B9B47518B80A3C004F36D8 /* R013 Panama@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B46018B80A3C004F36D8 /* R013 Panama@2x.jpg */; };
 		88EE98E818AA790E00351DD2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE98E718AA790E00351DD2 /* Foundation.framework */; };
 		88EE98EA18AA790E00351DD2 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE98E918AA790E00351DD2 /* CoreGraphics.framework */; };
 		88EE98EC18AA790E00351DD2 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88EE98EB18AA790E00351DD2 /* UIKit.framework */; };
@@ -167,12 +187,6 @@
 		88EE9A8418ABF43300351DD2 /* B141.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE99F518ABF43300351DD2 /* B141.jpg */; };
 		88EE9A8518ABF43300351DD2 /* B142.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE99F618ABF43300351DD2 /* B142.jpg */; };
 		88EE9A8618ABF43300351DD2 /* B143.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE99F718ABF43300351DD2 /* B143.jpg */; };
-		88EE9AAE18ABF47C00351DD2 /* R008.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A8E18ABF47C00351DD2 /* R008.jpg */; };
-		88EE9AAF18ABF47C00351DD2 /* R009.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A8F18ABF47C00351DD2 /* R009.jpg */; };
-		88EE9AB018ABF47C00351DD2 /* R010.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A9018ABF47C00351DD2 /* R010.jpg */; };
-		88EE9AB118ABF47C00351DD2 /* R011.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A9118ABF47C00351DD2 /* R011.jpg */; };
-		88EE9AB218ABF47C00351DD2 /* R012.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A9218ABF47C00351DD2 /* R012.jpg */; };
-		88EE9AB318ABF47C00351DD2 /* R013.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A9318ABF47C00351DD2 /* R013.jpg */; };
 		88EE9AB418ABF47C00351DD2 /* R014.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A9418ABF47C00351DD2 /* R014.jpg */; };
 		88EE9AB518ABF47C00351DD2 /* R015.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A9518ABF47C00351DD2 /* R015.jpg */; };
 		88EE9AB618ABF47C00351DD2 /* R016.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88EE9A9618ABF47C00351DD2 /* R016.jpg */; };
@@ -445,7 +459,27 @@
 		88B9B43A18B67C3D004F36D8 /* R004 Trenton@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R004 Trenton@2x.jpg"; sourceTree = "<group>"; };
 		88B9B43B18B67C3D004F36D8 /* R004 Trenton-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R004 Trenton-568h@2x.jpg"; sourceTree = "<group>"; };
 		88B9B44818B6804B004F36D8 /* CTTPano.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CTTPano.jpg; sourceTree = "<group>"; };
-		88B9B44A18B68565004F36D8 /* R007.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R007.jpg; sourceTree = "<group>"; };
+		88B9B44C18B80A3C004F36D8 /* R007 Fortress-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R007 Fortress-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B44D18B80A3C004F36D8 /* R007 Fortress.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R007 Fortress.jpg"; sourceTree = "<group>"; };
+		88B9B44E18B80A3C004F36D8 /* R007 Fortress@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R007 Fortress@2x.jpg"; sourceTree = "<group>"; };
+		88B9B44F18B80A3C004F36D8 /* R008 Butter Tower-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R008 Butter Tower-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45018B80A3C004F36D8 /* R008 Butter Tower.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R008 Butter Tower.jpg"; sourceTree = "<group>"; };
+		88B9B45118B80A3C004F36D8 /* R008 Butter Tower@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R008 Butter Tower@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45218B80A3C004F36D8 /* R009 Suleiman-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R009 Suleiman-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45318B80A3C004F36D8 /* R009 Suleiman.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R009 Suleiman.jpg"; sourceTree = "<group>"; };
+		88B9B45418B80A3C004F36D8 /* R009 Suleiman@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R009 Suleiman@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45518B80A3C004F36D8 /* R010 WTC-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R010 WTC-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45618B80A3C004F36D8 /* R010 WTC.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R010 WTC.jpg"; sourceTree = "<group>"; };
+		88B9B45718B80A3C004F36D8 /* R010 WTC@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R010 WTC@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45818B80A3C004F36D8 /* R011 ForbiddenCity-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R011 ForbiddenCity-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45918B80A3C004F36D8 /* R011 ForbiddenCity.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R011 ForbiddenCity.jpg"; sourceTree = "<group>"; };
+		88B9B45A18B80A3C004F36D8 /* R011 ForbiddenCity@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R011 ForbiddenCity@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45B18B80A3C004F36D8 /* R012 Ehrenbreitstein-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R012 Ehrenbreitstein-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45C18B80A3C004F36D8 /* R012 Ehrenbreitstein.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R012 Ehrenbreitstein.jpg"; sourceTree = "<group>"; };
+		88B9B45D18B80A3C004F36D8 /* R012 Ehrenbreitstein@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R012 Ehrenbreitstein@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45E18B80A3C004F36D8 /* R013 Panama-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R013 Panama-568h@2x.jpg"; sourceTree = "<group>"; };
+		88B9B45F18B80A3C004F36D8 /* R013 Panama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R013 Panama.jpg"; sourceTree = "<group>"; };
+		88B9B46018B80A3C004F36D8 /* R013 Panama@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R013 Panama@2x.jpg"; sourceTree = "<group>"; };
 		88EE98E418AA790E00351DD2 /* CTTRocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CTTRocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88EE98E718AA790E00351DD2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		88EE98E918AA790E00351DD2 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -570,12 +604,6 @@
 		88EE99F518ABF43300351DD2 /* B141.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B141.jpg; sourceTree = "<group>"; };
 		88EE99F618ABF43300351DD2 /* B142.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B142.jpg; sourceTree = "<group>"; };
 		88EE99F718ABF43300351DD2 /* B143.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = B143.jpg; sourceTree = "<group>"; };
-		88EE9A8E18ABF47C00351DD2 /* R008.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R008.jpg; sourceTree = "<group>"; };
-		88EE9A8F18ABF47C00351DD2 /* R009.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R009.jpg; sourceTree = "<group>"; };
-		88EE9A9018ABF47C00351DD2 /* R010.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R010.jpg; sourceTree = "<group>"; };
-		88EE9A9118ABF47C00351DD2 /* R011.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R011.jpg; sourceTree = "<group>"; };
-		88EE9A9218ABF47C00351DD2 /* R012.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R012.jpg; sourceTree = "<group>"; };
-		88EE9A9318ABF47C00351DD2 /* R013.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R013.jpg; sourceTree = "<group>"; };
 		88EE9A9418ABF47C00351DD2 /* R014.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R014.jpg; sourceTree = "<group>"; };
 		88EE9A9518ABF47C00351DD2 /* R015.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R015.jpg; sourceTree = "<group>"; };
 		88EE9A9618ABF47C00351DD2 /* R016.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = R016.jpg; sourceTree = "<group>"; };
@@ -960,7 +988,6 @@
 				88B9B43118B67C3D004F36D8 /* R006 Quarry.jpg */,
 				88B9B43218B67C3D004F36D8 /* R006 Quarry@2x.jpg */,
 				88B9B43318B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg */,
-				88B9B44A18B68565004F36D8 /* R007.jpg */,
 				88B9B43418B67C3D004F36D8 /* S005 Leiden.jpg */,
 				88B9B43518B67C3D004F36D8 /* R005 Leiden.jpg */,
 				88B9B43618B67C3D004F36D8 /* R005 Leiden@2x.jpg */,
@@ -973,12 +1000,27 @@
 				88B9B41718B5D941004F36D8 /* R003 Reims@2x.jpg */,
 				88B9B41818B5D941004F36D8 /* R003 Reims.jpg */,
 				88B9B41918B5D941004F36D8 /* R003 Reims-568h@2x.jpg */,
-				88EE9A8E18ABF47C00351DD2 /* R008.jpg */,
-				88EE9A8F18ABF47C00351DD2 /* R009.jpg */,
-				88EE9A9018ABF47C00351DD2 /* R010.jpg */,
-				88EE9A9118ABF47C00351DD2 /* R011.jpg */,
-				88EE9A9218ABF47C00351DD2 /* R012.jpg */,
-				88EE9A9318ABF47C00351DD2 /* R013.jpg */,
+				88B9B44C18B80A3C004F36D8 /* R007 Fortress-568h@2x.jpg */,
+				88B9B44D18B80A3C004F36D8 /* R007 Fortress.jpg */,
+				88B9B44E18B80A3C004F36D8 /* R007 Fortress@2x.jpg */,
+				88B9B44F18B80A3C004F36D8 /* R008 Butter Tower-568h@2x.jpg */,
+				88B9B45018B80A3C004F36D8 /* R008 Butter Tower.jpg */,
+				88B9B45118B80A3C004F36D8 /* R008 Butter Tower@2x.jpg */,
+				88B9B45218B80A3C004F36D8 /* R009 Suleiman-568h@2x.jpg */,
+				88B9B45318B80A3C004F36D8 /* R009 Suleiman.jpg */,
+				88B9B45418B80A3C004F36D8 /* R009 Suleiman@2x.jpg */,
+				88B9B45518B80A3C004F36D8 /* R010 WTC-568h@2x.jpg */,
+				88B9B45618B80A3C004F36D8 /* R010 WTC.jpg */,
+				88B9B45718B80A3C004F36D8 /* R010 WTC@2x.jpg */,
+				88B9B45818B80A3C004F36D8 /* R011 ForbiddenCity-568h@2x.jpg */,
+				88B9B45918B80A3C004F36D8 /* R011 ForbiddenCity.jpg */,
+				88B9B45A18B80A3C004F36D8 /* R011 ForbiddenCity@2x.jpg */,
+				88B9B45B18B80A3C004F36D8 /* R012 Ehrenbreitstein-568h@2x.jpg */,
+				88B9B45C18B80A3C004F36D8 /* R012 Ehrenbreitstein.jpg */,
+				88B9B45D18B80A3C004F36D8 /* R012 Ehrenbreitstein@2x.jpg */,
+				88B9B45E18B80A3C004F36D8 /* R013 Panama-568h@2x.jpg */,
+				88B9B45F18B80A3C004F36D8 /* R013 Panama.jpg */,
+				88B9B46018B80A3C004F36D8 /* R013 Panama@2x.jpg */,
 				88EE9A9418ABF47C00351DD2 /* R014.jpg */,
 				88EE9A9518ABF47C00351DD2 /* R015.jpg */,
 				88EE9A9618ABF47C00351DD2 /* R016.jpg */,
@@ -1408,11 +1450,11 @@
 			files = (
 				88EE9AC018ABF47C00351DD2 /* R026.jpg in Resources */,
 				88F651B918B25EF6009074BE /* Text083_Mark Twain Cave.rtf in Resources */,
-				88EE9AAF18ABF47C00351DD2 /* R009.jpg in Resources */,
 				88EE9A7C18ABF43300351DD2 /* B133.jpg in Resources */,
 				88F651C918B25EF6009074BE /* Text099_Ancient Town Hall.rtf in Resources */,
 				88EE9A8118ABF43300351DD2 /* B138.jpg in Resources */,
 				88F6522818B42E92009074BE /* B005 Pilgrims Settlement - Leyden, Netherlands.jpg in Resources */,
+				88B9B46918B80A3C004F36D8 /* R009 Suleiman@2x.jpg in Resources */,
 				88F651DC18B25EF6009074BE /* Text118_Town Hall Saint-Lô.rtf in Resources */,
 				88EE9AD818AC5EBE00351DD2 /* Flag of United States.png in Resources */,
 				88EE9A6C18ABF43300351DD2 /* B117.jpg in Resources */,
@@ -1437,10 +1479,13 @@
 				88EE9A7E18ABF43300351DD2 /* B135.jpg in Resources */,
 				88EE9A2118ABF43300351DD2 /* B042.jpg in Resources */,
 				88F651B818B25EF6009074BE /* Text082_William Henry Harrison Home.rtf in Resources */,
+				88B9B47118B80A3C004F36D8 /* R012 Ehrenbreitstein.jpg in Resources */,
 				88F6519F18B25EF6009074BE /* Text057_Beaumaris Castle.rtf in Resources */,
 				1864398F18B4277000EFFB9D /* #3blue.png in Resources */,
 				88EE9AB418ABF47C00351DD2 /* R014.jpg in Resources */,
+				88B9B46418B80A3C004F36D8 /* R008 Butter Tower-568h@2x.jpg in Resources */,
 				88EE9A2D18ABF43300351DD2 /* B054.jpg in Resources */,
+				88B9B46C18B80A3C004F36D8 /* R010 WTC@2x.jpg in Resources */,
 				88F651FE18B25F1F009074BE /* CTT New Inventory.csv in Resources */,
 				88F6518718B25EF6009074BE /* Text033_Cologne Cathedral.rtf in Resources */,
 				88EE9A7318ABF43300351DD2 /* B124.jpg in Resources */,
@@ -1456,6 +1501,7 @@
 				88F651B718B25EF6009074BE /* Text081_Fort Ticonderoga.rtf in Resources */,
 				88EE9A7818ABF43300351DD2 /* B129.jpg in Resources */,
 				88EE9A4318ABF43300351DD2 /* B076.jpg in Resources */,
+				88B9B46E18B80A3C004F36D8 /* R011 ForbiddenCity.jpg in Resources */,
 				88F651BB18B25EF6009074BE /* Text085_Independence Hall.rtf in Resources */,
 				88F6524218B47760009074BE /* B025 Taj_Mahal.jpg in Resources */,
 				88EE9A3E18ABF43300351DD2 /* B071.jpg in Resources */,
@@ -1478,6 +1524,7 @@
 				88B9B41C18B5D941004F36D8 /* R003 Reims.jpg in Resources */,
 				88EE9A7A18ABF43300351DD2 /* B131.jpg in Resources */,
 				88F651B518B25EF6009074BE /* Text079_House of Parliament.rtf in Resources */,
+				88B9B47018B80A3C004F36D8 /* R012 Ehrenbreitstein-568h@2x.jpg in Resources */,
 				88EE9AB918ABF47C00351DD2 /* R019.jpg in Resources */,
 				88EE9A6118ABF43300351DD2 /* B106.jpg in Resources */,
 				88F6518F18B25EF6009074BE /* Text041_Ancient Temple Honan Province.rtf in Resources */,
@@ -1509,6 +1556,7 @@
 				88EE9A6918ABF43300351DD2 /* B114.jpg in Resources */,
 				88F651A618B25EF6009074BE /* Text064_McCormick House.rtf in Resources */,
 				88F6524718B47760009074BE /* B031 Wawel_castle.jpg in Resources */,
+				88B9B46718B80A3C004F36D8 /* R009 Suleiman-568h@2x.jpg in Resources */,
 				88F651A718B25EF6009074BE /* Text065_Douglas Hall.rtf in Resources */,
 				88F651E818B25EF6009074BE /* Text130_Anzio Beachhead.rtf in Resources */,
 				88EE9A3018ABF43300351DD2 /* B057.jpg in Resources */,
@@ -1531,18 +1579,16 @@
 				88EE9A2B18ABF43300351DD2 /* B052.jpg in Resources */,
 				88F6518118B25EF6009074BE /* Text027_Massachusetts Hall.rtf in Resources */,
 				88EE9A4218ABF43300351DD2 /* B075.jpg in Resources */,
+				88B9B46618B80A3C004F36D8 /* R008 Butter Tower@2x.jpg in Resources */,
 				88F651E218B25EF6009074BE /* Text124_Bloody Nose Ridge.rtf in Resources */,
 				88F651A818B25EF6009074BE /* Text066_Mount McKinley.rtf in Resources */,
 				88B9B44018B67C3D004F36D8 /* S005 Leiden.jpg in Resources */,
 				88F651AA18B25EF6009074BE /* Text068_The White House.rtf in Resources */,
 				88F651EE18B25EF6009074BE /* Text136_Mount Rainier.rtf in Resources */,
-				88EE9AB118ABF47C00351DD2 /* R011.jpg in Resources */,
 				88B9B44118B67C3D004F36D8 /* R005 Leiden.jpg in Resources */,
 				88EE9A7B18ABF43300351DD2 /* B132.jpg in Resources */,
 				88F651A018B25EF6009074BE /* Text058_Union Stockyard Gate.rtf in Resources */,
-				88EE9AB018ABF47C00351DD2 /* R010.jpg in Resources */,
 				88F6517018B25EF6009074BE /* Text010_World Trade Center.rtf in Resources */,
-				88EE9AAE18ABF47C00351DD2 /* R008.jpg in Resources */,
 				88EE9A5818ABF43300351DD2 /* B097.jpg in Resources */,
 				88F651D518B25EF6009074BE /* Text111_Fort Brady.rtf in Resources */,
 				88F651F818B25EF6009074BE /* Text146_Mesa Verde.rtf in Resources */,
@@ -1570,7 +1616,6 @@
 				88F6518318B25EF6009074BE /* Text029_Edinburgh Castle.rtf in Resources */,
 				88F6522B18B42E92009074BE /* B002 Washingtons Landing Place - Delaware River, New Jersey.jpg in Resources */,
 				88EE9A5018ABF43300351DD2 /* B089.jpg in Resources */,
-				88B9B44B18B68565004F36D8 /* R007.jpg in Resources */,
 				88EE9A6518ABF43300351DD2 /* B110.jpg in Resources */,
 				88EE9A6A18ABF43300351DD2 /* B115.jpg in Resources */,
 				88B9B43E18B67C3D004F36D8 /* R006 Quarry@2x.jpg in Resources */,
@@ -1595,9 +1640,9 @@
 				88F6522C18B42E92009074BE /* B001 Revolutionary War Battlefield - Princeton, New Jersey.jpg in Resources */,
 				88F651D218B25EF6009074BE /* Text108_Cumberland Gap.rtf in Resources */,
 				88EE9A3B18ABF43300351DD2 /* B068.jpg in Resources */,
+				88B9B46F18B80A3C004F36D8 /* R011 ForbiddenCity@2x.jpg in Resources */,
 				88B9B41D18B5D941004F36D8 /* R003 Reims-568h@2x.jpg in Resources */,
 				88EE9A5118ABF43300351DD2 /* B090.jpg in Resources */,
-				88EE9AB318ABF47C00351DD2 /* R013.jpg in Resources */,
 				88F651DD18B25EF6009074BE /* Text119_Omaha Beach.rtf in Resources */,
 				88F651E618B25EF6009074BE /* Text128_Orote Peninsula.rtf in Resources */,
 				88F6525318B47778009074BE /* B021 Wartburg_Eisenach.jpg in Resources */,
@@ -1614,6 +1659,7 @@
 				88B9B41B18B5D941004F36D8 /* R003 Reims@2x.jpg in Resources */,
 				88F6517318B25EF6009074BE /* Text013_Santo Domingo Monastery Church.rtf in Resources */,
 				88B9B40918B5C384004F36D8 /* R001 Battlefield of Princetone-568h@2x.jpg in Resources */,
+				88B9B47418B80A3C004F36D8 /* R013 Panama.jpg in Resources */,
 				88F6521C18B42E92009074BE /* B014 Syndey Opera House.jpg in Resources */,
 				88EE9A6618ABF43300351DD2 /* B111.jpg in Resources */,
 				88F651C418B25EF6009074BE /* Text094_Old Swedes Church.rtf in Resources */,
@@ -1653,9 +1699,11 @@
 				88F6517218B25EF6009074BE /* Text012_Battlements of Fortress Ehrenbreitstein.rtf in Resources */,
 				88F6519018B25EF6009074BE /* Text042_Old General Post Office Dublin.rtf in Resources */,
 				88EE9A7918ABF43300351DD2 /* B130.jpg in Resources */,
+				88B9B47518B80A3C004F36D8 /* R013 Panama@2x.jpg in Resources */,
 				88F651B618B25EF6009074BE /* Text080_Dome of St. Peter’s Basilica.rtf in Resources */,
 				88F651FC18B25EF6009074BE /* Text150_Moon.rtf in Resources */,
 				88B9B43F18B67C3D004F36D8 /* R006 Quarry-568h@2x.jpg in Resources */,
+				88B9B46D18B80A3C004F36D8 /* R011 ForbiddenCity-568h@2x.jpg in Resources */,
 				88EE9A2C18ABF43300351DD2 /* B053.jpg in Resources */,
 				88F651AF18B25EF6009074BE /* Text073_Holy Door St. Peter’s Basilica.rtf in Resources */,
 				88F651B018B25EF6009074BE /* Text074_Monastery of Saint Michael.rtf in Resources */,
@@ -1671,6 +1719,7 @@
 				88F6516F18B25EF6009074BE /* Text009_Suleiman Mosque.rtf in Resources */,
 				88F6525018B47760009074BE /* B040 Notre_Dame_de_Paris_by_night_time.jpg in Resources */,
 				88EE9ABF18ABF47C00351DD2 /* R025.jpg in Resources */,
+				88B9B46118B80A3C004F36D8 /* R007 Fortress-568h@2x.jpg in Resources */,
 				88F6521E18B42E92009074BE /* B016 Lincoln_Tomb_in_Spring.jpg in Resources */,
 				88EE9A5E18ABF43300351DD2 /* B103.jpg in Resources */,
 				88F6522718B42E92009074BE /* B006 Quarry - Mount Pentelicus, Greece.jpg in Resources */,
@@ -1682,11 +1731,13 @@
 				88EE9A7118ABF43300351DD2 /* B122.jpg in Resources */,
 				88EE9A2018ABF43300351DD2 /* B041.jpg in Resources */,
 				88B9B41518B5D119004F36D8 /* R002 Washingtons Landing Place-568h@2x.jpg in Resources */,
+				88B9B46818B80A3C004F36D8 /* R009 Suleiman.jpg in Resources */,
 				88F6518D18B25EF6009074BE /* Text039_Fort Santiago.rtf in Resources */,
 				88EE9A7018ABF43300351DD2 /* B121.jpg in Resources */,
 				88F6519318B25EF6009074BE /* Text045_Hagia Sophia.rtf in Resources */,
 				88F651F018B25EF6009074BE /* Text138_Corregidor.rtf in Resources */,
 				88B9B44518B67C3D004F36D8 /* R004 Trenton.jpg in Resources */,
+				88B9B46218B80A3C004F36D8 /* R007 Fortress.jpg in Resources */,
 				88EE9A3918ABF43300351DD2 /* B066.jpg in Resources */,
 				88F6524C18B47760009074BE /* B036 Cologne_Cathedral.jpg in Resources */,
 				88EE9A6718ABF43300351DD2 /* B112.jpg in Resources */,
@@ -1694,12 +1745,13 @@
 				88F651BD18B25EF6009074BE /* Text087_Nassau Hall.rtf in Resources */,
 				88F6518218B25EF6009074BE /* Text028_Westminster Abbey.rtf in Resources */,
 				88F651A318B25EF6009074BE /* Text061_Bunker Hill.rtf in Resources */,
+				88B9B46518B80A3C004F36D8 /* R008 Butter Tower.jpg in Resources */,
 				1864399518B4277000EFFB9D /* #6blue.png in Resources */,
 				88F651F318B25EF6009074BE /* Text141_The Mormon Temple.rtf in Resources */,
+				88B9B46B18B80A3C004F36D8 /* R010 WTC.jpg in Resources */,
 				88EE9A3818ABF43300351DD2 /* B065.jpg in Resources */,
 				88F651DB18B25EF6009074BE /* Text117_Ludendorff Bridge.rtf in Resources */,
 				88EE9ABE18ABF47C00351DD2 /* R024.jpg in Resources */,
-				88EE9AB218ABF47C00351DD2 /* R012.jpg in Resources */,
 				88EE9A4D18ABF43300351DD2 /* B086.jpg in Resources */,
 				88F6519518B25EF6009074BE /* Text047_Arc de Triomphe.rtf in Resources */,
 				88F651A918B25EF6009074BE /* Text067_St. John’s Episcopal Church.rtf in Resources */,
@@ -1709,6 +1761,7 @@
 				88B9B41218B5D0E0004F36D8 /* R002 Washingtons Landing Place@2x.jpg in Resources */,
 				88EE9A7618ABF43300351DD2 /* B127.jpg in Resources */,
 				88F651E418B25EF6009074BE /* Text126_Pearl Harbor.rtf in Resources */,
+				88B9B46318B80A3C004F36D8 /* R007 Fortress@2x.jpg in Resources */,
 				88F6525418B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg in Resources */,
 				1864398B18B4277000EFFB9D /* #1blue.png in Resources */,
 				88EE9A5F18ABF43300351DD2 /* B104.jpg in Resources */,
@@ -1730,6 +1783,8 @@
 				88B9B44318B67C3D004F36D8 /* R005 Leiden-568h@2x.jpg in Resources */,
 				88EE9A2A18ABF43300351DD2 /* B051.jpg in Resources */,
 				88EE9A3A18ABF43300351DD2 /* B067.jpg in Resources */,
+				88B9B46A18B80A3C004F36D8 /* R010 WTC-568h@2x.jpg in Resources */,
+				88B9B47318B80A3C004F36D8 /* R013 Panama-568h@2x.jpg in Resources */,
 				1864398E18B4277000EFFB9D /* #3.png in Resources */,
 				88F6517D18B25EF6009074BE /* Text023_The Berlin Wall.rtf in Resources */,
 				88EE9A5D18ABF43300351DD2 /* B102.jpg in Resources */,
@@ -1740,6 +1795,7 @@
 				88F651F918B25EF6009074BE /* Text147_Boston Avenue Church.rtf in Resources */,
 				88F6518818B25EF6009074BE /* Text034_Fort San Antonio Abad.rtf in Resources */,
 				88EE9A6418ABF43300351DD2 /* B109.jpg in Resources */,
+				88B9B47218B80A3C004F36D8 /* R012 Ehrenbreitstein@2x.jpg in Resources */,
 				88EE9A4C18ABF43300351DD2 /* B085.jpg in Resources */,
 				88EE9A7D18ABF43300351DD2 /* B134.jpg in Resources */,
 				88F6522418B42E92009074BE /* B009 Süleymaniye_Mosque_exterior_view.jpg in Resources */,
