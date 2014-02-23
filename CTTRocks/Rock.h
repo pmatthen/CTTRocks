@@ -10,6 +10,7 @@
 
 @interface Rock : NSObject
 
+@property (nonatomic)         NSInteger number;
 @property (nonatomic, strong) NSString *title;
 @property (nonatomic, strong) NSString *location;
 @property (nonatomic, strong) NSString *country;

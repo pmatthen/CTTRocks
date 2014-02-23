@@ -14,35 +14,65 @@ static NSMutableArray *rocksFiltered;
 static NSString *lastUsedFilter;
 static NSArray *assestPaths;
 
+#define IS_PHONEPOD5() ([UIScreen mainScreen].bounds.size.height == 568.0f && [UIScreen mainScreen].scale == 2.f && UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+
+
 @interface Rock ()
 
 @end
 
 @implementation Rock
 
++(Rock*)rockAtNumber:(NSInteger)number
+{
+    
+    for (Rock *rock in rocks)
+    {
+        if (rock.number == number)
+        {
+            return rock;
+        }
+    }
+    return nil;
+}
+
 + (void)loadImages
 {
+    UIImage *img = [UIImage imageNamed:@"R114 Sydney.jpg"];
+    NSLog(@"%@", img);
+    
     for (int i = 0; i < assestPaths.count; i++)
     {
         NSString *searchStr= @"CTTRocks.app/";
-        NSRange range = [assestPaths[i] rangeOfString:searchStr];
+        NSString *accessPath = assestPaths[i];
         
-        NSString *rockNumber = [[assestPaths[i] substringFromIndex:range.location +14] substringToIndex:3];
-        NSString *kindOfImage = [[assestPaths[i] substringFromIndex:range.location +13] substringToIndex:1];
+        if (!([[[accessPath substringFromIndex:accessPath.length - 7] substringToIndex:1] isEqualToString:@"@"]))
+        {
+            
+            NSRange range = [assestPaths[i] rangeOfString:searchStr];            
+            NSInteger rockNumber = [[[assestPaths[i] substringFromIndex:range.location +14] substringToIndex:3] integerValue];
+            NSString *kindOfImage = [[assestPaths[i] substringFromIndex:range.location +13] substringToIndex:1];
+            
+            if (rockNumber > 0 && [kindOfImage isEqualToString:@"R"])
+            {
+                if(IS_PHONEPOD5())
+                {
+                    accessPath = [accessPath stringByReplacingOccurrencesOfString: [NSString stringWithFormat:@".jpg"]
+                                                                       withString: [NSString stringWithFormat:@"-568h@2x.jpg"] ];
+                }
+                [self rockAtNumber:rockNumber].image = [[UIImage alloc] initWithContentsOfFile:accessPath];
+            }
+            if (rockNumber >  0 && [kindOfImage isEqualToString:@"B"])
+            {
+                [self rockAtNumber:rockNumber].imageOfBuilding = [[UIImage alloc] initWithContentsOfFile:accessPath];
+            }
+            if (rockNumber > 0 && [kindOfImage isEqualToString:@"S"])
+            {
+                [self rockAtNumber:rockNumber].imageThumbnail = [[UIImage alloc] initWithContentsOfFile:accessPath];
+            }
+            
+        }
         
-        NSInteger indexOfImage = [rockNumber integerValue] - 1;
-        if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"R"])
-        {
-            ((Rock*)rocks[indexOfImage]).image = [[UIImage alloc] initWithContentsOfFile:assestPaths[i]];
-        }
-        if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"B"])
-        {
-            ((Rock*)rocks[indexOfImage]).imageOfBuilding = [[UIImage alloc] initWithContentsOfFile:assestPaths[i]];
-        }
-        if (indexOfImage >= 0 && [kindOfImage isEqualToString:@"S"])
-        {
-            ((Rock*)rocks[indexOfImage]).imageThumbnail = [[UIImage alloc] initWithContentsOfFile:assestPaths[i]];
-        }
     }
 }
 
@@ -53,11 +83,12 @@ static NSArray *assestPaths;
     {
         NSString *searchStr= @"CTTRocks.app/";
         NSRange range = [assestPaths[i] rangeOfString:searchStr];
-        NSString *rockNumber = [[assestPaths[i] substringFromIndex:range.location +17] substringToIndex:3];
-        NSInteger indexOfImage = [rockNumber integerValue] - 1;
-        if (indexOfImage >= 0)
+        
+        NSInteger rockNumber = [[[assestPaths[i] substringFromIndex:range.location +17] substringToIndex:3] integerValue];
+        
+        if (rockNumber > 0)
         {
-            ((Rock*)rocks[indexOfImage]).text = [[NSAttributedString alloc]   initWithFileURL:[[NSURL alloc]initFileURLWithPath:assestPaths[i]] options:@{NSDocumentTypeDocumentAttribute:NSRTFTextDocumentType} documentAttributes:nil error:nil];
+            [self rockAtNumber:rockNumber].text = [[NSAttributedString alloc]   initWithFileURL:[[NSURL alloc]initFileURLWithPath:assestPaths[i]] options:@{NSDocumentTypeDocumentAttribute:NSRTFTextDocumentType} documentAttributes:nil error:nil];
         }
     }
 }
@@ -81,13 +112,13 @@ static NSArray *assestPaths;
         for (int i = 1; i < rocksCSV.count; i++)
         {
             Rock *rock = [Rock new];
+            rock.number = [rocksCSV[i][0] integerValue];
             rock.title = rocksCSV[i][1];
             rock.country = rocksCSV[i][2];
             rock.state = rocksCSV[i][3];
             rock.location = rocksCSV[i][4];
             NSString *positionOnFacadeString = rocksCSV[i][5];
-            rock.positionOnFacade = [positionOnFacadeString integerValue];
-//            positionOnFacadeString.integerValue;
+            rock.positionOnFacade = [positionOnFacadeString intValue];
             
             [rocks addObject:rock];
         }
@@ -99,8 +130,8 @@ static NSArray *assestPaths;
         [self loadTexts];
         
         rocks  = [rocks sortedArrayUsingComparator:^NSComparisonResult(Rock *rock1, Rock *rock2) {
-            int location1 = rock1.positionOnFacade;
-            int location2 = rock2.positionOnFacade;
+            NSInteger location1 = rock1.positionOnFacade;
+            NSInteger location2 = rock2.positionOnFacade;
             
             if (location1 > location2) {
                 return NSOrderedDescending;
@@ -108,10 +139,9 @@ static NSArray *assestPaths;
             if (location1 < location2) {
                 return NSOrderedAscending;
             }
-            
             return NSOrderedSame;
         }];
-
+        
     });
     
     return rocks;
