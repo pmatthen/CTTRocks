@@ -390,6 +390,7 @@
 		88F6525418B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6525218B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg */; };
 		9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4718E18B512D50032EEFE /* WelcomeViewController.m */; };
 		9EC471D918B671260032EEFE /* tutorial6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471D818B671260032EEFE /* tutorial6.png */; };
+		9EC471DB18B93C840032EEFE /* tapGestureCoachMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -797,6 +798,7 @@
 		9EC4718D18B512D50032EEFE /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		9EC4718E18B512D50032EEFE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		9EC471D818B671260032EEFE /* tutorial6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial6.png; sourceTree = "<group>"; };
+		9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tapGestureCoachMark.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -907,6 +909,7 @@
 		88EE98EE18AA790E00351DD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */,
 				88EE98EF18AA790E00351DD2 /* CTTRocks-Info.plist */,
 				88EE98F018AA790E00351DD2 /* InfoPlist.strings */,
 				88EE98F318AA790E00351DD2 /* main.m */,
@@ -1502,6 +1505,7 @@
 				88EE9A3418ABF43300351DD2 /* B061.jpg in Resources */,
 				88F651EB18B25EF6009074BE /* Text133_Fort Clatsop.rtf in Resources */,
 				88F6524318B47760009074BE /* B027 Massachusetts Hall, Harvard University - Cambridge, Massachusetts.jpg in Resources */,
+				9EC471DB18B93C840032EEFE /* tapGestureCoachMark.png in Resources */,
 				88F6524818B47760009074BE /* B032 Stockholm Royal Castle.jpg in Resources */,
 				1864398D18B4277000EFFB9D /* #2blue.png in Resources */,
 				88EE9A2618ABF43300351DD2 /* B047.jpg in Resources */,

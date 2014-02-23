@@ -47,6 +47,7 @@
     UIImageView *buttonIndication5;
     UIImageView *buttonIndication6;
     UILabel *michiganLabel;
+    UIImageView *coachMarkImageView;
 }
 
 @end
@@ -66,6 +67,11 @@
     if (!self.selectedRock) {
         self.selectedRock = 0;
         previousPage = 0;
+        
+        coachMarkImageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, myScrollView.frame.size.height)];
+            coachMarkImageView.image = [UIImage imageNamed: @"tapGestureCoachMark.png"];
+                                                          [myScrollView addSubview: coachMarkImageView];
+        
     } else {
         previousPage = self.selectedRock;
     }
@@ -412,6 +418,8 @@
 
 -(void)tapPhoto
 {
+    [coachMarkImageView removeFromSuperview];
+    
     isOverlayOn = !(isOverlayOn);
     if (isOverlayOn) {
         for (UIView *myDetailOverlay in myScrollView.subviews) {
