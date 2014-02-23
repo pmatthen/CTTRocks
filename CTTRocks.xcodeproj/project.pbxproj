@@ -617,6 +617,7 @@
 		9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4718E18B512D50032EEFE /* WelcomeViewController.m */; };
 		9EC471D918B671260032EEFE /* tutorial6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471D818B671260032EEFE /* tutorial6.png */; };
 		9EC471DB18B93C840032EEFE /* tapGestureCoachMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */; };
+		9EC471DD18B9C9EE0032EEFE /* CoachMarks5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1251,6 +1252,7 @@
 		9EC4718E18B512D50032EEFE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		9EC471D818B671260032EEFE /* tutorial6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial6.png; sourceTree = "<group>"; };
 		9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tapGestureCoachMark.png; sourceTree = "<group>"; };
+		9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoachMarks5.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1428,6 +1430,7 @@
 				88F6520018B25F9B009074BE /* CHCSVParser.h */,
 				88F6520118B25F9B009074BE /* CHCSVParser.m */,
 				88EE98FF18AA790E00351DD2 /* Images.xcassets */,
+				9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */,
 				9EC471D818B671260032EEFE /* tutorial6.png */,
 				88EE98EE18AA790E00351DD2 /* Supporting Files */,
 			);
@@ -2064,7 +2067,7 @@
 				ORGANIZATIONNAME = "Josef Hilbert";
 				TargetAttributes = {
 					88EE98E318AA790E00351DD2 = {
-						DevelopmentTeam = 27W7GCND36;
+						DevelopmentTeam = 44F79BQXJ2;
 					};
 					88EE990418AA790E00351DD2 = {
 						TestTargetID = 88EE98E318AA790E00351DD2;
@@ -2302,6 +2305,7 @@
 				88F651E218B25EF6009074BE /* Text124_Bloody Nose Ridge.rtf in Resources */,
 				88F651A818B25EF6009074BE /* Text066_Mount McKinley.rtf in Resources */,
 				88B9B44018B67C3D004F36D8 /* S005 Leiden.jpg in Resources */,
+				9EC471DD18B9C9EE0032EEFE /* CoachMarks5.png in Resources */,
 				88F651AA18B25EF6009074BE /* Text068_The White House.rtf in Resources */,
 				88F651EE18B25EF6009074BE /* Text136_Mount Rainier.rtf in Resources */,
 				88B9B49218B8201C004F36D8 /* S010 WTC.jpg in Resources */,
