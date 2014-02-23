@@ -63,7 +63,6 @@
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1.0] /*#084283*/];
   
-
     if (!self.selectedRock) {
         self.selectedRock = 0;
         previousPage = 0;
@@ -163,6 +162,9 @@
     coachMarkImageView = [[UIImageView alloc] initWithFrame: CGRectMake(startingX, 0, self.view.frame.size.width, self.view.frame.size.height)];
     coachMarkImageView.image = [UIImage imageNamed: @"CoachMarks5.png"];
     [self.view addSubview: coachMarkImageView];
+    }else
+    {
+            [coachMarkImageView removeFromSuperview];
     }
 }
 
@@ -432,8 +434,11 @@
 
 -(void)tapPhoto
 {
+    
+    if([self.view.subviews containsObject: coachMarkImageView])
+    {
     [coachMarkImageView removeFromSuperview];
-
+    }else{
     isOverlayOn = !(isOverlayOn);
     if (isOverlayOn) {
         for (UIView *myDetailOverlay in myScrollView.subviews) {
@@ -448,6 +453,7 @@
             }
         }
     }
+}
 }
 
 - (BOOL)prefersStatusBarHidden
@@ -515,7 +521,7 @@
         if (previousOrientation != currentOrientation) {
             [self determinePositionOnPanorama];
         }
-        
+            [coachMarkImageView removeFromSuperview];
         myScrollView.hidden = YES;
         myPanoramicScrollview.hidden = NO;
         

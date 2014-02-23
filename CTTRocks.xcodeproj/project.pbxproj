@@ -933,6 +933,7 @@
 		9EC471D918B671260032EEFE /* tutorial6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471D818B671260032EEFE /* tutorial6.png */; };
 		9EC471DB18B93C840032EEFE /* tapGestureCoachMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */; };
 		9EC471DD18B9C9EE0032EEFE /* CoachMarks5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */; };
+		9EC471E018BA15A70032EEFE /* AcknowledgementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC471DF18BA15A70032EEFE /* AcknowledgementsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1883,6 +1884,8 @@
 		9EC471D818B671260032EEFE /* tutorial6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial6.png; sourceTree = "<group>"; };
 		9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tapGestureCoachMark.png; sourceTree = "<group>"; };
 		9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoachMarks5.png; sourceTree = "<group>"; };
+		9EC471DE18BA15A70032EEFE /* AcknowledgementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcknowledgementsViewController.h; sourceTree = "<group>"; };
+		9EC471DF18BA15A70032EEFE /* AcknowledgementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcknowledgementsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -2123,6 +2126,8 @@
 				88EE98F618AA790E00351DD2 /* AppDelegate.h */,
 				88EE98F718AA790E00351DD2 /* AppDelegate.m */,
 				88EE98F918AA790E00351DD2 /* Main.storyboard */,
+				9EC471DE18BA15A70032EEFE /* AcknowledgementsViewController.h */,
+				9EC471DF18BA15A70032EEFE /* AcknowledgementsViewController.m */,
 				9EC4718D18B512D50032EEFE /* WelcomeViewController.h */,
 				9EC4718E18B512D50032EEFE /* WelcomeViewController.m */,
 				88EE98FC18AA790E00351DD2 /* RocksScrollViewController.h */,
@@ -3976,6 +3981,7 @@
 				88EE98F818AA790E00351DD2 /* AppDelegate.m in Sources */,
 				88EE9AD218AC4F0100351DD2 /* CTTCollectionViewCell.m in Sources */,
 				9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */,
+				9EC471E018BA15A70032EEFE /* AcknowledgementsViewController.m in Sources */,
 				88EE98F418AA790E00351DD2 /* main.m in Sources */,
 				88EE9ACF18AC4ED600351DD2 /* MainCollectionViewController.m in Sources */,
 				88F6520218B25F9B009074BE /* CHCSVParser.m in Sources */,
