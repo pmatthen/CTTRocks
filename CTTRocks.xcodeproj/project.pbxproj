@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1818D96B18ADFE0600B1BF2F /* ILTranslucentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1818D96A18ADFE0600B1BF2F /* ILTranslucentView.m */; };
 		1864398A18B4277000EFFB9D /* #1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1864397C18B4277000EFFB9D /* #1.png */; };
 		1864398B18B4277000EFFB9D /* #1blue.png in Resources */ = {isa = PBXBuildFile; fileRef = 1864397D18B4277000EFFB9D /* #1blue.png */; };
 		1864398C18B4277000EFFB9D /* #2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1864397E18B4277000EFFB9D /* #2.png */; };
@@ -930,7 +929,6 @@
 		88F6525318B47778009074BE /* B021 Wartburg_Eisenach.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6525118B47778009074BE /* B021 Wartburg_Eisenach.jpg */; };
 		88F6525418B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6525218B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg */; };
 		9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4718E18B512D50032EEFE /* WelcomeViewController.m */; };
-		9EC471D918B671260032EEFE /* tutorial6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471D818B671260032EEFE /* tutorial6.png */; };
 		9EC471DB18B93C840032EEFE /* tapGestureCoachMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */; };
 		9EC471DD18B9C9EE0032EEFE /* CoachMarks5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */; };
 		9EC471E018BA15A70032EEFE /* AcknowledgementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC471DF18BA15A70032EEFE /* AcknowledgementsViewController.m */; };
@@ -947,8 +945,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1818D96918ADFE0600B1BF2F /* ILTranslucentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ILTranslucentView.h; sourceTree = "<group>"; };
-		1818D96A18ADFE0600B1BF2F /* ILTranslucentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ILTranslucentView.m; sourceTree = "<group>"; };
 		1864397C18B4277000EFFB9D /* #1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#1.png"; sourceTree = "<group>"; };
 		1864397D18B4277000EFFB9D /* #1blue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#1blue.png"; sourceTree = "<group>"; };
 		1864397E18B4277000EFFB9D /* #2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "#2.png"; sourceTree = "<group>"; };
@@ -1881,7 +1877,6 @@
 		88F6525218B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "B022 The_Great_Wall_of_China_at_Jinshanling.jpg"; sourceTree = "<group>"; };
 		9EC4718D18B512D50032EEFE /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		9EC4718E18B512D50032EEFE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
-		9EC471D818B671260032EEFE /* tutorial6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial6.png; sourceTree = "<group>"; };
 		9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tapGestureCoachMark.png; sourceTree = "<group>"; };
 		9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoachMarks5.png; sourceTree = "<group>"; };
 		9EC471DE18BA15A70032EEFE /* AcknowledgementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcknowledgementsViewController.h; sourceTree = "<group>"; };
@@ -2138,13 +2133,10 @@
 				88EE9AD118AC4F0100351DD2 /* CTTCollectionViewCell.m */,
 				88EE991C18AA814100351DD2 /* Rock.h */,
 				88EE991D18AA814100351DD2 /* Rock.m */,
-				1818D96918ADFE0600B1BF2F /* ILTranslucentView.h */,
-				1818D96A18ADFE0600B1BF2F /* ILTranslucentView.m */,
 				88F6520018B25F9B009074BE /* CHCSVParser.h */,
 				88F6520118B25F9B009074BE /* CHCSVParser.m */,
 				88EE98FF18AA790E00351DD2 /* Images.xcassets */,
 				9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */,
-				9EC471D818B671260032EEFE /* tutorial6.png */,
 				88EE98EE18AA790E00351DD2 /* Supporting Files */,
 			);
 			path = CTTRocks;
@@ -3455,7 +3447,6 @@
 				88F6519118B25EF6009074BE /* Text043_Winter Palace Forbidden City.rtf in Resources */,
 				88A5EB9218B9DB530048713F /* R103 Chimney Point-568h@2x.jpg in Resources */,
 				88F651CA18B25EF6009074BE /* Text100_Fort William and Mary.rtf in Resources */,
-				9EC471D918B671260032EEFE /* tutorial6.png in Resources */,
 				88A5E91C18B942080048713F /* R024 Hamlet@2x.jpg in Resources */,
 				88A5EA0B18B9DABE0048713F /* S093 Gaspee Point.jpg in Resources */,
 				88F651F218B25EF6009074BE /* Text140_Hans Christian Andersen Home.rtf in Resources */,
@@ -3976,7 +3967,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				88EE991E18AA814100351DD2 /* Rock.m in Sources */,
-				1818D96B18ADFE0600B1BF2F /* ILTranslucentView.m in Sources */,
 				88EE98FE18AA790E00351DD2 /* RocksScrollViewController.m in Sources */,
 				88EE98F818AA790E00351DD2 /* AppDelegate.m in Sources */,
 				88EE9AD218AC4F0100351DD2 /* CTTCollectionViewCell.m in Sources */,

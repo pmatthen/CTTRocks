@@ -48,9 +48,10 @@
     fontForNumber = [UIFont fontWithName:@"HelveticaNeue" size:12];
     
     [myCollectionView setContentInset:UIEdgeInsetsMake(44, 0, 0, 0)];
-    mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 0, 320, 44)];
+    mySearchBar = [[UISearchBar alloc] initWithFrame:CGRectMake(0, 44, 320, 44)];
     mySearchBar.delegate = self;
     [self.view addSubview:mySearchBar];
+    self.navigationItem.title = @"Search";
 }
 
 -(void)viewWillAppear:(BOOL)animated
@@ -70,17 +71,10 @@
     imageForCell = [UIImage imageNamed:@"640x150_rounded_opaque"];
 }
 
--(void)viewWillLayoutSubviews
-{
-    [self.navigationController setNavigationBarHidden:YES animated:NO];
-}
-
 - (BOOL) prefersStatusBarHidden
 {
     return YES;
 }
-
-
 
 -(void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText
 {

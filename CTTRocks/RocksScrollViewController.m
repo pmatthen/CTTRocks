@@ -46,8 +46,10 @@
     UIImageView *buttonIndication4;
     UIImageView *buttonIndication5;
     UIImageView *buttonIndication6;
+    __weak IBOutlet UIImageView *splashScreen;
     UILabel *michiganLabel;
     UIImageView *coachMarkImageView;
+    BOOL firstTime;
 }
 
 @end
@@ -61,7 +63,13 @@
 {
     [super viewDidLoad];
     
+    if (!rockArray) {
+        rockArray = [Rock rocks];
+    }
+    
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1.0]];
+    
+    firstTime = YES;
   
     if (!self.selectedRock) {
         self.selectedRock = 0;
@@ -92,8 +100,16 @@
                                             target:self
                                            action:@selector(showHelpOverlay)];
     
+    UIBarButtonItem *acknowledgmentsItem = [[UIBarButtonItem alloc]
+                                            initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(goToAcknowledgements)];
+    
+    UIBarButtonItem *searchItem = [[UIBarButtonItem alloc]
+                                   initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self
+                                   action:@selector(goToSearchPage)];
+    
     NSArray *actionButtonItems = @[shareItem, infoItem];
     self.navigationItem.rightBarButtonItems = actionButtonItems;
+    self.navigationItem.leftBarButtonItems = @[searchItem, acknowledgmentsItem];
     
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPhoto)];
@@ -103,8 +119,8 @@
     tapGestureRecognizer.delegate = self;
     [myScrollView addGestureRecognizer:tapGestureRecognizer];
     
-//    [self setupGestureRecognizerAbsentNavbar];
-//    [self setupNavbarGestureRecognizer];
+    [self setupGestureRecognizerAbsentNavbar];
+    [self setupNavbarGestureRecognizer];
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
@@ -115,9 +131,6 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:YES];
-    if (!rockArray) {
-        rockArray = [Rock rocks];
-    }
     
     isOverlayOn = NO;
     startingX = (int)self.selectedRock * (int)self.view.frame.size.width;
@@ -126,7 +139,13 @@
     myScrollView.contentSize = CGSizeMake(width, myScrollView.frame.size.height);
     
     [myScrollView setContentOffset:CGPointMake(startingX, self.view.frame.size.height)];
-    [self showHelpOverlay];    
+    previousPage = self.selectedRock;
+    
+    if (firstTime == YES) {
+        [self showHelpOverlay];
+        firstTime = NO;
+    }
+
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -150,13 +169,34 @@
             [myPanoramicScrollview addSubview:imageView];
         });
     });
-    [self.navigationController setNavigationBarHidden:NO animated:YES];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+    NSTimeInterval delay = 3;
+    [NSObject cancelPreviousPerformRequestsWithTarget:self];
+    [self performSelector:@selector(showNavBar) withObject:nil afterDelay:delay];
+}
+
+-(void)goToAcknowledgements
+{
+    [self performSegueWithIdentifier:@"AcknowledgementsSegue" sender:self];
+}
+
+-(void)goToSearchPage
+{
+    [self performSegueWithIdentifier:@"SearchSegue" sender:self];
+}
+
+-(void)showNavBar
+{
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
 }
 
 -(void)showHelpOverlay
 {
     if(![myScrollView.subviews containsObject: coachMarkImageView]){
         NSLog(@"CoachMarks does not exist...drawing!");
+        startingX = previousPage * self.view.frame.size.width;
         coachMarkImageView = [[UIImageView alloc] initWithFrame: CGRectMake(startingX, 0, self.view.frame.size.width, self.view.frame.size.height)];
         coachMarkImageView.image = [UIImage imageNamed: @"CoachMarks5.png"];
         [myScrollView addSubview: coachMarkImageView];
@@ -269,6 +309,10 @@
                 [self swipePhoto:(currentPage + 2) andAdd:(currentPage - 1)];
             }
             previousPage = currentPage;
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
+            NSTimeInterval delay = 3;
+            [NSObject cancelPreviousPerformRequestsWithTarget:self];
+            [self performSelector:@selector(showNavBar) withObject:nil afterDelay:delay];
         }
         scrollView.userInteractionEnabled = YES;
     }
@@ -438,7 +482,6 @@
         for (UIView *myDetailOverlay in myScrollView.subviews) {
             if (myDetailOverlay.tag >= 1000) {
                 myDetailOverlay.hidden = NO;
-                [self.navigationController setNavigationBarHidden:YES animated:YES];
                 
             }
         }
@@ -446,7 +489,6 @@
         for (UIView *myDetailOverlay in myScrollView.subviews) {
             if (myDetailOverlay.tag >= 1000) {
                 myDetailOverlay.hidden = YES;
-                [self.navigationController setNavigationBarHidden:NO animated:YES];
             }
         }
     }
@@ -461,10 +503,12 @@
 -(void)showHideNavbar
 {
     //Hide/unhide navigation controller
-    if (![self.navigationController isNavigationBarHidden])
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
-    else
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
+    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
+        if (![self.navigationController isNavigationBarHidden])
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
+        else
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+    }
 }
 
 
@@ -510,8 +554,9 @@
     [button6 removeFromSuperview];
     [topDownMapOverlay removeFromSuperview];
     
+    
     if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
-        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown)) {
+        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationFaceDown) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationFaceUp)) {
         [self.navigationController setNavigationBarHidden:YES animated:NO];
         currentOrientation = 1;
         
@@ -655,6 +700,11 @@
         if (currentOrientation != previousOrientation) {
             [self determinePositionOnScrollView];
         }
+        
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        NSTimeInterval delay = 3;
+        [NSObject cancelPreviousPerformRequestsWithTarget:self];
+        [self performSelector:@selector(showNavBar) withObject:nil afterDelay:delay];
         
         myPanoramicScrollview.hidden = YES;
         myScrollView.hidden = NO;
