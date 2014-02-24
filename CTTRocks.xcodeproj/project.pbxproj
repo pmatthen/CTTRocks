@@ -3048,7 +3048,7 @@
 				ORGANIZATIONNAME = "Josef Hilbert";
 				TargetAttributes = {
 					88EE98E318AA790E00351DD2 = {
-						DevelopmentTeam = 27W7GCND36;
+						DevelopmentTeam = 44F79BQXJ2;
 					};
 					88EE990418AA790E00351DD2 = {
 						TestTargetID = 88EE98E318AA790E00351DD2;
