@@ -63,15 +63,10 @@
     
     [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1.0] /*#084283*/];
   
-
     if (!self.selectedRock) {
         self.selectedRock = 0;
         previousPage = 0;
-        
-        coachMarkImageView = [[UIImageView alloc] initWithFrame: CGRectMake(0, 0, self.view.frame.size.width, myScrollView.frame.size.height)];
-            coachMarkImageView.image = [UIImage imageNamed: @"tapGestureCoachMark.png"];
-                                                          [myScrollView addSubview: coachMarkImageView];
-        
+        [self showHelpOverlay];
     } else {
         previousPage = self.selectedRock;
     }
@@ -91,8 +86,16 @@
     
     //Programmatically add share buttons
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(didTapAction)];
-    NSArray *actionButtonItems = @[shareItem];
+    
+    UIBarButtonItem *infoItem = [[UIBarButtonItem alloc]
+                                           initWithTitle:@"?"
+                                            style:UIBarButtonItemStyleBordered
+                                            target:self
+                                           action:@selector(showHelpOverlay)];
+    
+    NSArray *actionButtonItems = @[shareItem, infoItem];
     self.navigationItem.rightBarButtonItems = actionButtonItems;
+    
     
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapPhoto)];
     tapGestureRecognizer.numberOfTapsRequired = 1;
@@ -150,6 +153,19 @@
     
 
 }
+
+-(void)showHelpOverlay
+{
+    if(![self.view.subviews containsObject: coachMarkImageView]){
+    coachMarkImageView = [[UIImageView alloc] initWithFrame: CGRectMake(startingX, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    coachMarkImageView.image = [UIImage imageNamed: @"CoachMarks5.png"];
+    [self.view addSubview: coachMarkImageView];
+    }else
+    {
+            [coachMarkImageView removeFromSuperview];
+    }
+}
+
 
 -(void)resetScrollView
 {
@@ -419,8 +435,11 @@
 
 -(void)tapPhoto
 {
-    [coachMarkImageView removeFromSuperview];
     
+    if([self.view.subviews containsObject: coachMarkImageView])
+    {
+    [coachMarkImageView removeFromSuperview];
+    }else{
     isOverlayOn = !(isOverlayOn);
     if (isOverlayOn) {
         for (UIView *myDetailOverlay in myScrollView.subviews) {
@@ -436,6 +455,7 @@
         }
     }
 }
+}
 
 - (BOOL)prefersStatusBarHidden
 {
@@ -446,19 +466,15 @@
 {
     //Hide/unhide navigation controller
     if (![self.navigationController isNavigationBarHidden])
-        [self.navigationController setNavigationBarHidden:YES animated:YES]; // hides
+        [self.navigationController setNavigationBarHidden:YES animated:YES];
     else
-        [self.navigationController setNavigationBarHidden:NO animated:YES]; // shows
+        [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 
 - (void) setupGestureRecognizerAbsentNavbar {
-    // recognise taps on navigation bar to hide
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbar)];
     gestureRecognizer.numberOfTapsRequired = 1;
-    // create a view which covers most of the tap bar to
-    // manage the gestures - if we use the navigation bar
-    // it interferes with the nav buttons
     CGRect frame = CGRectMake(0, 0, self.view.frame.size.width, 44);
     UIView *navBarTapView = [[UIView alloc] initWithFrame:frame];
     [self.view addSubview:navBarTapView];
@@ -468,12 +484,8 @@
 }
 
 - (void) setupNavbarGestureRecognizer {
-    // recognise taps on navigation bar to hide
     UITapGestureRecognizer *gestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(showHideNavbar)];
     gestureRecognizer.numberOfTapsRequired = 1;
-    // create a view which covers most of the tap bar to
-    // manage the gestures - if we use the navigation bar
-    // it interferes with the nav buttons
     CGRect frame = CGRectMake(self.view.frame.size.width/4, 0, self.view.frame.size.width/2, 44);
     UIView *navBarTapView = [[UIView alloc] initWithFrame:frame];
     [self.navigationController.navigationBar addSubview:navBarTapView];
@@ -515,7 +527,7 @@
             NSLog(@"self.view.frame.size.height/2 = %f", self.view.frame.size.width/2);
             [self determinePositionOnPanorama];
         }
-        
+            [coachMarkImageView removeFromSuperview];
         myScrollView.hidden = YES;
         myPanoramicScrollview.hidden = NO;
         

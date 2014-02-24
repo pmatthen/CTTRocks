@@ -11,6 +11,7 @@
 #import "CTTCollectionViewCell.h"
 #import "Rock.h"
 #import "WelcomeViewController.h"
+#import "AcknowledgementsViewController.h"
 
 @interface MainCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UISearchBarDelegate>
 
