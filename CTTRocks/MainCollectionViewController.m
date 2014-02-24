@@ -43,6 +43,8 @@
 {
     [super viewDidLoad];
     
+   
+    
     fontForTitle = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17];
     fontForLocation = [UIFont fontWithName:@"HelveticaNeue" size:17];
     fontForNumber = [UIFont fontWithName:@"HelveticaNeue" size:12];
@@ -222,7 +224,7 @@
         RocksScrollViewController *vc = segue.destinationViewController;
         vc.selectedRock = selectedIP.row;
         vc.rockArray = rocks;
-        NSLog(@"segue to %i", selectedIP.row);
+        NSLog(@"segue to %li", (long)selectedIP.row);
     }
 }
 

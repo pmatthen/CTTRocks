@@ -21,7 +21,7 @@
     NSArray *imagePaths;
     float startingX;
     int currentPage;
-    int previousPage;
+    NSInteger previousPage;
     int currentOrientation;
     int previousOrientation;
     BOOL isOverlayOn;
