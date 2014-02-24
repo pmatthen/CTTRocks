@@ -217,19 +217,8 @@
     return nil;
 }
 
-- (UIInterfaceOrientation)preferredInterfaceOrientationForPresentation
-{
-    return UIInterfaceOrientationPortrait;
-}
-
-- (NSUInteger)supportedInterfaceOrientations
-{
+- (NSUInteger)supportedInterfaceOrientations{
     return UIInterfaceOrientationMaskPortrait;
-}
-
-- (NSUInteger)application:(UIApplication *)application supportedInterfaceOrientationsForWindow:(UIWindow *)window
-{
-    return (UIInterfaceOrientationMaskPortrait);
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender

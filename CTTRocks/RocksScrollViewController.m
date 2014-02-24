@@ -61,12 +61,11 @@
 {
     [super viewDidLoad];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1.0] /*#084283*/];
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1.0]];
   
     if (!self.selectedRock) {
         self.selectedRock = 0;
         previousPage = 0;
-        [self showHelpOverlay];
     } else {
         previousPage = self.selectedRock;
     }
@@ -104,8 +103,8 @@
     tapGestureRecognizer.delegate = self;
     [myScrollView addGestureRecognizer:tapGestureRecognizer];
     
-    [self setupGestureRecognizerAbsentNavbar];
-    [self setupNavbarGestureRecognizer];
+//    [self setupGestureRecognizerAbsentNavbar];
+//    [self setupNavbarGestureRecognizer];
     
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(detectOrientation) name:@"UIDeviceOrientationDidChangeNotification" object:nil];
@@ -127,6 +126,7 @@
     myScrollView.contentSize = CGSizeMake(width, myScrollView.frame.size.height);
     
     [myScrollView setContentOffset:CGPointMake(startingX, self.view.frame.size.height)];
+    [self showHelpOverlay];    
 }
 
 -(void)viewDidAppear:(BOOL)animated
@@ -150,19 +150,18 @@
             [myPanoramicScrollview addSubview:imageView];
         });
     });
-    
-
+    [self.navigationController setNavigationBarHidden:NO animated:YES];
 }
 
 -(void)showHelpOverlay
 {
-    if(![self.view.subviews containsObject: coachMarkImageView]){
-    coachMarkImageView = [[UIImageView alloc] initWithFrame: CGRectMake(startingX, 0, self.view.frame.size.width, self.view.frame.size.height)];
-    coachMarkImageView.image = [UIImage imageNamed: @"CoachMarks5.png"];
-    [self.view addSubview: coachMarkImageView];
-    }else
-    {
-            [coachMarkImageView removeFromSuperview];
+    if(![myScrollView.subviews containsObject: coachMarkImageView]){
+        NSLog(@"CoachMarks does not exist...drawing!");
+        coachMarkImageView = [[UIImageView alloc] initWithFrame: CGRectMake(startingX, 0, self.view.frame.size.width, self.view.frame.size.height)];
+        coachMarkImageView.image = [UIImage imageNamed: @"CoachMarks5.png"];
+        [myScrollView addSubview: coachMarkImageView];
+    } else {
+        [coachMarkImageView removeFromSuperview];
     }
 }
 
@@ -277,8 +276,6 @@
 
 -(void)determinePositionOnPanorama
 {
-    NSLog(@"DPP self.width = %f", self.view.frame.size.width);
-    
     Rock *rock = rockArray[previousPage];
     if ((rock.positionOnFacade - self.view.frame.size.width/2) < 0) {
         myPanoramicScrollview.contentOffset = CGPointMake(0, 50);
@@ -297,8 +294,6 @@
     Rock *previousRock;
     float startOfRange;
     float endOfRange;
-    
-    NSLog(@"DPS self.height = %f", self.view.frame.size.height);
     
     for (int n = 0; n < rockArray.count; n++) {
         if (rockArray.count == 1) {
@@ -323,8 +318,6 @@
         }
         
         if (((myPanoramicScrollview.contentOffset.x + self.view.frame.size.height/2) > startOfRange) && ((myPanoramicScrollview.contentOffset.x + self.view.frame.size.height/2) < endOfRange)) {
-            NSLog(@"startOfRange = %f", startOfRange);
-            NSLog(@"endOfRange = %f", endOfRange);
             self.selectedRock = n;
             break;
         }
@@ -436,7 +429,7 @@
 -(void)tapPhoto
 {
     
-    if([self.view.subviews containsObject: coachMarkImageView])
+    if([myScrollView.subviews containsObject: coachMarkImageView])
     {
     [coachMarkImageView removeFromSuperview];
     }else{
@@ -445,12 +438,15 @@
         for (UIView *myDetailOverlay in myScrollView.subviews) {
             if (myDetailOverlay.tag >= 1000) {
                 myDetailOverlay.hidden = NO;
+                [self.navigationController setNavigationBarHidden:YES animated:YES];
+                
             }
         }
     } else {
         for (UIView *myDetailOverlay in myScrollView.subviews) {
             if (myDetailOverlay.tag >= 1000) {
                 myDetailOverlay.hidden = YES;
+                [self.navigationController setNavigationBarHidden:NO animated:YES];
             }
         }
     }
@@ -520,11 +516,8 @@
         currentOrientation = 1;
         
         if (previousOrientation != currentOrientation) {
-            NSLog(@"previousPage = %i", previousPage);
             Rock *rock;
             rock = rockArray[previousPage];
-            NSLog(@"position on facade = %ld", (long)(rock.positionOnFacade - self.view.frame.size.width/2));
-            NSLog(@"self.view.frame.size.height/2 = %f", self.view.frame.size.width/2);
             [self determinePositionOnPanorama];
         }
             [coachMarkImageView removeFromSuperview];
@@ -660,7 +653,6 @@
         currentOrientation = 0;
         
         if (currentOrientation != previousOrientation) {
-            NSLog(@"myPanoramicScrollView.contentOffset.x = %f", myPanoramicScrollview.contentOffset.x);
             [self determinePositionOnScrollView];
         }
         

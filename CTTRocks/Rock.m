@@ -39,7 +39,7 @@ static NSArray *assestPaths;
 + (void)loadImages
 {
     UIImage *img = [UIImage imageNamed:@"R114 Sydney.jpg"];
-    NSLog(@"%@", img);
+    NSLog(@"%@ 111", img);
     
     for (int i = 0; i < assestPaths.count; i++)
     {
@@ -150,31 +150,32 @@ static NSArray *assestPaths;
 
 +(NSMutableArray*)rocksFiltered:(NSString*)filterString
 {
+    
     if ([lastUsedFilter isEqualToString:filterString])
         return rocksFiltered;
     
     rocksFiltered = [NSMutableArray new];
     for (Rock *rock in [Rock rocks])
     {
-        if ([rock.title rangeOfString:filterString].location != NSNotFound)
+        if ([rock.title rangeOfString:filterString options:NSCaseInsensitiveSearch].location != NSNotFound)
         {
             [rocksFiltered addObject:rock];
         }
         else
         {
-            if ([rock.country rangeOfString:filterString].location != NSNotFound)
+            if ([rock.country rangeOfString:filterString options:NSCaseInsensitiveSearch].location != NSNotFound)
             {
                 [rocksFiltered addObject:rock];
             }
             else
             {
-                if ((rock.state) && [rock.state rangeOfString:filterString].location != NSNotFound)
+                if ((rock.state) && [rock.state rangeOfString:filterString options:NSCaseInsensitiveSearch].location != NSNotFound)
                 {
                     [rocksFiltered addObject:rock];
                 }
                 else
                 {
-                    if ([rock.location rangeOfString:filterString].location != NSNotFound)
+                    if ([rock.location rangeOfString:filterString options:NSCaseInsensitiveSearch].location != NSNotFound)
                     {
                         [rocksFiltered addObject:rock];
                     }
