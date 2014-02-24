@@ -61,8 +61,8 @@
 {
     [super viewDidLoad];
     
-    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.070 green:0.350 blue:0.60 alpha:1.0]];
-  
+    [[UINavigationBar appearance] setBarTintColor:[UIColor colorWithRed:0.518 green:0.486 blue:0.392 alpha:.6]];
+
     if (!self.selectedRock) {
         self.selectedRock = 0;
         previousPage = 0;
@@ -133,7 +133,7 @@
 {
     [super viewDidAppear:animated];
     
-    currentPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
+    previousPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul);
     
@@ -182,7 +182,7 @@
 //Add share functionality
 - (void)didTapAction {
     NSString *shareString = @"Tribune Tower, Chicago";
-    UIImage *shareImage = ((Rock*)rockArray[self.selectedRock]).image;
+    UIImage *shareImage = ((Rock*)rockArray[previousPage]).image;
     NSArray *activityItems = [NSArray arrayWithObjects:shareString, shareImage, nil];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;

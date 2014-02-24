@@ -942,7 +942,6 @@
 		88F6525418B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88F6525218B47778009074BE /* B022 The_Great_Wall_of_China_at_Jinshanling.jpg */; };
 		9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4718E18B512D50032EEFE /* WelcomeViewController.m */; };
 		9EC471D918B671260032EEFE /* tutorial6.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471D818B671260032EEFE /* tutorial6.png */; };
-		9EC471DB18B93C840032EEFE /* tapGestureCoachMark.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */; };
 		9EC471DD18B9C9EE0032EEFE /* CoachMarks5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */; };
 		9EC471E018BA15A70032EEFE /* AcknowledgementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC471DF18BA15A70032EEFE /* AcknowledgementsViewController.m */; };
 /* End PBXBuildFile section */
@@ -1903,7 +1902,6 @@
 		9EC4718D18B512D50032EEFE /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		9EC4718E18B512D50032EEFE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		9EC471D818B671260032EEFE /* tutorial6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tutorial6.png; sourceTree = "<group>"; };
-		9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tapGestureCoachMark.png; sourceTree = "<group>"; };
 		9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoachMarks5.png; sourceTree = "<group>"; };
 		9EC471DE18BA15A70032EEFE /* AcknowledgementsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcknowledgementsViewController.h; sourceTree = "<group>"; };
 		9EC471DF18BA15A70032EEFE /* AcknowledgementsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcknowledgementsViewController.m; sourceTree = "<group>"; };
@@ -2164,7 +2162,6 @@
 				88F6520018B25F9B009074BE /* CHCSVParser.h */,
 				88F6520118B25F9B009074BE /* CHCSVParser.m */,
 				88EE98FF18AA790E00351DD2 /* Images.xcassets */,
-				9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */,
 				9EC471D818B671260032EEFE /* tutorial6.png */,
 				88EE98EE18AA790E00351DD2 /* Supporting Files */,
 			);
@@ -2174,7 +2171,6 @@
 		88EE98EE18AA790E00351DD2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				9EC471DA18B93C840032EEFE /* tapGestureCoachMark.png */,
 				88EE98EF18AA790E00351DD2 /* CTTRocks-Info.plist */,
 				88EE98F018AA790E00351DD2 /* InfoPlist.strings */,
 				88EE98F318AA790E00351DD2 /* main.m */,
@@ -2839,6 +2835,7 @@
 			children = (
 				88B9B44818B6804B004F36D8 /* CTTPano.jpg */,
 				18E9BE0B18B01C5100D292D4 /* Estrella.jpeg */,
+				9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */,
 			);
 			name = Others;
 			sourceTree = "<group>";
@@ -3309,7 +3306,6 @@
 				88F6524318B47760009074BE /* B027 Massachusetts Hall, Harvard University - Cambridge, Massachusetts.jpg in Resources */,
 				88A5EA2518B9DABE0048713F /* S120 City Hall.jpg in Resources */,
 				88A5EF7C18BBC1F20048713F /* R063 Fort Marion.jpg in Resources */,
-				9EC471DB18B93C840032EEFE /* tapGestureCoachMark.png in Resources */,
 				88A5F03D18BBC1F20048713F /* R127 Kwajalein@2x.jpg in Resources */,
 				88A5EF6118BBC1F20048713F /* R054 Christ Church.jpg in Resources */,
 				88A5EEFF18BBC1F20048713F /* R021 Wartburg@2x.jpg in Resources */,
