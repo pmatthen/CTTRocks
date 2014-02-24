@@ -270,7 +270,7 @@ Cg
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kVQ-nS-VHD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2418" y="-142"/>
+            <point key="canvasLocation" x="2460" y="76"/>
         </scene>
         <!--Rocks Scroll View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -412,26 +412,6 @@ Cg
             <point key="canvasLocation" x="492" y="394"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="zzK-LJ-ulj">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="F9P-Kx-aq3" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" id="9fh-VE-IxZ"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hGT-jy-qYe">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="1W7-XA-ygp"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gbq-CH-fn1" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2418" y="-1085"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="Wdk-cF-nkO">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="cQK-U0-ayI" sceneMemberID="viewController">
@@ -471,7 +451,4 @@ Cg
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
-    <inferredMetricsTieBreakers>
-        <segue reference="pR3-hA-Agb"/>
-    </inferredMetricsTieBreakers>
 </document>

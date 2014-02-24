@@ -43,6 +43,8 @@
 {
     [super viewDidLoad];
     
+   
+    
     fontForTitle = [UIFont fontWithName:@"HelveticaNeue-Bold" size:17];
     fontForLocation = [UIFont fontWithName:@"HelveticaNeue" size:17];
     fontForNumber = [UIFont fontWithName:@"HelveticaNeue" size:12];
