@@ -152,7 +152,7 @@
 {
     [super viewDidAppear:animated];
     
-    currentPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
+    previousPage = (myScrollView.contentOffset.x + (0.5f * myScrollView.frame.size.width))/myScrollView.frame.size.width;
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_BACKGROUND, 0ul);
     
@@ -222,7 +222,8 @@
 //Add share functionality
 - (void)didTapAction {
     NSString *shareString = @"Tribune Tower, Chicago";
-    UIImage *shareImage = ((Rock*)rockArray[self.selectedRock]).image;
+    UIImage *shareImage = ((Rock*)rockArray[previousPage]).image;
+    self.selectedRock = previousPage;
     NSArray *activityItems = [NSArray arrayWithObjects:shareString, shareImage, nil];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -544,6 +545,10 @@
     return YES; // handle the touch
 }
 
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
+}
+
 -(void) detectOrientation {
     
     [button1 removeFromSuperview];
@@ -556,7 +561,7 @@
     
     
     if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
-        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationFaceDown) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationFaceUp)) {
+        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown)) {
         [self.navigationController setNavigationBarHidden:YES animated:NO];
         currentOrientation = 1;
         

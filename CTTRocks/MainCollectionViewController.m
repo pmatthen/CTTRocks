@@ -222,9 +222,21 @@
     if ([segue.identifier isEqualToString:@"unwindSegue"])
     {
         RocksScrollViewController *vc = segue.destinationViewController;
-        vc.selectedRock = selectedIP.row;
-        vc.rockArray = rocks;
-        NSLog(@"segue to %li", (long)selectedIP.row);
+        
+        Rock *rock = rocks[selectedIP.row];
+        
+        for (int n = 0; n < vc.rockArray.count; n++) {
+            Rock *tempRock = vc.rockArray[n];
+            if (rock.positionOnFacade == tempRock.positionOnFacade) {
+                vc.selectedRock = n;
+                NSLog(@"n = %i", n);
+            }
+        }
+//        
+//        
+//        vc.selectedRock = selectedIP.row;
+//        vc.rockArray = rocks;
+//        NSLog(@"segue to %li", (long)selectedIP.row);
     }
 }
 
