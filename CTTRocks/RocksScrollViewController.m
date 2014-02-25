@@ -130,6 +130,8 @@
     tapGestureRecognizer.delegate = self;
     [myScrollView addGestureRecognizer:tapGestureRecognizer];
     
+    self.navigationController.navigationBar.tag = 0;
+    
     [self setupGestureRecognizerAbsentNavbar];
     [self setupNavbarGestureRecognizer];
     
