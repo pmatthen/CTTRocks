@@ -139,7 +139,7 @@
     
     dispatch_async(queue, ^{
         UIImage *image;
-        image = [UIImage imageNamed:@"CTTPano.jpg"];
+        image = [UIImage imageNamed:@"CTTPanoramaV2.jpg"];
         dispatch_sync(dispatch_get_main_queue(), ^{
             imageView = [[UIImageView alloc] initWithImage:image];
             myPanoramicScrollview.contentSize = imageView.frame.size;
