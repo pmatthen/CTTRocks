@@ -29,10 +29,9 @@
 	// Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning
+- (BOOL)prefersStatusBarHidden
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    return YES;
 }
 
 - (NSUInteger)supportedInterfaceOrientations{
