@@ -223,6 +223,7 @@
 - (void)didTapAction {
     NSString *shareString = @"Tribune Tower, Chicago";
     UIImage *shareImage = ((Rock*)rockArray[previousPage]).image;
+    self.selectedRock = previousPage;
     NSArray *activityItems = [NSArray arrayWithObjects:shareString, shareImage, nil];
     UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
     activityViewController.modalTransitionStyle = UIModalTransitionStyleCoverVertical;
@@ -542,6 +543,10 @@
         return NO; // ignore the touch
     }
     return YES; // handle the touch
+}
+
+- (NSUInteger)supportedInterfaceOrientations{
+    return UIInterfaceOrientationMaskPortrait | UIInterfaceOrientationMaskPortraitUpsideDown | UIInterfaceOrientationMaskLandscapeLeft | UIInterfaceOrientationMaskLandscapeRight;
 }
 
 -(void) detectOrientation {
