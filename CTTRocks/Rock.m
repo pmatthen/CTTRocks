@@ -130,7 +130,7 @@ static NSArray *assestPaths;
                 return NSOrderedAscending;
             }
             return NSOrderedSame;
-        }];
+        }].mutableCopy;
 
             assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:nil];
             [self loadImages];

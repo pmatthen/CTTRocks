@@ -751,6 +751,9 @@
 		88EE991E18AA814100351DD2 /* Rock.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EE991D18AA814100351DD2 /* Rock.m */; };
 		88EE9ACF18AC4ED600351DD2 /* MainCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EE9ACD18AC4ED600351DD2 /* MainCollectionViewController.m */; };
 		88EE9AD218AC4F0100351DD2 /* CTTCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 88EE9AD118AC4F0100351DD2 /* CTTCollectionViewCell.m */; };
+		88F4FF1E18BCF511005066B1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F4FF1B18BCF511005066B1 /* Default-568h@2x.png */; };
+		88F4FF1F18BCF511005066B1 /* Default-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F4FF1C18BCF511005066B1 /* Default-Portrait.png */; };
+		88F4FF2018BCF511005066B1 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 88F4FF1D18BCF511005066B1 /* Default@2x.png */; };
 		88F6516718B25EF6009074BE /* Text001_Battlefield of Princeton.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 88F650D118B25EF6009074BE /* Text001_Battlefield of Princeton.rtf */; };
 		88F6516818B25EF6009074BE /* Text002_Washington’s Landing Place.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 88F650D218B25EF6009074BE /* Text002_Washington’s Landing Place.rtf */; };
 		88F6516918B25EF6009074BE /* Text003_The Cathedral of Reims.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 88F650D318B25EF6009074BE /* Text003_The Cathedral of Reims.rtf */; };
@@ -1711,6 +1714,9 @@
 		88EE9ACD18AC4ED600351DD2 /* MainCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainCollectionViewController.m; sourceTree = "<group>"; };
 		88EE9AD018AC4F0100351DD2 /* CTTCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTTCollectionViewCell.h; sourceTree = "<group>"; };
 		88EE9AD118AC4F0100351DD2 /* CTTCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTTCollectionViewCell.m; sourceTree = "<group>"; };
+		88F4FF1B18BCF511005066B1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		88F4FF1C18BCF511005066B1 /* Default-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait.png"; sourceTree = "<group>"; };
+		88F4FF1D18BCF511005066B1 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		88F650D118B25EF6009074BE /* Text001_Battlefield of Princeton.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "Text001_Battlefield of Princeton.rtf"; sourceTree = "<group>"; };
 		88F650D218B25EF6009074BE /* Text002_Washington’s Landing Place.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "Text002_Washington’s Landing Place.rtf"; sourceTree = "<group>"; };
 		88F650D318B25EF6009074BE /* Text003_The Cathedral of Reims.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = "Text003_The Cathedral of Reims.rtf"; sourceTree = "<group>"; };
@@ -2205,6 +2211,9 @@
 		88EE991F18AA85BD00351DD2 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				88F4FF1B18BCF511005066B1 /* Default-568h@2x.png */,
+				88F4FF1C18BCF511005066B1 /* Default-Portrait.png */,
+				88F4FF1D18BCF511005066B1 /* Default@2x.png */,
 				1864397B18B4277000EFFB9D /* topDown Images */,
 				88EE9AC718ABF48B00351DD2 /* Buildings */,
 				88B9B48418B81703004F36D8 /* Rocks_thumbnails */,
@@ -3527,6 +3536,7 @@
 				88F6519818B25EF6009074BE /* Text050_Tower of Tears.rtf in Resources */,
 				88A5F09A18BC5BE00048713F /* R143 Yellowstone National Park.jpg in Resources */,
 				88A5E9F918B9DABE0048713F /* S075 The Great Wall of China.jpg in Resources */,
+				88F4FF1E18BCF511005066B1 /* Default-568h@2x.png in Resources */,
 				88A5EEF918BBC1F20048713F /* R019 Alamo@2x.jpg in Resources */,
 				88A5EA2F18B9DABE0048713F /* S130 Anzio Beachhead.jpg in Resources */,
 				88F6519D18B25EF6009074BE /* Text055_The Powder Tower.rtf in Resources */,
@@ -3859,6 +3869,7 @@
 				88B9B49718B8201C004F36D8 /* S015 StStephens.jpg in Resources */,
 				88A5EFE118BBC1F20048713F /* R097 Old Fur Trading Post-568h@2x.jpg in Resources */,
 				88A5F04618BBC1F20048713F /* R130 Anzio Beachhead@2x.jpg in Resources */,
+				88F4FF2018BCF511005066B1 /* Default@2x.png in Resources */,
 				1864398C18B4277000EFFB9D /* #2.png in Resources */,
 				88F6516C18B25EF6009074BE /* Text006_Mount Pentelicus.rtf in Resources */,
 				88A5EF4718BBC1F20048713F /* R045 Hagia Sophia@2x.jpg in Resources */,
@@ -3903,6 +3914,7 @@
 				88A5EECB18BBC1F20048713F /* R004 Trenton.jpg in Resources */,
 				88F6522418B42E92009074BE /* B009 Süleymaniye_Mosque_exterior_view.jpg in Resources */,
 				88A5F02518BBC1F20048713F /* R119 Omaha Beach@2x.jpg in Resources */,
+				88F4FF1F18BCF511005066B1 /* Default-Portrait.png in Resources */,
 				88A5F07F18BBC1F20048713F /* R149 Nativity stone@2x.jpg in Resources */,
 				88A5F05018BBC1F20048713F /* R134 Mosaic Hall-568h@2x.jpg in Resources */,
 				88A5EF3518BBC1F20048713F /* R039 Fort Santiago@2x.jpg in Resources */,
@@ -4149,7 +4161,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4157,6 +4168,7 @@
 				INFOPLIST_FILE = "CTTRocks/CTTRocks-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -4165,7 +4177,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -4173,6 +4184,7 @@
 				INFOPLIST_FILE = "CTTRocks/CTTRocks-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

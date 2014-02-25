@@ -418,7 +418,7 @@
     detailOverlay.hidden = !isOverlayOn;
     [myScrollView addSubview:detailOverlay];
     
-    UIImageView *historicalImage = [[UIImageView alloc] initWithFrame:CGRectMake(35, 35, 250, 175)];
+    UIImageView *historicalImage = [[UIImageView alloc] initWithFrame:CGRectMake(35, 65, 250, 175)];
     [historicalImage setImage:rock.imageOfBuilding];
     historicalImage.contentMode = UIViewContentModeScaleToFill;
     
@@ -436,7 +436,7 @@
         // Add text container to text layout manager
         [textLayout addTextContainer:textContainer];
         
-        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -254) textContainer:textContainer];
+        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 250, 250, self.view.frame.size.height -314) textContainer:textContainer];
         textView.backgroundColor = [UIColor clearColor];
         textView.editable = NO;
         textView.selectable = NO;
@@ -444,17 +444,17 @@
         textView.textColor = [UIColor blackColor];
         textView.directionalLockEnabled = YES;
         [textView sizeToFit];
-        if (textView.frame.size.height > 250)
+        if (textView.frame.size.height > 190)
         {
-            textView.frame = CGRectMake(35, 220, textView.frame.size.width, self.view.frame.size.height -254);
+            textView.frame = CGRectMake(35, 250, textView.frame.size.width, self.view.frame.size.height -314);
         }
     }
     else
     {
-        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 220, 250, self.view.frame.size.height -254)];
+        textView = [[UITextView alloc] initWithFrame:CGRectMake(35, 250, 250, self.view.frame.size.height -314)];
     }
     
-    UIView *myTranslucentView = [[UIView alloc] initWithFrame:CGRectMake(20, 20, 280, self.view.frame.size.height -40)];
+    UIView *myTranslucentView = [[UIView alloc] initWithFrame:CGRectMake(20, 50, 280, self.view.frame.size.height -100)];
     myTranslucentView.backgroundColor = [UIColor whiteColor];
     myTranslucentView.alpha = 0.8;
     myTranslucentView.layer.cornerRadius = 10.0;
