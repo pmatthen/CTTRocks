@@ -58,6 +58,7 @@ static NSArray *assestPaths;
                                                                        withString: [NSString stringWithFormat:@"-568h@2x.jpg"] ];
                 }
                 [self rockAtNumber:rockNumber].image = [[UIImage alloc] initWithContentsOfFile:accessPath];
+                
             }
             if (rockNumber >  0 && [kindOfImage isEqualToString:@"B"])
             {
