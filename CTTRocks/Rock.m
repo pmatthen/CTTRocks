@@ -38,9 +38,6 @@ static NSArray *assestPaths;
 
 + (void)loadImages
 {
-    UIImage *img = [UIImage imageNamed:@"R114 Sydney.jpg"];
-    NSLog(@"%@ 111", img);
-    
     for (int i = 0; i < assestPaths.count; i++)
     {
         NSString *searchStr= @"CTTRocks.app/";
@@ -70,9 +67,7 @@ static NSArray *assestPaths;
             {
                 [self rockAtNumber:rockNumber].imageThumbnail = [[UIImage alloc] initWithContentsOfFile:accessPath];
             }
-            
         }
-        
     }
 }
 
@@ -122,12 +117,6 @@ static NSArray *assestPaths;
             
             [rocks addObject:rock];
         }
-        assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:nil];
-        [self loadImages];
-        assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:nil];
-        [self loadImages];
-        assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"rtf" inDirectory:nil];
-        [self loadTexts];
         
         rocks  = [rocks sortedArrayUsingComparator:^NSComparisonResult(Rock *rock1, Rock *rock2) {
             NSInteger location1 = rock1.positionOnFacade;
@@ -141,7 +130,13 @@ static NSArray *assestPaths;
             }
             return NSOrderedSame;
         }];
-        
+
+            assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"jpg" inDirectory:nil];
+            [self loadImages];
+            assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:nil];
+            [self loadImages];
+            assestPaths = [[NSBundle mainBundle] pathsForResourcesOfType:@"rtf" inDirectory:nil];
+            [self loadTexts];
     });
     
     return rocks;
