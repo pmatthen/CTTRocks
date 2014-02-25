@@ -27,8 +27,6 @@
     NSIndexPath *selectedIP;
     NSMutableArray *arrayOfAllIndexPaths;
     
-    BOOL landscape;
-    
     UIFont *fontForTitle;
     UIFont *fontForLocation;
     UIFont *fontForNumber;
@@ -60,20 +58,20 @@
 {
     [super viewWillAppear:animated];
     
+    self.navigationController.navigationBar.tag = 1;
+    
     collectionViewFlowLayout.scrollDirection = UICollectionViewScrollDirectionVertical;
     myCollectionView.backgroundColor = [UIColor whiteColor];
     
     myCollectionView.delegate = self;
     myCollectionView.dataSource = self;
     
-    landscape = NO;
-    
     rocks = [Rock rocks];
     
     imageForCell = [UIImage imageNamed:@"640x150_rounded_opaque"];
 }
 
-- (BOOL) prefersStatusBarHidden
+- (BOOL)prefersStatusBarHidden
 {
     return YES;
 }
@@ -125,8 +123,6 @@
     cell.imageViewRockThumbnail.image = rock.imageThumbnail;
 
     cell.imageViewRockThumbnail.contentMode = UIViewContentModeScaleAspectFit;
- //   cell.imageViewCountry.image = [UIImage imageNamed:@"Flag of United States"];
- //   cell.imageViewCountry.contentMode = UIViewContentModeScaleAspectFit;
 
     cell.labelTitle.text = rock.title;
     [cell.labelTitle setFont:fontForTitle];
@@ -137,22 +133,16 @@
         cell.contentView.backgroundColor = [UIColor colorWithRed:0.478 green:0.663 blue:0.78 alpha:1];
     }
 
-    
-    
-
-    if ([rock.country isEqualToString:@"USA"])
-    {
+    if ([rock.country isEqualToString:@"USA"]) {
         cell.labelLocation.text = [NSString stringWithFormat:@"%@ %@ %@",rock.country, rock.state, rock.location];
     }
-    else
-    {
+    else {
         cell.labelLocation.text = [NSString stringWithFormat:@"%@ %@",rock.country, rock.location];
     }
+    
     [cell.labelLocation setFont:fontForLocation];
-
     cell.labelNumber.text = [NSString stringWithFormat:@"%03d", (int)indexPath.row + 1];
     [cell.labelNumber setFont:fontForNumber];
-    
     [arrayOfAllIndexPaths addObject:indexPath];
   
     return cell;
@@ -180,22 +170,15 @@
     cell.imageView.alpha = 1.0;
 }
 
-
-
 - (CGSize)collectionView:(UICollectionView *)cv layout:(UICollectionViewLayout*)collectionViewLayout sizeForItemAtIndexPath:(NSIndexPath *)indexPath {
-
-    CGSize retval;
-    
-    if (landscape)
-        retval = CGSizeMake(640, 150);
-    else
-        retval = CGSizeMake(320, 65);
-    return retval;
+    return CGSizeMake(320, 65);
 }
 
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section {
     return UIEdgeInsetsMake(0, 0, 0, 0);
 }
+
+
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {

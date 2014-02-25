@@ -94,14 +94,25 @@
     //Programmatically add share buttons
     UIBarButtonItem *shareItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(didTapAction)];
     
+    UIImage* infoImage = [UIImage imageNamed:@"Icon_?_44x_white.png"];
+    CGRect frameimg = CGRectMake(0, 0, 22, 22);
+    UIButton *infoButton = [[UIButton alloc] initWithFrame:frameimg];
+    [infoButton setBackgroundImage:infoImage forState:UIControlStateNormal];
+    [infoButton addTarget:self action:@selector(showHelpOverlay)
+         forControlEvents:UIControlEventTouchUpInside];
+    
     UIBarButtonItem *infoItem = [[UIBarButtonItem alloc]
-                                           initWithTitle:@"?"
-                                            style:UIBarButtonItemStyleBordered
-                                            target:self
-                                           action:@selector(showHelpOverlay)];
+                                 initWithCustomView:infoButton];
+    
+    UIImage* acknowledgementImage = [UIImage imageNamed:@"Icon_!_44x_white.png"];
+    CGRect acknowledgementImageFrame = CGRectMake(0, 0, 22, 22);
+    UIButton *acknowledgementButton = [[UIButton alloc] initWithFrame:acknowledgementImageFrame];
+    [acknowledgementButton setBackgroundImage:acknowledgementImage forState:UIControlStateNormal];
+    [acknowledgementButton addTarget:self action:@selector(goToAcknowledgements)
+         forControlEvents:UIControlEventTouchUpInside];
     
     UIBarButtonItem *acknowledgmentsItem = [[UIBarButtonItem alloc]
-                                            initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(goToAcknowledgements)];
+                                            initWithCustomView:acknowledgementButton];
     
     UIBarButtonItem *searchItem = [[UIBarButtonItem alloc]
                                    initWithBarButtonSystemItem:UIBarButtonSystemItemSearch target:self
@@ -140,6 +151,8 @@
     
     [myScrollView setContentOffset:CGPointMake(startingX, self.view.frame.size.height)];
     previousPage = self.selectedRock;
+    
+    self.navigationController.navigationBar.tag = 0;
     
     if (firstTime == YES) {
         [self showHelpOverlay];
@@ -188,7 +201,9 @@
 -(void)showNavBar
 {
     if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
-        [self.navigationController setNavigationBarHidden:NO animated:YES];
+        if (self.navigationController.navigationBar.tag == 0) {
+            [self.navigationController setNavigationBarHidden:NO animated:YES];
+        }
     }
 }
 
@@ -241,7 +256,7 @@
 
 -(void)checkMyPanoramicScrollViewContentOffset
 {
-    if (myPanoramicScrollview.contentOffset.x <= 5840) {
+    if (myPanoramicScrollview.contentOffset.x <= 5656) {
         buttonIndicator1.hidden = YES;
         buttonIndication1.hidden = NO;
     } else {
@@ -249,7 +264,7 @@
         buttonIndication1.hidden = YES;
     }
     
-    if ((myPanoramicScrollview.contentOffset.x > 5840) && (myPanoramicScrollview.contentOffset.x <= 7485)) {
+    if ((myPanoramicScrollview.contentOffset.x > 5656) && (myPanoramicScrollview.contentOffset.x <= 7160)) {
         buttonIndicator2.hidden = YES;
         buttonIndication2.hidden = NO;
     } else {
@@ -257,7 +272,7 @@
         buttonIndication2.hidden = YES;
     }
     
-    if ((myPanoramicScrollview.contentOffset.x > 7485) && (myPanoramicScrollview.contentOffset.x <= 9690)) {
+    if ((myPanoramicScrollview.contentOffset.x > 7160) && (myPanoramicScrollview.contentOffset.x <= 9099)) {
         buttonIndicator3.hidden = YES;
         buttonIndication3.hidden = NO;
     } else {
@@ -265,7 +280,7 @@
         buttonIndication3.hidden = YES;
     }
     
-    if ((myPanoramicScrollview.contentOffset.x > 9690) && (myPanoramicScrollview.contentOffset.x <= 10780)) {
+    if ((myPanoramicScrollview.contentOffset.x > 9099) && (myPanoramicScrollview.contentOffset.x <= 10346)) {
         buttonIndicator4.hidden = YES;
         buttonIndication4.hidden = NO;
     } else {
@@ -273,14 +288,14 @@
         buttonIndication4.hidden = YES;
     }
     
-    if ((myPanoramicScrollview.contentOffset.x > 10780) && (myPanoramicScrollview.contentOffset.x < 12415)) {
+    if ((myPanoramicScrollview.contentOffset.x > 10346) && (myPanoramicScrollview.contentOffset.x < 11569)) {
         buttonIndicator5.hidden = YES;
         buttonIndication5.hidden = NO;
     } else {
         buttonIndicator5.hidden = NO;
         buttonIndication5.hidden = YES;
     }
-    if (myPanoramicScrollview.contentOffset.x >= 12415) {
+    if (myPanoramicScrollview.contentOffset.x >= 11569) {
         buttonIndicator6.hidden = YES;
         buttonIndication6.hidden = NO;
     } else {
@@ -503,12 +518,13 @@
 
 -(void)showHideNavbar
 {
-    //Hide/unhide navigation controller
-    if ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) {
-        if (![self.navigationController isNavigationBarHidden])
-            [self.navigationController setNavigationBarHidden:YES animated:YES];
-        else
-            [self.navigationController setNavigationBarHidden:NO animated:YES];
+    if (self.navigationController.navigationBar.tag == 0) {
+        if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortrait) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationFaceDown) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationFaceUp)) {
+            if (![self.navigationController isNavigationBarHidden])
+                [self.navigationController setNavigationBarHidden:YES animated:YES];
+            else
+                [self.navigationController setNavigationBarHidden:NO animated:YES];
+        }
     }
 }
 
@@ -562,7 +578,9 @@
     
     if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
         ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown)) {
-        [self.navigationController setNavigationBarHidden:YES animated:NO];
+        if (self.navigationController.navigationBar.tag == 0) {
+            [self.navigationController setNavigationBarHidden:YES animated:NO];
+        }
         currentOrientation = 1;
         
         if (previousOrientation != currentOrientation) {
@@ -706,7 +724,10 @@
             [self determinePositionOnScrollView];
         }
         
-        [self.navigationController setNavigationBarHidden:YES animated:YES];
+        if (self.navigationController.navigationBar.tag == 0) {
+            [self.navigationController setNavigationBarHidden:YES animated:YES];
+        }
+        
         NSTimeInterval delay = 3;
         [NSObject cancelPreviousPerformRequestsWithTarget:self];
         [self performSelector:@selector(showNavBar) withObject:nil afterDelay:delay];
@@ -725,23 +746,23 @@
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 2:
-            myPanoramicScrollview.contentOffset = CGPointMake(5841, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(5657, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 3:
-            myPanoramicScrollview.contentOffset = CGPointMake(7486, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(7161, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 4:
-            myPanoramicScrollview.contentOffset = CGPointMake(9691, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(9100, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 5:
-            myPanoramicScrollview.contentOffset = CGPointMake(10781, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(10347, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         case 6:
-            myPanoramicScrollview.contentOffset = CGPointMake(12416, 50);
+            myPanoramicScrollview.contentOffset = CGPointMake(11570, 50);
             [self checkMyPanoramicScrollViewContentOffset];
             break;
         default:
