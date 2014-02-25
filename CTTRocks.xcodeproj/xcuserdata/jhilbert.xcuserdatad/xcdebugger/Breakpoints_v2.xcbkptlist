@@ -22,22 +22,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CTTRocks/RocksScrollViewController.m"
-            timestampString = "414605451.388029"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
@@ -48,22 +32,6 @@
             startingLineNumber = "248"
             endingLineNumber = "248"
             landmarkName = "-didReceiveMemoryWarning"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "CTTRocks/RocksScrollViewController.m"
-            timestampString = "414605451.388029"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "-viewDidLoad"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -170,11 +138,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CTTRocks/Rock.m"
-            timestampString = "414797370.035495"
+            timestampString = "414997532.298772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "+rocksFiltered:"
             landmarkType = "5">
          </BreakpointContent>
@@ -290,16 +258,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CTTRocks/RocksScrollViewController.m"
-            timestampString = "414605451.388029"
+            filePath = "CTTRocks/Rock.m"
+            timestampString = "414997532.298772"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "+rocks"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -310,41 +278,57 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CTTRocks/RocksScrollViewController.m"
-            timestampString = "414605451.388029"
+            timestampString = "414995640.645328"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "145"
-            endingLineNumber = "145"
-            landmarkName = "-viewWillAppear:"
+            startingLineNumber = "548"
+            endingLineNumber = "548"
+            landmarkName = "-detectOrientation"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CTTRocks/RocksScrollViewController.m"
+            timestampString = "414996071.719133"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "456"
+            endingLineNumber = "456"
+            landmarkName = "-swipePhoto:andAdd:"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__43-[RocksScrollViewController viewDidAppear:]_block_invoke"
+                  symbolName = "-[RocksScrollViewController swipePhoto:andAdd:]"
                   moduleName = "CTTRocks"
                   urlString = "file:///Users/jhilbert/Documents/XCodeProjects/CTTRocks/CTTRocks/CTTRocks/RocksScrollViewController.m"
-                  timestampString = "414737975.411768"
+                  timestampString = "414997532.312044"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "260">
+                  startingLineNumber = "456"
+                  endingLineNumber = "456"
+                  offsetFromSymbolStart = "52">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__copy_helper_block_128"
+                  symbolName = "-[RocksScrollViewController swipePhoto:andAdd:]"
                   moduleName = "CTTRocks"
                   urlString = "file:///Users/jhilbert/Documents/XCodeProjects/CTTRocks/CTTRocks/CTTRocks/RocksScrollViewController.m"
-                  timestampString = "414737975.411878"
+                  timestampString = "414997532.312237"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "145"
-                  endingLineNumber = "145"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "456"
+                  endingLineNumber = "456"
+                  offsetFromSymbolStart = "484">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -352,15 +336,33 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
+            condition = "rockNumber == 143"
             continueAfterRunningActions = "No"
             filePath = "CTTRocks/Rock.m"
-            timestampString = "414740993.970034"
+            timestampString = "414996203.081656"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "+loadImages"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            condition = "rockNumber == 143"
+            continueAfterRunningActions = "No"
+            filePath = "CTTRocks/Rock.m"
+            timestampString = "414996370.212644"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
             landmarkName = "+loadImages"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,12 +374,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CTTRocks/Rock.m"
-            timestampString = "414797370.035495"
+            timestampString = "414997368.615243"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "95"
-            endingLineNumber = "95"
-            landmarkName = "+rocks"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "+loadImages"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

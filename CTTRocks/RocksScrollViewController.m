@@ -556,7 +556,7 @@
     
     
     if (([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeLeft) ||
-        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationFaceDown) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationFaceUp)) {
+        ([[UIDevice currentDevice] orientation] == UIDeviceOrientationLandscapeRight) || ([[UIDevice currentDevice] orientation] == UIDeviceOrientationPortraitUpsideDown)) {
         [self.navigationController setNavigationBarHidden:YES animated:NO];
         currentOrientation = 1;
         

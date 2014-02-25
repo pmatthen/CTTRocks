@@ -685,8 +685,6 @@
 		88A5F06818BBC1F20048713F /* R142 Craters of the Moon-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5EEA918BBC1F20048713F /* R142 Craters of the Moon-568h@2x.jpg */; };
 		88A5F06918BBC1F20048713F /* R142 Craters of the Moon.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5EEAA18BBC1F20048713F /* R142 Craters of the Moon.jpg */; };
 		88A5F06A18BBC1F20048713F /* R142 Craters of the Moon@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5EEAB18BBC1F20048713F /* R142 Craters of the Moon@2x.jpg */; };
-		88A5F06C18BBC1F20048713F /* R143 Yellowstone National Park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5EEAD18BBC1F20048713F /* R143 Yellowstone National Park.jpg */; };
-		88A5F06D18BBC1F20048713F /* R143 Yellowstone National Park@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5EEAE18BBC1F20048713F /* R143 Yellowstone National Park@2x.jpg */; };
 		88A5F06E18BBC1F20048713F /* R144 Petrified Forest-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5EEAF18BBC1F20048713F /* R144 Petrified Forest-568h@2x.jpg */; };
 		88A5F06F18BBC1F20048713F /* R144 Petrified Forest.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5EEB018BBC1F20048713F /* R144 Petrified Forest.jpg */; };
 		88A5F07018BBC1F20048713F /* R144 Petrified Forest@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5EEB118BBC1F20048713F /* R144 Petrified Forest@2x.jpg */; };
@@ -715,6 +713,9 @@
 		88A5F09118BC53C00048713F /* R150 Lunar_Ferroan_Anorthosite@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5F08E18BC53C00048713F /* R150 Lunar_Ferroan_Anorthosite@2x.jpg */; };
 		88A5F09318BC53D90048713F /* S150 Lunar_Ferroan_Anorthosite.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5F09218BC53D90048713F /* S150 Lunar_Ferroan_Anorthosite.jpg */; };
 		88A5F09518BC53FF0048713F /* CTTPanoramaV2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5F09418BC53FF0048713F /* CTTPanoramaV2.jpg */; };
+		88A5F09918BC5BE00048713F /* R143 Yellowstone National Park-568h@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5F09618BC5BE00048713F /* R143 Yellowstone National Park-568h@2x.jpg */; };
+		88A5F09A18BC5BE00048713F /* R143 Yellowstone National Park.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5F09718BC5BE00048713F /* R143 Yellowstone National Park.jpg */; };
+		88A5F09B18BC5BE00048713F /* R143 Yellowstone National Park@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88A5F09818BC5BE00048713F /* R143 Yellowstone National Park@2x.jpg */; };
 		88B9B40B18B5C691004F36D8 /* S001 Battlefield of Princetone.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B40A18B5C691004F36D8 /* S001 Battlefield of Princetone.jpg */; };
 		88B9B41018B5D0E0004F36D8 /* S002 Washingtons Landing Place.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B40C18B5D0E0004F36D8 /* S002 Washingtons Landing Place.jpg */; };
 		88B9B41A18B5D941004F36D8 /* S003 Reims.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 88B9B41618B5D941004F36D8 /* S003 Reims.jpg */; };
@@ -1634,9 +1635,6 @@
 		88A5EEA918BBC1F20048713F /* R142 Craters of the Moon-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R142 Craters of the Moon-568h@2x.jpg"; sourceTree = "<group>"; };
 		88A5EEAA18BBC1F20048713F /* R142 Craters of the Moon.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R142 Craters of the Moon.jpg"; sourceTree = "<group>"; };
 		88A5EEAB18BBC1F20048713F /* R142 Craters of the Moon@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R142 Craters of the Moon@2x.jpg"; sourceTree = "<group>"; };
-		88A5EEAC18BBC1F20048713F /* R143 Yellowstone National Park-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R143 Yellowstone National Park-568h@2x.jpg"; sourceTree = "<group>"; };
-		88A5EEAD18BBC1F20048713F /* R143 Yellowstone National Park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R143 Yellowstone National Park.jpg"; sourceTree = "<group>"; };
-		88A5EEAE18BBC1F20048713F /* R143 Yellowstone National Park@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R143 Yellowstone National Park@2x.jpg"; sourceTree = "<group>"; };
 		88A5EEAF18BBC1F20048713F /* R144 Petrified Forest-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R144 Petrified Forest-568h@2x.jpg"; sourceTree = "<group>"; };
 		88A5EEB018BBC1F20048713F /* R144 Petrified Forest.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R144 Petrified Forest.jpg"; sourceTree = "<group>"; };
 		88A5EEB118BBC1F20048713F /* R144 Petrified Forest@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R144 Petrified Forest@2x.jpg"; sourceTree = "<group>"; };
@@ -1665,6 +1663,9 @@
 		88A5F08E18BC53C00048713F /* R150 Lunar_Ferroan_Anorthosite@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R150 Lunar_Ferroan_Anorthosite@2x.jpg"; sourceTree = "<group>"; };
 		88A5F09218BC53D90048713F /* S150 Lunar_Ferroan_Anorthosite.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S150 Lunar_Ferroan_Anorthosite.jpg"; sourceTree = "<group>"; };
 		88A5F09418BC53FF0048713F /* CTTPanoramaV2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = CTTPanoramaV2.jpg; sourceTree = "<group>"; };
+		88A5F09618BC5BE00048713F /* R143 Yellowstone National Park-568h@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R143 Yellowstone National Park-568h@2x.jpg"; sourceTree = "<group>"; };
+		88A5F09718BC5BE00048713F /* R143 Yellowstone National Park.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R143 Yellowstone National Park.jpg"; sourceTree = "<group>"; };
+		88A5F09818BC5BE00048713F /* R143 Yellowstone National Park@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "R143 Yellowstone National Park@2x.jpg"; sourceTree = "<group>"; };
 		88B9B40A18B5C691004F36D8 /* S001 Battlefield of Princetone.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S001 Battlefield of Princetone.jpg"; sourceTree = "<group>"; };
 		88B9B40C18B5D0E0004F36D8 /* S002 Washingtons Landing Place.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S002 Washingtons Landing Place.jpg"; sourceTree = "<group>"; };
 		88B9B41618B5D941004F36D8 /* S003 Reims.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "S003 Reims.jpg"; sourceTree = "<group>"; };
@@ -2638,9 +2639,9 @@
 				88A5EEA918BBC1F20048713F /* R142 Craters of the Moon-568h@2x.jpg */,
 				88A5EEAA18BBC1F20048713F /* R142 Craters of the Moon.jpg */,
 				88A5EEAB18BBC1F20048713F /* R142 Craters of the Moon@2x.jpg */,
-				88A5EEAC18BBC1F20048713F /* R143 Yellowstone National Park-568h@2x.jpg */,
-				88A5EEAD18BBC1F20048713F /* R143 Yellowstone National Park.jpg */,
-				88A5EEAE18BBC1F20048713F /* R143 Yellowstone National Park@2x.jpg */,
+				88A5F09618BC5BE00048713F /* R143 Yellowstone National Park-568h@2x.jpg */,
+				88A5F09718BC5BE00048713F /* R143 Yellowstone National Park.jpg */,
+				88A5F09818BC5BE00048713F /* R143 Yellowstone National Park@2x.jpg */,
 				88A5EEAF18BBC1F20048713F /* R144 Petrified Forest-568h@2x.jpg */,
 				88A5EEB018BBC1F20048713F /* R144 Petrified Forest.jpg */,
 				88A5EEB118BBC1F20048713F /* R144 Petrified Forest@2x.jpg */,
@@ -3455,7 +3456,6 @@
 				88F6519B18B25EF6009074BE /* Text053_Clementine Hall Pontifical Palace.rtf in Resources */,
 				88A5EF3918BBC1F20048713F /* R041 Ancient Temple-568h@2x.jpg in Resources */,
 				88A5ECD418BBA6220048713F /* B105 Schlacht_am_Little_Bighorn_River.jpg in Resources */,
-				88A5F06C18BBC1F20048713F /* R143 Yellowstone National Park.jpg in Resources */,
 				88A5EC5A18BB01EF0048713F /* B044 Beijing-forbidden.jpg in Resources */,
 				88A5ECD218BBA6220048713F /* B103 Lake_Champlain.jpg in Resources */,
 				88F6518E18B25EF6009074BE /* Text040_Notre Dame Cathedral.rtf in Resources */,
@@ -3486,6 +3486,7 @@
 				88A5EECF18BBC1F20048713F /* R005 Leiden@2x.jpg in Resources */,
 				88A5EF7218BBC1F20048713F /* R060 Tainitzkaya Tower-568h@2x.jpg in Resources */,
 				88A5E82E18B940AC0048713F /* S026 Chillon.jpg in Resources */,
+				88A5F09B18BC5BE00048713F /* R143 Yellowstone National Park@2x.jpg in Resources */,
 				88A5EC8E18BB01EF0048713F /* B096 Nelson House - Yorktown, Virginia.jpg in Resources */,
 				88A5F05E18BBC1F20048713F /* R138 Corregidor@2x.jpg in Resources */,
 				88F651C618B25EF6009074BE /* Text096_Nelson House.rtf in Resources */,
@@ -3518,6 +3519,7 @@
 				88A5EF7418BBC1F20048713F /* R060 Tainitzkaya Tower@2x.jpg in Resources */,
 				88A5E84418B940AC0048713F /* S048 Roman Ruins.jpg in Resources */,
 				88F6519818B25EF6009074BE /* Text050_Tower of Tears.rtf in Resources */,
+				88A5F09A18BC5BE00048713F /* R143 Yellowstone National Park.jpg in Resources */,
 				88A5E9F918B9DABE0048713F /* S075 The Great Wall of China.jpg in Resources */,
 				88A5EEF918BBC1F20048713F /* R019 Alamo@2x.jpg in Resources */,
 				88A5EA2F18B9DABE0048713F /* S130 Anzio Beachhead.jpg in Resources */,
@@ -3707,6 +3709,7 @@
 				88F6517218B25EF6009074BE /* Text012_Battlements of Fortress Ehrenbreitstein.rtf in Resources */,
 				88F6519018B25EF6009074BE /* Text042_Old General Post Office Dublin.rtf in Resources */,
 				88A5EC7518BB01EF0048713F /* B071 Stabian Baths Pompeii.jpg in Resources */,
+				88A5F09918BC5BE00048713F /* R143 Yellowstone National Park-568h@2x.jpg in Resources */,
 				88A5EC8F18BB01EF0048713F /* B097 Old Fur Trading Post.jpg in Resources */,
 				88A5EA0918B9DABE0048713F /* S091 John Brown’s Cabin.jpg in Resources */,
 				88A5EED318BBC1F20048713F /* R007 Fortress-568h@2x.jpg in Resources */,
@@ -3751,7 +3754,6 @@
 				88F6517418B25EF6009074BE /* Text014_Sydney Opera House.rtf in Resources */,
 				88A5EEDD18BBC1F20048713F /* R010 WTC.jpg in Resources */,
 				88A5EFB918BBC1F20048713F /* R083 Mark Twain Cave@2x.jpg in Resources */,
-				88A5F06D18BBC1F20048713F /* R143 Yellowstone National Park@2x.jpg in Resources */,
 				88F6517A18B25EF6009074BE /* Text020_Trondhjem Cathedral.rtf in Resources */,
 				88A5F04918BBC1F20048713F /* R131 Petrified Forest@2x.jpg in Resources */,
 				88A5F03318BBC1F20048713F /* R124 Bloody Nose.jpg in Resources */,
