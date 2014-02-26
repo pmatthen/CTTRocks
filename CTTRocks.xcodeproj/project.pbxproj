@@ -948,6 +948,7 @@
 		88F651FE18B25F1F009074BE /* CTT New Inventory.csv in Resources */ = {isa = PBXBuildFile; fileRef = 88F651FD18B25F1F009074BE /* CTT New Inventory.csv */; };
 		88F6520218B25F9B009074BE /* CHCSVParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 88F6520118B25F9B009074BE /* CHCSVParser.m */; };
 		9E7124C218BD52540084B475 /* TribNightView.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 9E7124C118BD52540084B475 /* TribNightView.jpeg */; };
+		9E7F1AD318BD67510026C797 /* CoachMarksWBackground2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9E7F1AD218BD67510026C797 /* CoachMarksWBackground2.png */; };
 		9EC4718F18B512D50032EEFE /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC4718E18B512D50032EEFE /* WelcomeViewController.m */; };
 		9EC471DD18B9C9EE0032EEFE /* CoachMarks5.png in Resources */ = {isa = PBXBuildFile; fileRef = 9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */; };
 		9EC471E018BA15A70032EEFE /* AcknowledgementsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9EC471DF18BA15A70032EEFE /* AcknowledgementsViewController.m */; };
@@ -1914,6 +1915,7 @@
 		88F6520018B25F9B009074BE /* CHCSVParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHCSVParser.h; sourceTree = "<group>"; };
 		88F6520118B25F9B009074BE /* CHCSVParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHCSVParser.m; sourceTree = "<group>"; };
 		9E7124C118BD52540084B475 /* TribNightView.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TribNightView.jpeg; sourceTree = "<group>"; };
+		9E7F1AD218BD67510026C797 /* CoachMarksWBackground2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoachMarksWBackground2.png; sourceTree = "<group>"; };
 		9EC4718D18B512D50032EEFE /* WelcomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
 		9EC4718E18B512D50032EEFE /* WelcomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
 		9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CoachMarks5.png; sourceTree = "<group>"; };
@@ -2849,6 +2851,7 @@
 				88F4061F18BD5110005066B1 /* CTTPanoramaV2.jpg */,
 				18EF52B518BD373D0025127F /* Icon_!_44x_white.png */,
 				18EF52B618BD373D0025127F /* Icon_?_44x_white.png */,
+				9E7F1AD218BD67510026C797 /* CoachMarksWBackground2.png */,
 				9EC471DC18B9C9EE0032EEFE /* CoachMarks5.png */,
 			);
 			name = Others;
@@ -3059,7 +3062,7 @@
 				ORGANIZATIONNAME = "Josef Hilbert";
 				TargetAttributes = {
 					88EE98E318AA790E00351DD2 = {
-						DevelopmentTeam = 27W7GCND36;
+						DevelopmentTeam = 44F79BQXJ2;
 					};
 					88EE990418AA790E00351DD2 = {
 						TestTargetID = 88EE98E318AA790E00351DD2;
@@ -3588,6 +3591,7 @@
 				88F4093A18BD5C1F005066B1 /* R115 Ancient Gate.jpg in Resources */,
 				88F651E618B25EF6009074BE /* Text128_Orote Peninsula.rtf in Resources */,
 				88F4FFEE18BD392A005066B1 /* B054 Christ Church.jpg in Resources */,
+				9E7F1AD318BD67510026C797 /* CoachMarksWBackground2.png in Resources */,
 				88F405BB18BD3A36005066B1 /* S053 Clementine Hall.jpg in Resources */,
 				88F4086B18BD5C1F005066B1 /* R046 Forbidden City.jpg in Resources */,
 				88F4061618BD3A36005066B1 /* S144 Petrified Forest.jpg in Resources */,

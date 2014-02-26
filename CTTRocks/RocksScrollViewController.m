@@ -215,7 +215,7 @@
         NSLog(@"CoachMarks does not exist...drawing!");
         startingX = previousPage * self.view.frame.size.width;
         coachMarkImageView = [[UIImageView alloc] initWithFrame: CGRectMake(startingX, 0, self.view.frame.size.width, self.view.frame.size.height)];
-        coachMarkImageView.image = [UIImage imageNamed: @"CoachMarks5.png"];
+        coachMarkImageView.image = [UIImage imageNamed: @"CoachMarksWBackground2.png"];
         [myScrollView addSubview: coachMarkImageView];
     } else {
         [coachMarkImageView removeFromSuperview];
